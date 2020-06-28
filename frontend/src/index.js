@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import axios from 'axios';
+import configureStore from './store/store.js';
+import Root from './Root';
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+    <Root store={configureStore()} />
   </React.StrictMode>,
   document.getElementById('root')
 );
