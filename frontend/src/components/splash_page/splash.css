@@ -28,3 +28,8 @@
     display: flex;
     justify-content: center;
 }
+
+.deals img{
+    width: 30%;
+    height: auto;
+}
