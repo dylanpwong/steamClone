@@ -2,10 +2,12 @@ import {RECEIVE_CURRENT_USER, RECEIVE_USER_LOGOUT} from '../actions/session_acti
 
 const userReducer=(state={},action)=>{
     Object.freeze(state);
-
+    // debugger;
     switch(action.type){
+        
         case RECEIVE_CURRENT_USER:
-            return Object.assign({},state,{[action.user.id]: action.user});
+            // return 
+            return Object.assign({},state,{[action.currentUser.id]: action.currentUser});
             break;
         default:
             return {};
