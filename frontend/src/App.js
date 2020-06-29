@@ -9,7 +9,7 @@ import signup_form_container from './components/session/signup_form_container';
 
 function App() {
   return (
-    <div >
+    <div className='mainContentWrapper' >
       <Route exact path='/' component={SplashPage}/>
       <Route exact path='/login' component={login_form_container}/>
       <Route exact path='/join' component={signup_form_container}/>

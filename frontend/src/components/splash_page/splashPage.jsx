@@ -1,5 +1,8 @@
 import React from 'react';
 import './splash.css';
+import Header from './header.jsx';
+import Login from "./login.jsx";
+import Deals from "./deals.jsx";
 
 class SplashPage extends React.Component{
     constructor(props){
@@ -21,8 +24,12 @@ onSignUpClick(){
   render(){
         return(
             <>
-            <div>
-                hello
+            <div className='test'>
+                <Login/>
+                <Header/>
+                <Deals/>
+                <div>Edward is dumb.</div>
+                <div>CANCER</div>
             </div>
 
             <div onClick={this.onSignUpClick}>Sign in</div>
