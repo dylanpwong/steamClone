@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.mainContentWrapper {
+  background-image: url(https://wallpaperplay.com/walls/full/8/e/9/78943.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}

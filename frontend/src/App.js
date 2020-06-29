@@ -7,7 +7,7 @@ import SplashPage from './components/splash_page/splashPage';
 
 function App() {
   return (
-    <div >
+    <div className='mainContentWrapper' >
       <Route path='/' component={SplashPage}/>
     </div>
   );

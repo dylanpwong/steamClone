@@ -1,0 +1,30 @@
+
+
+.test{
+    width: 100vw;
+    height: 100vh;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.login {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; 
+}
+
+.deals {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
