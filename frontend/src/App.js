@@ -14,6 +14,7 @@ function App() {
       <Route exact path='/' component={splashPage_container}/>
       <Route exact path='/login' component={login_form_container}/>
       <Route exact path='/join' component={signup_form_container}/>
+      {/* <Route path='/' component={footer.jsx}/> */}
     </div>
   );
 }
