@@ -13,6 +13,9 @@ class SplashPage extends React.Component{
         }
 
         this.onSignUpClick=this.onSignUpClick.bind(this);
+        this.checkLogin=this.checkLogin.bind(this);
+        this.onLogin=this.onLogin.bind(this);
+        this.onLogout=this.onLogout.bind(this);
     }
 
 // this.props.history.push(/join);
@@ -20,12 +23,47 @@ class SplashPage extends React.Component{
 onSignUpClick(){
     this.props.history('/join');
 }
+onLogin(){
+    this.props.history.push('/login')
+}
+onLogout(){
+    this.props.logout();
+}
+checkLogin(){
+    if (this.props.currentUser) {
+        // debugger;
+        console.log('Logged In')
+        return(
+            <>
+            <div>
+                <div>
+                {this.props.currentUser.username}
+
+                </div>
+                <div onClick={this.onLogout}>
+                    Logout
+                </div>
+            </div>
+            </>
+        )
+    }else{
+        return(
+            <>
+            {console.log('not logged in')}
+            <Login onLogin={this.onLogin}/>
+            </>
+        )
+    }
+}
 
   render(){
+
+    
         return(
             <>
             <div className='test'>
-                <Login/>
+                
+                {this.checkLogin()}
                 <Header/>
                 <Deals/>
                 <div>Edward is dumb.</div>
