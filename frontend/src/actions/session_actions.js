@@ -18,7 +18,8 @@ export const receiveUserSignIn=()=>{
 }
 export const receiveErrors = errors =>{
     return({
-        type: RECEIVE_SESSION_ERRORS
+        type: RECEIVE_SESSION_ERRORS,
+        errors: errors
     })
 }
 export const logoutUser= ()=>{
