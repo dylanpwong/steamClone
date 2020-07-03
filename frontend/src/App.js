@@ -7,6 +7,8 @@ import login_form_container from './components/session/login_form_container';
 import signup_form_container from './components/session/signup_form_container';
 // import splash_page_container from './components/splash_page/splashPage_container';
 import splashPage_container from './components/splash_page/splashPage_container';
+import CompleteSignUp from './components/session/complete_signup';
+import CompleteSignUp_Container from './components/session/complete_signup_container'
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <Route exact path='/' component={splashPage_container}/>
       <Route exact path='/login' component={login_form_container}/>
       <Route exact path='/join' component={signup_form_container}/>
+      <Route exact path='/join/completesignup' component={CompleteSignUp_Container}/>
       {/* <Route path='/' component={footer.jsx}/> */}
     </div>
   );

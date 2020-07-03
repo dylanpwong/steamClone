@@ -1,4 +1,4 @@
-import { signup } from "../../actions/session_actions"
+import { signup, checkEmail } from "../../actions/session_actions"
 import { connect } from "react-redux"
 import SignupForm from "./signup_form"
 
@@ -12,7 +12,8 @@ const mapStateToProps= (state)=>{
 
 const mapDisptachToProps = (dispatch)=>{
     return{
-        signup: user => dispatch(signup(user))
+        signup: user => dispatch(signup(user)),
+        checkEmail: email=> (dispatch(checkEmail(email)))
     }
 }
 

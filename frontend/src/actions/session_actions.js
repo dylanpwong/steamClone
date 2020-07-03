@@ -4,6 +4,7 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS= "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT="RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN="RECEIVE_USER_SIGN_IN";
+export const RECEIVE_EMAIL="RECEIVE_EMAIL";
 
 export const receiveCurrentUser = currentUser=>{
     return({
@@ -26,6 +27,18 @@ export const logoutUser= ()=>{
     return({
         type: RECEIVE_USER_LOGOUT
     })
+}
+
+export const saveEmail=(email)=>{
+    return({
+        type: RECEIVE_EMAIL,
+        email: email.data
+    })
+}
+
+export const checkEmail=(email)=>dispatch=>{
+   return APIutil.checkEmail(email)
+    .then((res)=>dispatch(saveEmail(res)))
 }
 export const signup = (user)=> dispatch=>{
     APIutil.signup(user)
