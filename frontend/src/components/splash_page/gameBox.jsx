@@ -1,6 +1,7 @@
 import React from "react";
+import "./splash.css";
 
-class gameBox extends React.Component {
+class GameBox extends React.Component {
     render () {
         return (    
             <>        
@@ -11,3 +12,5 @@ class gameBox extends React.Component {
         )
     }
 }
+
+export default GameBox;

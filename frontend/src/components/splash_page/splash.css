@@ -42,3 +42,22 @@
     height: auto;
 }
 
+.gameList {
+    color: white;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game img {
+    width: 15%;
+    height: auto;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+

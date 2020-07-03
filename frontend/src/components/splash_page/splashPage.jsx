@@ -3,6 +3,7 @@ import './splash.css';
 import Header from './header.jsx';
 import Login from "./login.jsx";
 import Deals from "./deals.jsx";
+import GameList from "./gameList.jsx";
 
 class SplashPage extends React.Component{
     constructor(props){
