@@ -7,6 +7,11 @@ export const login = userData => {
     return axios.post('api/users/login',userData)
 };
 
+export const checkEmail = email =>{
+    // debugger;
+    return axios.post('/api/users/checkEmail', email)
+}
+
 export const setAuthToken = token =>{
     if(token){
         axios.defaults.headers.common["Authorization"] = token;

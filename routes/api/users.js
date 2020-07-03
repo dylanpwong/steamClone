@@ -67,6 +67,26 @@ router.delete("/flush", (req, res) => {
   User.deleteMany({}).then((user) => res.json(user));
 });
 
+router.post('/checkEmail',(req,res)=>{
+    // console.log(`Email is :${req}`)
+    let foundUser = User.find({email: req.body.email}).then((user)=>{
+        // console.log(`user is ${user}`);
+        // debugger;
+        if(!!user.length){
+            res.json({
+                found: true,
+                email: null
+            })
+        }else{
+            res.json(({
+                fonud: false,
+                email: req.body.email
+            }))
+        }
+        
+    })
+})
+
 router.post('/login',(req,res)=>{
     const{errors,isValid} = validateLoginInput(req.body);
 
