@@ -66,7 +66,7 @@ checkLogin(){
                 {this.checkLogin()}
                 <Header/>
                 <Deals/>
-                <div>Edward is dumb.</div>
+                <GameList/>
                 <div>CANCER</div>
             </div>
 
