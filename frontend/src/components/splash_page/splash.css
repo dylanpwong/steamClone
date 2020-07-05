@@ -16,6 +16,13 @@
     justify-content: space-between;
 }
 
+.searchBar {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .login {
     cursor: pointer;
     color: white;
