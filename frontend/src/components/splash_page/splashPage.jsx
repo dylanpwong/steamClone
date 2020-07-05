@@ -1,6 +1,7 @@
 import React from 'react';
 import './splash.css';
 import Header from './header.jsx';
+import SearchBar from './searchBar.jsx';
 import Login from "./login.jsx";
 import Deals from "./deals.jsx";
 import GameList from "./gameList.jsx";
@@ -66,9 +67,9 @@ checkLogin(){
                 
                 {this.checkLogin()}
                 <Header/>
+                <SearchBar/>
                 <Deals/>
                 <GameList/>
-                <div>CANCER</div>
             </div>
 
             <div onClick={this.onSignUpClick}>Sign in</div>
