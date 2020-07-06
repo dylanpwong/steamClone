@@ -65,14 +65,17 @@ checkLogin(){
             <>
             <div className='test'>
                 
+                <div className='topContainer'>
                 {this.checkLogin()}
                 <Header/>
+                </div>
+
                 <SearchBar/>
                 <Deals/>
                 <GameList/>
             </div>
 
-            <div onClick={this.onSignUpClick}>Sign in</div>
+            {/* <div onClick={this.onSignUpClick}>Sign in</div> */}
             </>
 
         )
