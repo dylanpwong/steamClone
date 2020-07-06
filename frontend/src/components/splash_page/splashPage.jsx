@@ -70,7 +70,9 @@ checkLogin(){
                 <Header/>
                 </div>
 
+                <div className='upperContainer'>
                 <SearchBar/>
+                </div>
                 <Deals/>
                 <GameList/>
             </div>
