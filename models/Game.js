@@ -7,8 +7,12 @@ const GameSchema = new Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
+  },
+  imgUrl:{
+    type: String,
+    required: true
   },
 
   genres: [{ type: Schema.Types.ObjectId, ref: "Genre" }],

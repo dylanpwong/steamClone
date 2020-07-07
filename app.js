@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
+const genres =require('./routes/api/genres')
 const User = require('./models/User');
 const bodyParser = require('body-parser');
 
@@ -28,7 +29,7 @@ app.get("/", (req,res)=>{
 });
 
 app.use("/api/users",users);
-
+app.use("/api/genres",genres);
 // app.get("/ed", (req, res) => {
 //   res.send("hello ed");
 // });
