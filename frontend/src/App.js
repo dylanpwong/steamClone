@@ -10,10 +10,12 @@ import splashPage_container from './components/splash_page/splashPage_container'
 import CompleteSignUp from './components/session/complete_signup';
 import CompleteSignUp_Container from './components/session/complete_signup_container';
 import gamePage_container from './components/game_page/gamePage_container';
+import header_container from './components/header/header_container';
 
 function App() {
   return (
     <div className='mainContentWrapper' >
+      <Route path='/' component={header_container}/>
       <Route exact path='/' component={splashPage_container}/>
       <Route exact path='/game' component={gamePage_container}/> 
       <Route exact path='/login' component={login_form_container}/>

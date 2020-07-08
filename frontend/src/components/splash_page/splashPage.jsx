@@ -1,7 +1,7 @@
 import React from 'react';
 import './splash.css';
-import Header from './header.jsx';
-import SearchBar from './searchBar.jsx';
+import Header from '../header/header.jsx';
+// import SearchBar from '../header/searchBar.jsx';
 import Login from "./login.jsx";
 import Deals from "./deals.jsx";
 import GameList from "./gameList.jsx";
@@ -67,11 +67,11 @@ checkLogin(){
                 
                 <div className='topContainer'>
                 {this.checkLogin()}
-                <Header/>
+                {/* s */}
                 </div>
 
                 <div className='upperContainer'>
-                <SearchBar/>
+                {/* <SearchBar/> */}
                 </div>
                 <Deals/>
                 <GameList/>
