@@ -1,5 +1,6 @@
 const User = require("../models/User");
-const Game = require("../models/Game")
+const Game = require("../models/Game");
+const Genre = require("../models/Genre");
 const mongoose = require("mongoose");
 const db = require("../config/keys").mongoURI;
 const bcrypt = require('bcryptjs');
@@ -12,7 +13,7 @@ Game.deleteMany({})
     .then(() => console.log("deleted Games"))
     .catch((error) => console.log(error));
 
-
+let action = Genre.findOne({name: 'action'});
 
 
 const games = [
@@ -20,7 +21,7 @@ const games = [
         title: 'HellTaker',
         price: 'Free',
         imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/HelltakerImg.jpg',
-
+        genres: Genre.findOne({ name: 'action' }),
     })
 ]
 
