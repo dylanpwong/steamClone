@@ -7,11 +7,16 @@ class GamePage extends React.Component {
         super (props);
     }
 
+    // Runs after render runs first, fetches game then rerenders.
+    componentDidMount () {
+        this.props.Helltaker();
+    }
+
     render () {
         return (
             <>
             <div className="gameProfile">
-    
+                {/* {this.props.gameHelltaker.data.title} */}
             </div>
             </>
         )

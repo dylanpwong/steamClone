@@ -1,18 +1,19 @@
 import { connect } from "react-redux"
 import GamePage from "./gamePage"
-import { logout } from "../../actions/session_actions"
+import {  } from "../../actions/session_actions"
+import { fetchHelltaker } from "../../actions/game_actions"
 
 
 const mapStateToProps=(state)=>{
     // debugger
     return({
-        currentUser: (state.session.user)?  state.session.user : null
+        gameHelltaker: state.entities.game
     })
 }
 
 const mapDispatchToProps=(dispatch)=>{
     return({
-        logout: ()=>dispatch(logout())
+        Helltaker: () => dispatch(fetchHelltaker())
     })
 }
 

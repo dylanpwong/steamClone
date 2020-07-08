@@ -1,10 +1,13 @@
 import { combineReducers } from "redux";
 import EmailReducer from "./email_reducer";
+import GameReducer from "./games_reducer";
 
 
 
-const entitesReducer = combineReducers ({
-    savedEmail: EmailReducer
+const entitiesReducer = combineReducers ({
+    savedEmail: EmailReducer,
+    games: GameReducer
+    
 });
 
-export default entitesReducer;
+export default entitiesReducer;
