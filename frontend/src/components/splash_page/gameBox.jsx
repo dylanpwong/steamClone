@@ -6,7 +6,8 @@ class GameBox extends React.Component {
         return (    
             <>        
             <div className = "game">
-                <img src="https://i.ytimg.com/vi/CLCy87zqMSQ/maxresdefault.jpg" ></img>
+                    <img src="https://dpwong-steamclone-dev.s3.amazonaws.com/HelltakerImg.jpg" />
+                {/* <img src="https://i.ytimg.com/vi/CLCy87zqMSQ/maxresdefault.jpg" ></img> */}
             </div>
             </>
         )

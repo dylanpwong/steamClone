@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const Genre = require('../models/Genre');
+const Review = require('../models/Review');
 const Schema = mongoose.Schema;
 
 const GameSchema = new Schema({
@@ -7,11 +9,28 @@ const GameSchema = new Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
+  imgUrl:{
+    type: String,
+    required: true
+  },
+  upVotes:{
+    type: Number,
+    default: 0
+  },
+  downVotes:{
+    type: Number,
+    default:0,
+  },
+  sales:{
+    type: Number,
+    default:0
+  },
 
-  genres: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
+  reviews: [{type: Schema.Types.ObjectId,ref: Review}],
+  genres: [{ type: Schema.Types.ObjectId, ref: Genre }],
 });
 const Game = mongoose.model("games", GameSchema);
 module.exports = Game;
