@@ -6,16 +6,16 @@ class GamePage extends React.Component {
     constructor(props) {
         super (props);
     }
-}
 
-render () {
-    return (
-        <>
-        <div className="gameProfile">
-
-        </div>
-        </>
-    )
+    render () {
+        return (
+            <>
+            <div className="gameProfile">
+    
+            </div>
+            </>
+        )
+    }
 }
 
 export default GamePage;

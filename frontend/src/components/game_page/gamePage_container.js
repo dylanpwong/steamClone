@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import GamePage from "./splashPage"
+import GamePage from "./gamePage"
 import { logout } from "../../actions/session_actions"
 
 
