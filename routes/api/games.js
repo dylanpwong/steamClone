@@ -8,12 +8,28 @@ router.get('/index',(req,res)=>{
     //     .then((games)=>{
     //         res.json(games)
     //     })
-    Game.findOne({ title: 'HellTaker' }).populate('genres')
+    Game.findOne({ title: 'HellTaker' }).populate('genres reviews')
         .exec((err, genre) => {
             if (err) console.log(`error is: ${err}`)
             // console.log(`Genre is ${genre}`)
             res.json(genre);
         });
+})
+
+router.post('/showGame',(req,res)=>{
+    Game.findOne({ id: req.body }).populate('genres')
+        .exec((err, genre) => {
+            if (err) console.log(`error is: ${err}`)
+            // console.log(`Genre is ${genre}`)
+            res.json(genre);
+        });
+})
+
+router.post('/upVoteGame',(req,res)=>{
+    Game.findOne({id: req.body})
+    .then((game)=>{
+        game.upVote ++;
+    })
 })
 
 router.post('/genreGame',(req,res)=>{

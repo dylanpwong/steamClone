@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Genre = require('../models/Genre');
+const Review = require('../models/Review');
 const Schema = mongoose.Schema;
 
 const GameSchema = new Schema({
@@ -15,7 +16,20 @@ const GameSchema = new Schema({
     type: String,
     required: true
   },
+  upVotes:{
+    type: Number,
+    default: 0
+  },
+  downVotes:{
+    type: Number,
+    default:0,
+  },
+  sales:{
+    type: Number,
+    default:0
+  },
 
+  reviews: [{type: Schema.Types.ObjectId,ref: Review}],
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }],
 });
 const Game = mongoose.model("games", GameSchema);

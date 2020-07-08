@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const Game = require("../models/Game");
-const Genre=require('../models/Genre')
+const Genre=require('../models/Genre');
+const Review= require('../models/Review');
 const mongoose = require("mongoose");
 const db = require("../config/keys").mongoURI;
 // const bcrypt = require('bcryptjs');
@@ -19,7 +20,10 @@ Game.deleteMany({})
     .then(() => console.log("deleted Games"))
     .catch((error) => console.log(error));
 
-
+Review.deleteMany({})
+    .then(() => console.log("deleted Review"))
+    .catch((error) => console.log(error));
+//GENRES
 // Array of new Genre objects
 const genres = [
     new Genre({
@@ -61,6 +65,31 @@ for (let i = 0; i < genres.length; i++) {
         })
         .catch((error) => console.log(error));
 }
+// REVIEWS
+
+const reviews=[
+    new Review({
+        content: 'THIS IS GREAT PLEASE TRY IT!!!!',
+        helpfulYes: 50,
+        helpfulNo: 10,
+    })
+]
+
+let finished3 = 0;
+for (let i = 0; i < reviews.length; i++) {
+    reviews[i]
+        .save()
+        .then((review) => {
+            finished3++;
+            if (finished3 === reviews.length) {
+                exit();
+            }
+        })
+        .catch((error) => console.log(error));
+}
+
+
+///// GAMES
 
 const games=[
     new Game({
@@ -72,8 +101,7 @@ const games=[
 ]
 games[0].genres.push(genres[0]);
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
-// console.log(`Genre before populate: ${games[0].genres[0]}`);
-
+games[0].reviews.push(reviews[0]);
 // same as finished1, but for games instead
 let finished2 = 0;
 for (let i = 0; i < games.length; i++) {
