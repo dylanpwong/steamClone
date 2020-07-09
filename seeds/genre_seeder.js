@@ -97,6 +97,10 @@ const games=[
         price: 'Free',
         imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/HelltakerImg.jpg',
         // genres: 
+    }),
+    new Game({
+        title: 'Dark Souls',
+        price: '20.00',
     })
 ]
 games[0].genres.push(genres[0]);
