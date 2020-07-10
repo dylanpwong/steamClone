@@ -23,6 +23,9 @@ Game.deleteMany({})
 Review.deleteMany({})
     .then(() => console.log("deleted Review"))
     .catch((error) => console.log(error));
+User.findOne({username: 'demoUser'}).then((user)=>{
+
+
 //GENRES
 // Array of new Genre objects
 const genres = [
@@ -43,6 +46,15 @@ const genres = [
     new Genre({
         name: 'Adventure'
     }),
+    new Genre({
+        name: 'Anime'
+    }),
+    new Genre({
+        name: 'FPS'
+    }),
+    new Genre({
+        name: 'Multiplayer'
+    })
     
 ]
 
@@ -51,6 +63,9 @@ let horrorId=genres[1]._id;
 let rpgId=genres[2]._id;
 let soulsLikeId=genres[3]._id;
 let adventureId=genres[4]._id;
+let animeId=genres[5]._id;
+let fpsId=genres[6]._id
+let multiPlayeId=genres[7]._id
 
 // finished saves genres into database 
 let finished = 0;
@@ -60,7 +75,7 @@ for (let i = 0; i < genres.length; i++) {
         .then((genre) => {
             finished++;
             if (finished === genres.length) {
-                exit();
+                // exit();
             }
         })
         .catch((error) => console.log(error));
@@ -72,7 +87,9 @@ const reviews=[
         content: 'THIS IS GREAT PLEASE TRY IT!!!!',
         helpfulYes: 50,
         helpfulNo: 10,
-    })
+        user: user
+    }),
+    
 ]
 
 let finished3 = 0;
@@ -82,7 +99,7 @@ for (let i = 0; i < reviews.length; i++) {
         .then((review) => {
             finished3++;
             if (finished3 === reviews.length) {
-                exit();
+                // exit();
             }
         })
         .catch((error) => console.log(error));
@@ -101,11 +118,36 @@ const games=[
     new Game({
         title: 'Dark Souls',
         price: '20.00',
+        imgUrl: 'ttps://dpwong-steamclone-dev.s3.amazonaws.com/dark-souls-remastered-cover.jpg'
+    }),
+    new Game({
+        title: 'Persona 5',
+        price: '60.00',
+        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/P5-Guide-Cover-Art.jpg'
+    }),
+    new Game({
+        title: 'Resident Evil 4',
+        price: '30.00',
+        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/RE4+Cover.jpg'
+    }),
+    new Game({
+        title: 'Call Of Duty Black Ops 3',
+        price: '50.00',
+        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3.jpeg'
     })
 ]
-games[0].genres.push(genres[0]);
+games[0].genres.push(genres[0]); //helltaker
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
 games[0].reviews.push(reviews[0]);
+
+games[1].genres.push(soulsLikeId); //dark souls
+games[1].genres.push(actionId);
+
+games[2].genres.push(animeId); // persona 5
+games[2].genres.push(rpgId);
+
+games[3].genres.push(fpsId); //black ops 3
+games[3].genres.push(multiPlayeId);
 // same as finished1, but for games instead
 let finished2 = 0;
 for (let i = 0; i < games.length; i++) {
@@ -120,7 +162,7 @@ for (let i = 0; i < games.length; i++) {
         .catch((error) => console.log(error));
 }
 
-
+})
 // console.log(`Game's Genre: ${games[0].genres}`)
 function exit() {
     mongoose

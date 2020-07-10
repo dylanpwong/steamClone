@@ -32,6 +32,10 @@ router.post('/upVoteGame',(req,res)=>{
     })
 })
 
+router.get('/randomGames',(req,res)=>{
+    // Game.find()
+})
+
 router.post('/genreGame',(req,res)=>{
     // Game.find({gen})
 })

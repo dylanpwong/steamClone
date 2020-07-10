@@ -19,15 +19,15 @@ mongoose
 
   app.use(bodyParser.json());
 
-app.get("/", (req,res)=>{
-    const user = new User({
-        username: "Froppie",
-        email: "demo@gmail.com",
-        password: '123456',
-    })
-    user.save();
-    res.send('DYLANSUCKSPLAYGANGBEASTS');
-});
+// app.get("/", (req,res)=>{
+//     const user = new User({
+//         username: "Froppie",
+//         email: "demo@gmail.com",
+//         password: '123456',
+//     })
+//     user.save();
+//     res.send('DYLANSUCKSPLAYGANGBEASTS');
+// });
 
 app.use("/api/users",users);
 app.use("/api/genres",genres);

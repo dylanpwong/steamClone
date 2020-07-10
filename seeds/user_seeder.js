@@ -31,10 +31,11 @@ const getPass = (password)=>{
     const users=[
         new User({
             username: 'demoUser',
-            password: pass,
+            password: '123456',
             email: 'demo@gmail.com'
         })
     ]
+    
 
 let finished = 0;
 for (let i = 0; i < users.length; i++) {
