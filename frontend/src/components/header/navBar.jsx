@@ -1,7 +1,7 @@
 import React from "react";
-import "./splash.css";
+// import "./splash.css";
 
-class SearchBar extends React.Component {
+class NavBar extends React.Component {
     constructor (props) {
         super (props);
     }
@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
     render () {
         return (
             <>
-            <div className='searchBar'>
+            <div className='navBar'>
                 <div>Your Store</div>
                 <div>Games</div>
                 <div>Software</div>
@@ -23,4 +23,4 @@ class SearchBar extends React.Component {
     }
 }
 
-export default SearchBar;
+export default NavBar;
