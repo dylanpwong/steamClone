@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 const Genre = require('../models/Genre');
 const Review = require('../models/Review');
+const random = require("mongoose-random");
 const Schema = mongoose.Schema;
 
 const GameSchema = new Schema({
+  
   title: {
     type: String,
     required: true,
@@ -32,5 +34,6 @@ const GameSchema = new Schema({
   reviews: [{type: Schema.Types.ObjectId,ref: Review}],
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }],
 });
+GameSchema.plugin(random, { path: "r" });
 const Game = mongoose.model("games", GameSchema);
 module.exports = Game;
