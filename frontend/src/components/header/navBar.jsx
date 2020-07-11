@@ -9,14 +9,21 @@ class NavBar extends React.Component {
     render () {
         return (
             <>
+            <div className="upperContainer">
             <div className='navBar'>
-                <div>Your Store</div>
-                <div>Games</div>
-                <div>Software</div>
-                <div>Hardware</div>
-                <div>News</div>
-                <div>Steam Labs</div>
-                <input type="text" />
+                <div className="navGrouper">
+                    <div className="navbarItems">Your Store</div>
+                    <div className="navbarItems">Browse</div>
+                    <div className="navbarItems">News</div>
+                </div>
+                {/* <div className="navbarItems">Hardware</div>
+                <div className="navbarItems">News</div>
+                <div className="navbarItems">Steam Labs</div> */}
+                <div className="searchbarContainer">
+                <input placeholder="search the store" type="text" />
+
+                </div>
+            </div>
             </div>
             </>
         )

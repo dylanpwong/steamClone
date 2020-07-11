@@ -24,7 +24,7 @@ class Header extends React.Component {
     checkLogin(){
         if (this.props.currentUser) {
             // debugger;
-            console.log('Logged In')
+            // console.log('Logged In')
             return(
                 <>
                 <div className='loggedIn'>
@@ -42,22 +42,29 @@ class Header extends React.Component {
         }else{
             return(
                 <>
-                {console.log('not logged in')}
+                {/* {console.log('not logged in')} */}
                 <Login onLogin={this.onLogin}/>
                 </>
             )
         }
     }
+
+    onLogoClick(){
+        this.props.history.push('/');
+    }
     
     render(){
         return (
             <>
+            
+
+           
             <div className='topContainer'>
 
                 {this.checkLogin()}
 
                 <div className='header'>
-                   <img className='steamLogo' src="https://royal-crossing-dev.s3.amazonaws.com/SteamLogo.png"/>
+                   <img onClick={this.onLogoClick.bind(this)}className='steamLogo' src="https://royal-crossing-dev.s3.amazonaws.com/SteamLogo.png"/>
                    <div className='headerTopics'>
                         <div>STORE</div>
                         <div>COMMUNITY</div>
@@ -68,9 +75,10 @@ class Header extends React.Component {
             
             </div>
 
-            <div className='upperContainer'>
+            {/* <div className='upperContainer'>
                 <NavBar/>
-            </div>
+            </div> */}
+
             </>
         )
     }
