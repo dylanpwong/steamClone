@@ -34,6 +34,6 @@ const GameSchema = new Schema({
   reviews: [{type: Schema.Types.ObjectId,ref: Review}],
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }],
 });
-GameSchema.plugin(random, { path: "r" });
+// GameSchema.plugin(random, { path: "r" });
 const Game = mongoose.model("games", GameSchema);
 module.exports = Game;

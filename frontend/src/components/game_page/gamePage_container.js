@@ -5,6 +5,7 @@ import { fetchHelltaker } from "../../actions/game_actions"
 
 
 const mapStateToProps=(state)=>{
+    if(!state.entities.game) return{};
     // debugger
     return({
         gameHelltaker: state.entities.game
