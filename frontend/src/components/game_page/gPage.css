@@ -7,10 +7,60 @@
 .title {
     font-size: 26px;
     line-height: 32px;
-    text-overflow: ellipsis;
 }
 
 .gameProfile img {
-    width: 40%;
+    width: 45%;
     height: auto;
+}
+
+.gameDesc {
+    margin-top: 10px;
+    position: relative;
+    width: 45%;
+    float: left;
+}
+
+.buyContainer {
+    background: linear-gradient( -60deg, rgba(226,244,255,0.3) 5%,rgba(84, 107, 115, 0.3) 95%);
+    position: relative;
+    font-size: 21px;
+    border-radius: 4px;
+    padding: 16px;
+    width: calc(100% - 32px); /* Width of container minus TOTAL padding */
+}
+
+.priceBox {
+    background-color: black;
+    font-size: 13px;
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 24px;
+}
+
+.buyButton {
+    background: linear-gradient( to right, #75b022 5%, #588a1b 95%);
+    font-size: 13px;
+    font-size: 13px;
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 24px;
+    border-radius: 2px;
+}
+
+.buyGame {
+    position: absolute;
+    padding-right: 20px;
+    bottom: -16px;
+    right: 16px;
+    z-index: 1;
+}
+
+.blackBox {
+    display: flex;
+    background-color: black;
+    padding: 2px 2px 2px 0px;
+    border-radius: 2px;
 }

@@ -35,7 +35,17 @@ class GamePage extends React.Component {
                     <div>GAMES PAGE</div>
                     <div className='title'>{this.state.game.title}</div>
                     <img src={this.state.game.imgUrl}/>
-                    <div> Buy {this.state.game.title}</div>
+                    <div className='gameDesc'>
+                        <div className="buyContainer">
+                            <div>Buy {this.state.game.title}</div>
+                            <div className="buyGame">
+                                <div className='blackBox'>
+                                    <div className='priceBox'>{this.state.game.price}</div>
+                                    <div className='buyButton'>Add to Cart</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   </div>
                   
                 </>
