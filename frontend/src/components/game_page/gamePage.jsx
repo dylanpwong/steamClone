@@ -32,9 +32,11 @@ class GamePage extends React.Component {
               return (
                 <>
                   <div className="gameProfile">
-                      GAMES PAGE
-                    {this.state.game.title}
+                    <div>GAMES PAGE</div>
+                    <div className='title'>{this.state.game.title}</div>
+                    <img src={this.state.game.imgUrl}/>
                   </div>
+                  
                 </>
               );
 
