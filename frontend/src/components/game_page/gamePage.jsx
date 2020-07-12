@@ -35,6 +35,7 @@ class GamePage extends React.Component {
                     <div>GAMES PAGE</div>
                     <div className='title'>{this.state.game.title}</div>
                     <img src={this.state.game.imgUrl}/>
+                    <div> Buy {this.state.game.title}</div>
                   </div>
                   
                 </>
