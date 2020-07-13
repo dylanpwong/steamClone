@@ -42,8 +42,13 @@ router.get('/randomGames',(req,res)=>{
     const amount = 5;
     Game.find({}).then(games=>{
         
-        
+        let gamesObj={};
         shuffle(games);
+        // for(let i =0;i<amount;i++ ){
+        //     // gamesObj[games[i]._id] = games[i]; //by id
+        //     gamesObj[games[i].title] = games[i];
+        // }
+        // gamesObj.hello='ed';
         res.json(games);
     })
    

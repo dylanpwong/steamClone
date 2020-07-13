@@ -10,6 +10,7 @@ export const recieveGame = (game) =>{
     })
 };
 export const receiveMore = games =>{
+    // debugger
     return({
         type: RECEIVE_PLENTY,
         games: games.data
@@ -30,5 +31,5 @@ export const fetchGame =(gameId) =>dispatch=>{
 }
 export const getRandom = ()=> dispatch=>{
     return APIutil.getRandom()
-    .then((res)=> dispatch(recieveGame(res)))
+    .then((res)=> dispatch(receiveMore(res)))
 }
