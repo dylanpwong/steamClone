@@ -39,13 +39,18 @@ router.get('/randomGames',(req,res)=>{
     // .then((games)=>{
     //     res.json(games)
     // })
-    // Game.findRandom()
-    //   .limit(10)
-    //   .exec(function (err, songs) {
-    //     res.json(songs);
-    //   });
+    const amount = 5;
+    Game.find({}).then(games=>{
+        
+        
+        shuffle(games);
+        res.json(games);
+    })
+   
 })
-
+function shuffle(array) {
+   array.sort(() => Math.random() - 0.5);
+}
 router.post('/genreGame',(req,res)=>{
     // Game.find({gen})
 })
