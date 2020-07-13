@@ -10,10 +10,14 @@
 }
 
 .deals {
-    color: white;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    letter-spacing: 2px;
+    font-weight: normal;
+    padding-top: 6px;
+    width: 60%;
 }
 
 .images {
@@ -23,12 +27,13 @@
 }
 
 .deals img{
-    width: 30%;
+    width: calc(100% / 3);
     height: auto;
 }
 
 .gameList {
     color: white;
+    width: 60%;
 }
 
 .tabs {
@@ -46,3 +51,29 @@
     flex-direction: column;
 }
 
+.gutterCol {
+    position: absolute;
+    display: block;
+    width: 15%;
+    left: 25px;
+    right: 0;
+    top: 145.234px;
+    bottom: 0;
+}
+
+.gutterCol img {
+    width: 85%;
+    border-bottom: 1px solid #30678A;
+}
+
+.gutterHeader {
+    color:#c6d4df;
+    font-size: 11px;
+}
+
+.gutterContent {
+    color:#66c0f4;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 7px 0;
+}

@@ -23,7 +23,8 @@
 
 .login {
     cursor: pointer;
-    color: white;
+    color:  #b8b6b4;
+    font-size: 11px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end; 
@@ -45,6 +46,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-right: 3px;
 }
 
 .navBar > div {
@@ -58,16 +60,12 @@
     padding: 0 1em;
     border-right: 1px solid black;
 }
+
 .navGrouper{
     display:flex;
     width: 40%;
     justify-content: space-between;
     padding: 0 1em;
-}
-
-
-.navBar > div > input {
-    /* margin-left: 7em; */
 }
 
 .steamLogo{
@@ -89,25 +87,41 @@
 
 .upperContainer{
     margin-top: 1.5%;
+    margin: auto;
     display: flex;
     justify-content:center;
     align-items: center;
-    width: auto;
+    width: 60%;
     height: 35px;
-    background-color: #526C7E;
+    background-color: #377197;
 }
-.navBar  input{
-    background-color: #4e677a;
+.navBar input{
+    background-color: #316282;
     color: black;
     font-size: 14px;
-    border: none ;
+    border-color: 1px solid rgba( 0, 0, 0, 0.3);;
     font-style: italic;
     text-shadow: 1px 1px 0px rgba(255,255,255,0.1);
     font-weight: 100;
+    border-radius: 3px;
 }
+
+.navBar img {
+    height: 25px;
+    width: 25px;
+}
+
+.searchIcon {
+    background-color: #539AC4;
+    height: 25px;
+    width: 100%;
+    border-color: 1px solid rgba( 0, 0, 0, 0.3);;
+    border-radius: 3px;
+}
+
 .searchbarContainer{
     /* margin-left: 7em !important; */
-    background-color: #526C7E;
+    display: flex;
+    background-color: #377197;
     border: 1px solid rgba(0,0,0,0.3);
-    /* padding: 3px 4px 2px; */
 }
