@@ -7,3 +7,6 @@ export const getGame = (game) => {
 export const Helltaker = () => {
     return axios.get('/api/games/index');
 }
+export const getRandom = () =>{
+    return axios.get('/api/games/randomGames')
+}

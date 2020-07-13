@@ -29,5 +29,6 @@ export const fetchGame =(gameId) =>dispatch=>{
     .then((res)=> dispatch(recieveGame(res)))
 }
 export const getRandom = ()=> dispatch=>{
-
+    return APIutil.getRandom()
+    .then((res)=> dispatch(recieveGame(res)))
 }
