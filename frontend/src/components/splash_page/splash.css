@@ -20,17 +20,6 @@
     width: 60%;
 }
 
-.images {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.deals img{
-    width: calc(100% / 3);
-    height: auto;
-}
-
 .gameList {
     color: white;
     width: 60%;
@@ -76,4 +65,44 @@
     font-size: 13px;
     line-height: 16px;
     margin: 7px 0;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 7px 0px #000;
+    margin-top: 8px;
+}
+
+.images img {
+    width: calc(100% / (3/2));
+    height: calc(100vh / 3);
+    z-index: 1;
+    box-shadow: 0 0 10px 5px #000;
+}
+
+.gameInfo {
+    display: flex;
+    flex-direction: column;
+    background-color: #0F1922;
+    width: calc(100% / 3);
+}
+
+.infoHeading {
+    font-size: 24px;
+    padding-top: 6px;
+    padding-left: 16px;
+    padding-right: 6px;
+}
+
+.infoPrice {
+    margin-top: auto; /* May be temporary, based on what is in box */
+    padding-left: 16px;
+    padding-right: 6px;
+    padding-bottom: 12px;
+    font-size: 11px;
+    color: #acdbf5;
 }

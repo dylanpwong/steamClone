@@ -1,4 +1,5 @@
 import React from 'react';
+import './splash.css';
 
 class FeaturedGames extends React.Component{
     constructor(props){
@@ -28,11 +29,17 @@ class FeaturedGames extends React.Component{
     }
 
     render(){
-        const gamesList= this.props.games.map((ele)=><img src={ele.imgUrl}></img>);
-        
+        const gamesImage= this.props.games.map((ele)=><img src={ele.imgUrl}></img>);
+        const gamesTitle= this.props.games.map((ele)=><div>{ele.title}</div>);
+        const gamesPrice= this.props.games.map((ele)=><div>{ele.price}</div>);
+
         return(
             <>
-                {gamesList[this.state.gameIndex]}
+                {gamesImage[this.state.gameIndex]}
+            <div className='gameInfo'>
+                <div className='infoHeading'>{gamesTitle[this.state.gameIndex]}</div>
+                <div className='infoPrice'>{gamesPrice[this.state.gameIndex]}</div>
+            </div>
             </>
         )
     }
