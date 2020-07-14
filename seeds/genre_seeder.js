@@ -118,7 +118,7 @@ const games=[
     new Game({
         title: 'Dark Souls',
         price: '20.00',
-        imgUrl: 'ttps://dpwong-steamclone-dev.s3.amazonaws.com/dark-souls-remastered-cover.jpg'
+        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/dark-souls-remastered-cover.jpg'
     }),
     new Game({
         title: 'Persona 5',
