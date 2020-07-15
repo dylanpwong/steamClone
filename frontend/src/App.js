@@ -20,7 +20,7 @@ function App() {
       <div className='contentContainer'>
       <Route path='/' component={NavBar}/>
       <Route exact path='/' component={splashPage_container}/>
-      <Route exact path='/game' component={gamePage_container}/> 
+      <Route exact path='/game/:gameId' component={gamePage_container}/>
       <Route exact path='/login' component={login_form_container}/>
       <Route exact path='/join' component={signup_form_container}/>
       <Route exact path='/join/completesignup' component={CompleteSignUp_Container}/>

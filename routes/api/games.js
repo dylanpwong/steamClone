@@ -18,12 +18,19 @@ router.get('/index',(req,res)=>{
 })
 
 router.post('/showGame',(req,res)=>{
-    Game.findOne({ id: req.body }).populate('genres')
+    // debugger
+    const gameId = Object.keys(req.body)[0];
+    Game.findOne({ _id: gameId }).populate('genres reviews')
         .exec((err, genre) => {
             if (err) console.log(`error is: ${err}`)
             // console.log(`Genre is ${genre}`)
+            // debugger
             res.json(genre);
         });
+    // debugger
+    // Game.findOne({_id: gameId}).then((game)=>{
+    //     res.json(game)
+    // })
 })
 
 router.post('/upVoteGame',(req,res)=>{

@@ -1,35 +1,45 @@
 import React from 'react';
 import './splash.css';
+import { withRouter } from 'react-router-dom';
 
 class FeaturedGames extends React.Component{
     constructor(props){
         super(props)
 
         this.state={
-            gameIndex: 0
+            gameIndex: 0,
+            leavePage:false
         }
         this.timer=this.timer.bind(this);
         this.toGame = this.toGame.bind(this);
     }
 
     componentDidMount(){
-        setInterval(this.timer,3000)
+        setInterval(this.timer,3000);
     }
     timer(){
-        console.log(this.state.gameIndex);
-        if(this.state.gameIndex < this.props.games.length - 1){
-            this.setState({gameIndex: this.state.gameIndex + 1});
+        // console.log(this.state.gameIndex);
+        if(!this.state.leavePage){
+            if(this.state.gameIndex < this.props.games.length - 1){
+                this.setState({gameIndex: this.state.gameIndex + 1});
+            }else{
+                this.setState({gameIndex: 0})
+            }
         }else{
-            this.setState({gameIndex: 0})
+            clearInterval();
         }
     }
 
     toGame(gameId){
-        this.history.push();
+        return()=>{
+            this.state.leavePage=true;
+            clearInterval();
+            this.props.history.push(`/game/${gameId}`);
+        }
     }
 
     render(){
-        const gamesImage= this.props.games.map((ele)=><img src={ele.imgUrl}></img>);
+        const gamesImage= this.props.games.map((ele)=><img onClick={this.toGame(ele._id)} src={ele.imgUrl}></img>);
         const gamesTitle= this.props.games.map((ele)=><div>{ele.title}</div>);
         const gamesPrice= this.props.games.map((ele)=><div>{ele.price}</div>);
 
@@ -44,4 +54,5 @@ class FeaturedGames extends React.Component{
         )
     }
 }
-export default FeaturedGames
+// withRouter
+export default withRouter(FeaturedGames)

@@ -13,7 +13,7 @@ class GamePage extends React.Component {
 
     // Runs after render runs first, fetches game then rerenders.
     componentDidMount () {
-        this.props.Helltaker().then((res)=>{
+        this.props.fetchGame(this.props.gameId).then((res)=>{
             this.setState({render: true,game: res.game});
             // debugger;
             // this.setState({game: res.game});

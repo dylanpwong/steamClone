@@ -1,20 +1,21 @@
 import { connect } from "react-redux"
 import GamePage from "./gamePage"
 import {  } from "../../actions/session_actions"
-import { fetchHelltaker } from "../../actions/game_actions"
+import { fetchHelltaker, fetchGame } from "../../actions/game_actions"
 
 
-const mapStateToProps=(state)=>{
-    if(!state.entities.game) return{};
-    // debugger
+const mapStateToProps=(state,ownProps)=>{
+    
     return({
-        gameHelltaker: state.entities.game
+        gameId: ownProps.match.params.gameId
+        // gameHelltaker: state.entities.game
     })
 }
 
 const mapDispatchToProps=(dispatch)=>{
     return({
-        Helltaker: () => dispatch(fetchHelltaker())
+        Helltaker: () => dispatch(fetchHelltaker()),
+        fetchGame:(gameId) =>dispatch(fetchGame(gameId))
     })
 }
 
