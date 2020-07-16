@@ -30,6 +30,10 @@ const GameSchema = new Schema({
     type: Number,
     default:0
   },
+  releaseDate:{
+    type: Date,
+    default: Date.now()
+  },
 
   reviews: [{type: Schema.Types.ObjectId,ref: Review}],
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }],
