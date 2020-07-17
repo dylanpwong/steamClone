@@ -45,6 +45,22 @@ class GamePage extends React.Component {
                                 </div>
                             </div>
                         </div>
+
+                        <div className='aboutDesc'>
+                            <div className='aboutHeader'>About This Game</div>
+                            <br></br>
+                            <div>Description goes here</div>
+                            <br></br>
+                            
+                            <div className='aboutHeader'>System Requirements</div>
+                            <br></br>
+                            <div>System requirements go here</div>
+                            <br></br>
+
+                            <div className='aboutHeader'>Customer Reviews</div>
+                            <br></br>
+                            <div>Reviews go here</div>
+                        </div>
                     </div>
                   </div>
                   

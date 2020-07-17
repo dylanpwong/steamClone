@@ -11,7 +11,7 @@
 
 .gameProfile img {
     width: 45%;
-    height: auto;
+    height: 33vh;
 }
 
 .gameDesc {
@@ -63,4 +63,20 @@
     background-color: black;
     padding: 2px 2px 2px 0px;
     border-radius: 2px;
+}
+
+.aboutDesc {
+    padding-top: 16px;
+    color: #acb2b8;
+    font-size: 14px;
+    line-height: 1.4em;
+}
+
+.aboutHeader {
+    color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    text-transform: uppercase;
+    border-bottom: 1px solid #30678A;
 }
