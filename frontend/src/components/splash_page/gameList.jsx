@@ -3,10 +3,14 @@ import GameBox from "./gameBox"
 import "./splash.css";
 
 class GameList extends React.Component {
+
+    
+
     render() {
         return (
             <>
             <div className="gameList">
+                <br></br>
                 <div className="tabs">
                     <div>New and Trending</div>
                     <div>Top Sellers</div>

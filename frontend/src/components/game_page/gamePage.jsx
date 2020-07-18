@@ -34,7 +34,15 @@ class GamePage extends React.Component {
                   <div className="gameProfile">
                     <div>GAMES PAGE</div>
                     <div className='title'>{this.state.game.title}</div>
-                    <img src={this.state.game.imgUrl}/>
+
+                    <div className='imageProfile'>
+                        <img src={this.state.game.imgUrl}/>
+                        <div className='imageRightProf'>
+                            <img src={this.state.game.imgUrl}/>
+                            <div className='gameSynopsis'>Brief description goes here</div>
+                        </div>
+                    </div>
+
                     <div className='gameDesc'>
                         <div className="buyContainer">
                             <div>Buy {this.state.game.title}</div>
