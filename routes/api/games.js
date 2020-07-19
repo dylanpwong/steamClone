@@ -56,7 +56,10 @@ function shuffle(array) {
    array.sort(() => Math.random() - 0.5);
 }
 router.post('/genreGame',(req,res)=>{
-    // Game.find({gen})
+    const findGenre = Object.keys(req.body)[0];
+    Game.find({genre: findGenre}).then((games)=>{
+        res.json({games})
+    })
 })
 router.post('releaseDate',()=>{
 
