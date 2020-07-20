@@ -15,7 +15,8 @@ const mapStateToProps=(state,ownProps)=>{
 const mapDispatchToProps=(dispatch)=>{
     return({
         Helltaker: () => dispatch(fetchHelltaker()),
-        fetchGame:(gameId) =>dispatch(fetchGame(gameId))
+        fetchGame:(gameId) =>dispatch(fetchGame(gameId)),
+        //hello: () => console.log("Hello")
     })
 }
 
