@@ -58,11 +58,14 @@ function shuffle(array) {
 router.post('/genreGame',(req,res)=>{
     const findGenre = Object.keys(req.body)[0];
     Game.find({genre: findGenre}).then((games)=>{
-        res.json({games})
+        res.json(games)
     })
 })
-router.post('releaseDate',()=>{
-
+router.get('/releaseDate',(req,res)=>{
+  const amount = 5;
+    Game.find({}).sort({_id: -1}).limit(amount).then(games=>{
+        res.json(games);
+    })
 })
 router.post('topSellers', ()=> {
 
