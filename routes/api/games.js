@@ -74,6 +74,10 @@ router.post('popular',()=>{ //
 
 })
 router.post('topRated',()=>{ // review score
+    let perfect = 90;
+    let good = 70;
+    let mixed = 50;
+    let bad = 30;
 
 })
 
