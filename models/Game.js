@@ -26,6 +26,11 @@ const GameSchema = new Schema({
     type: Number,
     default:0,
   },
+  reviewScore:{
+    function(){
+      return this.upVotes/(this.upVotes + this.downVotes);
+    }
+  },
   sales:{
     type: Number,
     default:0

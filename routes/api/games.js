@@ -78,6 +78,7 @@ router.post('topRated',()=>{ // review score
     let good = 70;
     let mixed = 50;
     let bad = 30;
+    
 
 })
 
