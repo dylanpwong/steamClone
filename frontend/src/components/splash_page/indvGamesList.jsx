@@ -13,6 +13,8 @@ class IndvGamesList extends React.Component{
 //this.props.list
     render(){
         // debugger;
+
+        // use this.state.currentList
         return(
             <>
             
