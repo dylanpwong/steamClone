@@ -8,7 +8,8 @@ class SplashPage extends React.Component{
         super(props);
 
         this.state={
-            games: null
+            games: null,
+            new_and_trending: null
         }
     }
 
@@ -18,7 +19,7 @@ class SplashPage extends React.Component{
 componentDidMount(){
     this.props.fetchGames().then((res)=>{
         // debugger;
-        this.setState({games: res.games})
+        this.setState({games: res.games, new_and_trending: res.games})
     })
 }
   render(){
@@ -30,7 +31,7 @@ componentDidMount(){
             <div className='test'>  
                 {/* <Deals games2 = {games}/> */}
                 <Deals/>
-                <GameList/>
+                <GameList new_and_trending ={this.state.new_and_trending}/>
             </div>
 
             {/* <div onClick={this.onSignUpClick}>Sign in</div> */}
