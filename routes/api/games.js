@@ -79,11 +79,15 @@ router.get('/popular',(req,res)=>{ //
         res.json(games);
     })  
 })
-router.get('/topRated',()=>{ // review score
+router.get('/topRated',(req,res)=>{ // review score
     let perfect = 90;
     let good = 70;
     let mixed = 50;
     let bad = 30;
+    const amount = 5;
+    Game.find({reviewScore: {$gte: 80}}).limit(amount).then(games=>{
+        res.json(games);
+    })
     //look up mongoose filter
 
 

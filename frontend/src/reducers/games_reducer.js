@@ -8,7 +8,8 @@ const gameReducer = (state={}, action) => {
             return {[action.game._id]: action.game};
             break;
         case RECEIVE_PLENTY:
-            return Object.assign({},state,action.games)
+            return Object.assign({},state,action.games);
+        
         default:
             return state;
 
