@@ -10,3 +10,12 @@ export const Helltaker = () => {
 export const getRandom = () =>{
     return axios.get('/api/games/randomGames')
 }
+export const getPopular=()=>{
+    return axios.get('/api/games/popular');
+}
+export const getTopSellers=()=>{
+    return axios.get('/api/games/topSellers');
+}
+export const getReleaseDate=()=>{
+    return axios.get('/api/games/releaseDate');
+}

@@ -31,3 +31,7 @@ export const getRandom = ()=> dispatch=>{
     return APIutil.getRandom()
     .then((res)=> dispatch(receiveMore(res)))
 }
+export const getPopular = ()=> dispatch=>{
+    return APIutil.getPopular()
+    .then((res)=>dispatch(receiveMore(res)))
+}

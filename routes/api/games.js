@@ -67,16 +67,19 @@ router.get('/releaseDate',(req,res)=>{
         res.json(games);
     })
 })
-router.post('/topSellers', ()=> {
+router.get('/topSellers', (req,res)=> {
     const amount =  5;
-    Game.find({}).sort({sales: -1}).then(games=>{
-        
+    Game.find({}).sort({sales: -1}).limit(amount).then(games=>{
+        res.json(games);
     })
 })
-router.post('popular',()=>{ //
-
+router.get('/popular',(req,res)=>{ //
+    const amount = 5;
+    Game.find({}).sort({clicks: -1}).limit(amount).then(games=>{
+        res.json(games);
+    })  
 })
-router.post('topRated',()=>{ // review score
+router.get('/topRated',()=>{ // review score
     let perfect = 90;
     let good = 70;
     let mixed = 50;
