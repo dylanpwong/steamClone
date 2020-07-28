@@ -67,8 +67,11 @@ router.get('/releaseDate',(req,res)=>{
         res.json(games);
     })
 })
-router.post('topSellers', ()=> {
-
+router.post('/topSellers', ()=> {
+    const amount =  5;
+    Game.find({}).sort({sales: -1}).then(games=>{
+        
+    })
 })
 router.post('popular',()=>{ //
 
@@ -82,5 +85,9 @@ router.post('topRated',()=>{ // review score
 
 
 })
+router.post('/new_and_trending',()=>{
+
+})
+
 
 module.exports = router;
