@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./gamesLists.css";
 
 class IndvGamesList extends React.Component{
     constructor(props){
@@ -15,9 +15,12 @@ class IndvGamesList extends React.Component{
         // debugger;
 
         // use this.state.currentList
+        console.log(this.state.currentList[0]);
         return(
             <>
-            
+            <div className="gamesList">
+                <div>bleh</div>
+            </div>
             </>
         )
     }
