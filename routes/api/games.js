@@ -87,6 +87,8 @@ router.get('/topRated',(req,res)=>{ // review score
     const amount = 5;
     Game.find({reviewScore: {$gte: 80}}).limit(amount).then(games=>{
         res.json(games);
+    }).catch(err=>{
+        res.json({error: "failed to get top games"})
     })
     //look up mongoose filter
 
