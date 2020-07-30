@@ -10,15 +10,15 @@ class GameList extends React.Component {
         this.state={
             current: "new_and_trending",
             lists: {
-                new_and_trending: this.props.new_and_trending,
-                top_sellers: null,
-                whats_popular: null,
-                top_rated: null,
-                upcoming: null,
+                new_and_trending: this.props.newAndTrending,
+                top_sellers: this.props.topSellers,
+                whats_popular: this.props.popular,
+                top_rated: this.props.topRated,
+                upcoming: this.props.releaseDate,
             },
             prevEvent: "newAndTrending",
         }
-
+        // debugger;
         this.onTabClick=this.onTabClick.bind(this);
     }
 
@@ -30,7 +30,7 @@ class GameList extends React.Component {
                 document.getElementById(this.state.prevEvent).classList.toggle("tabButton--active");
                 this.state.prevEvent = e.target.id;
             }
-
+            // debugger;
             this.setState({current: tabName});
         }
 

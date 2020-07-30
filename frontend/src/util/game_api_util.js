@@ -19,3 +19,6 @@ export const getTopSellers=()=>{
 export const getReleaseDate=()=>{
     return axios.get('/api/games/releaseDate');
 }
+export const getTopRated=()=>{
+    return axios.get('/api/games/topRated')
+}

@@ -18,7 +18,7 @@ export const receiveMore = games =>{
         games: games.data
     })
 }
-export const receive = type =>{
+export const receiveType = type =>{
     let returnObj=({
         type: "",
         games: "",
@@ -71,5 +71,17 @@ export const getRandom = ()=> dispatch=>{
 }
 export const getPopular = ()=> dispatch=>{
     return APIutil.getPopular()
-    .then((res)=>dispatch(receiveMore(res)))
+    .then((res)=>dispatch(receiveType(RECEIVE_POPULAR)(res)))
+}
+export const getTopRated =() =>dispatch=>{
+    return APIutil.getTopRated()
+    .then((res)=> dispatch(receiveType(RECEIVE_TOPRATED)(res)));
+}
+export const getReleaseDate = ()=> dispatch=>{
+    return APIutil.getReleaseDate()
+    .then((res)=>dispatch(receiveType(RECEIVE_RELEASEDATE)(res)))
+}
+export const getTopSellers = ()=> dispatch =>{
+    return APIutil.getTopSellers()
+    .then((res)=> dispatch(receiveType(RECEIVE_TOPSELLERS)(res)))
 }

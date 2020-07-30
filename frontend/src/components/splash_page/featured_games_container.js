@@ -6,7 +6,7 @@ import FeaturedGames from "./featured_games"
 const mapStateToProps = (state)=>{
     // debugger
     return{
-        games: Object.values(state.entities.games)
+        games: Object.values(state.entities.games.RECEIVE_RANDOM)
     }
 }
 
