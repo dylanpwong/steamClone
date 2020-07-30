@@ -39,17 +39,32 @@ class FeaturedGames extends React.Component{
     }
 
     render(){
-        const gamesImage= this.props.games.map((ele)=><img onClick={this.toGame(ele._id)} src={ele.imgUrl}></img>);
-        const gamesTitle= this.props.games.map((ele)=><div>{ele.title}</div>);
-        const gamesPrice= this.props.games.map((ele)=><div>{ele.price}</div>);
+        // const gamesImage= this.props.games.map((ele)=><img onClick={this.toGame(ele._id)} src={ele.imgUrl}></img>);
+        // const gamesTitle= this.props.games.map((ele)=><div>{ele.title}</div>);
+        // const gamesPrice= this.props.games.map((ele)=><div>{ele.price}</div>);
+
+        // Alternate
+        const gamesImage= this.props.games.map((ele)=>{
+            return (
+              <>
+                <img onClick={this.toGame(ele._id)} src={ele.imgUrl}></img>
+                <div className="gameInfo">
+                  {/* <div className='infoHeading'><div>{ele.title}</div></div>
+                <div className='infoPrice'><div>{ele.price}</div></div> */}
+                  <div className='infoHeading'>{ele.title}</div>
+                  <div className='infoPrice'>{ele.price}</div>
+                </div>
+              </>
+            );
+        });
 
         return(
             <>
                 {gamesImage[this.state.gameIndex]}
-            <div className='gameInfo'>
+            {/* <div className='gameInfo'>
                 <div className='infoHeading'>{gamesTitle[this.state.gameIndex]}</div>
                 <div className='infoPrice'>{gamesPrice[this.state.gameIndex]}</div>
-            </div>
+            </div> */}
             </>
         )
     }
