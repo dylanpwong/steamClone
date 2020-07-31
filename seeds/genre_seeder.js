@@ -108,34 +108,72 @@ for (let i = 0; i < reviews.length; i++) {
 
 ///// GAMES
 
-const games=[
-    new Game({
-        title: 'HellTaker',
-        price: 'Free',
-        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/HelltakerImg.jpg',
-        // genres: 
-    }),
-    new Game({
-        title: 'Dark Souls',
-        price: '20.00',
-        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/dark-souls-remastered-cover.jpg'
-    }),
-    new Game({
-        title: 'Persona 5',
-        price: '60.00',
-        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/P5-Guide-Cover-Art.jpg'
-    }),
-    new Game({
-        title: 'Resident Evil 4',
-        price: '30.00',
-        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/RE4+Cover.jpg'
-    }),
-    new Game({
-        title: 'Call Of Duty Black Ops 3',
-        price: '50.00',
-        imgUrl: 'https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3.jpeg'
-    })
-]
+const games = [
+  new Game({
+    title: "HellTaker",
+    price: "Free",
+    imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/HelltakerImg.jpg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/helltakerScreenShot1.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot2.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot4.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot5.png",
+    ],
+
+    // genres:
+  }),
+  new Game({
+    title: "Dark Souls",
+    price: "20.00",
+    imgUrl:
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/dark-souls-remastered-cover.jpg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/darkSoulsScreenShot1.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot2.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot4.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot5.jpg",
+    ],
+  }),
+  new Game({
+    title: "Persona 5",
+    price: "60.00",
+    imgUrl:
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/P5-Guide-Cover-Art.jpg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/Persona5ScreenShot1.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5ScreenShot2.jpeg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5ScreenShot3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5Screenshot4.jpeg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5ScreenShot5.png",
+    ],
+  }),
+  new Game({
+    title: "Resident Evil 4",
+    price: "30.00",
+    imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/RE4+Cover.jpg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/residentEvil4ScreenShot1.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/residentevil4ScreenShot2.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/residentEvil4ScreenShots3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/ResidentEvil4ScreenShot4.jpg,",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/ResidentEvil4ScreenShot5.jpg",
+    ],
+  }),
+  new Game({
+    title: "Call Of Duty Black Ops 3",
+    price: "50.00",
+    imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3.jpeg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/blackOps3ScreenShot1.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/blackopsScreenShot2.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3ScreenShot3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3ScreenShot4.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3ScreenShot5.jpg",
+    ],
+  }),
+];
 games[0].genres.push(genres[0]); //helltaker
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
 games[0].reviews.push(reviews[0]);

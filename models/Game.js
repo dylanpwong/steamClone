@@ -18,6 +18,10 @@ const GameSchema = new Schema({
     type: String,
     required: true
   },
+  otherImg:{
+    type: Array,
+    default:[]
+  },
   upVotes:{
     type: Number,
     default: 0
