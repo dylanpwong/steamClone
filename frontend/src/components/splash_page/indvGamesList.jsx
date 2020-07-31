@@ -1,5 +1,6 @@
 import React from 'react';
 import "./gamesLists.css";
+import HoverGame from './hoverGame';
 
 class IndvGamesList extends React.Component{
     constructor(props){
@@ -7,9 +8,10 @@ class IndvGamesList extends React.Component{
         // debugger;
         this.state ={
             currentList: this.props.lists[this.props.listName],
-            updated: null
+            currentGame: this.props.lists[this.props.listName][0],
         }
         this.equalArray=this.equalArray.bind(this);
+        this.hoverChanger=this.hoverChanger.bind(this);
     }
 
 
@@ -21,6 +23,12 @@ class IndvGamesList extends React.Component{
     }
     equalArray(arr1,arr2){
         return (arr1.length == arr2.length && arr1.every((ele,idx)=> arr1[idx] == arr2[idx]))
+    }
+    hoverChanger(game){
+        return (e)=>{
+            this.setState({currentGame: game})
+        }
+        // this.setState({currentGame:})
     }
 // this.props.listName = "list name"
 //this.props.list
@@ -36,7 +44,7 @@ class IndvGamesList extends React.Component{
         const listOfGames = this.state.currentList.map((ele, idx)=>{
             return (
                 
-                <div key={idx} className="listGames">
+                <div onMouseEnter={this.hoverChanger(ele)} key={idx} className="listGames">
                     <div className="listImg">
                         <img src = {ele.imgUrl}></img>
                     </div>
@@ -48,6 +56,7 @@ class IndvGamesList extends React.Component{
                 
             )
         })
+        
 
         return(
             <>
@@ -56,7 +65,7 @@ class IndvGamesList extends React.Component{
                 {listOfGames}
             </div>
             <div className='rightContainer'>
-                <div>bleh</div>
+                <HoverGame game={this.state.currentGame}/>
             </div>
             </div>
             </>
