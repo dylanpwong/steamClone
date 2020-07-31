@@ -107,7 +107,13 @@ for (let i = 0; i < reviews.length; i++) {
 
 
 ///// GAMES
-
+// const hellTakerImgs = [
+//   "https://dpwong-steamclone-dev.s3.amazonaws.com/helltakerScreenShot1.jpg",
+//   "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot2.jpg",
+//   "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot3.jpg",
+//   "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot4.jpg",
+//   "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot5.png",
+// ];
 const games = [
   new Game({
     title: "HellTaker",
@@ -177,6 +183,7 @@ const games = [
 games[0].genres.push(genres[0]); //helltaker
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
 games[0].reviews.push(reviews[0]);
+// games[0].otherImgs= hellTakerImgs;
 
 games[1].genres.push(soulsLikeId); //dark souls
 games[1].genres.push(actionId);

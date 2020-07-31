@@ -6,8 +6,21 @@ class IndvGamesList extends React.Component{
         super(props);
         // debugger;
         this.state ={
-            currentList: this.props.lists[this.props.listName]
+            currentList: this.props.lists[this.props.listName],
+            updated: null
         }
+        this.equalArray=this.equalArray.bind(this);
+    }
+
+
+    componentDidUpdate(){
+        if(!this.equalArray(this.state.currentList,this.props.lists[this.props.listName])){
+            // this.state.updated = "updated";
+            this.setState({currentList: this.props.lists[this.props.listName]});
+        }
+    }
+    equalArray(arr1,arr2){
+        return (arr1.length == arr2.length && arr1.every((ele,idx)=> arr1[idx] == arr2[idx]))
     }
 // this.props.listName = "list name"
 //this.props.list
