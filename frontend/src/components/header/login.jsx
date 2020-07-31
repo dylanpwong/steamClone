@@ -11,7 +11,7 @@ class Login extends React.Component {
             <>
             <div className='login' onClick={this.props.onLogin}> 
                 <div>login</div>
-                &nbsp; &nbsp;
+                &nbsp; | &nbsp;
                 <div>language</div> 
             </div>
             </>
