@@ -12,6 +12,7 @@ import CompleteSignUp_Container from './components/session/complete_signup_conta
 import gamePage_container from './components/game_page/gamePage_container';
 import header_container from './components/header/header_container';
 import NavBar from './components/header/navBar';
+import Footer from './components/header/footer';
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       <Route exact path='/join/completesignup' component={CompleteSignUp_Container}/>
       </div>
       
-      {/* <Route path='/' component={footer.jsx}/> */}
+      <Route path='/' component={Footer}/>
     </div>
   );
 }
