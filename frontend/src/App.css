@@ -38,15 +38,15 @@
 }
 
 .mainContentWrapper {
-  background-image: url(https://wallpaperplay.com/walls/full/8/e/9/78943.jpg);
-  width: 100vw;
-  height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  /* font-family: sans-serif; */
+  background: url(https://wallpaperplay.com/walls/full/8/e/9/78943.jpg) no-repeat;
+  /* overflow: hidden; */
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  /* border: 1px solid transparent; */
 }
 .contentContainer{
+  height: 84.5%;
   margin: 0 5%;
   padding:0 2%;
 }

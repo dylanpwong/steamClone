@@ -1,4 +1,4 @@
-
+/* * { border: 1px solid red; } */
 .test{
     /* width: 100vw;
     height: 100vh; */
@@ -50,6 +50,7 @@
     right: 0;
     top: 145.234px;
     bottom: 0;
+    height: fit-content;
 }
 
 .gutterCol img {

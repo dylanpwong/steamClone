@@ -20,10 +20,10 @@ class IndvGamesList extends React.Component{
         // we need a container to hold both left and right sides,
         //right side will hold the hover stuff,
         //left will hold games image
-        const listOfGames = this.state.currentList.map((ele)=>{
+        const listOfGames = this.state.currentList.map((ele, idx)=>{
             return (
-                <>
-                <div className="listGames">
+                
+                <div key={idx} className="listGames">
                     <div className="listImg">
                         <img src = {ele.imgUrl}></img>
                     </div>
@@ -32,17 +32,19 @@ class IndvGamesList extends React.Component{
                         <div className="listPrice">{ele.price}</div>
                     </div>
                 </div>
-                </>
+                
             )
         })
 
         return(
             <>
+            <div className="listContainer">
             <div className='leftContainer'>
                 {listOfGames}
             </div>
             <div className='rightContainer'>
-
+                <div>bleh</div>
+            </div>
             </div>
             </>
         )

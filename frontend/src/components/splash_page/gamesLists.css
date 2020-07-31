@@ -5,8 +5,9 @@
 .listGames {
     display: flex;
     flex-direction: row;
-    margin-bottom: 5px;
+    align-items: space-between;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 
 .listImg{
@@ -36,4 +37,21 @@
     align-self: flex-end;
     color: #acdbf5;
     font-size: 13px;
+}
+
+.listContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftContainer {
+    width: 70%;
+}
+
+.rightContainer {
+    width: calc(30% - 14px);
+    color: #263645;
+    margin-left: 14px;
+    margin-bottom: 5px;
+    background-color: #c6d4df;
 }

@@ -56,9 +56,7 @@ class Header extends React.Component {
     render(){
         return (
             <>
-            
-
-           
+                       
             <div className='topContainer'>
 
                 {this.checkLogin()}
@@ -70,7 +68,7 @@ class Header extends React.Component {
                         <div>COMMUNITY</div>
                         <div>ABOUT</div>
                         <div>SUPPORT</div>
-                </div>
+                    </div>
                 </div>
             
             </div>

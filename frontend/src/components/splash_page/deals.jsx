@@ -23,7 +23,7 @@ class Deals extends React.Component {
                     <div className='gutterContent'>Tags</div>
                 <div className='gutterHeader'>BROWSE CATAGORIES</div>
                 <div className='gutterHeader'>BROWSE BY GENRE</div>
-            </div>
+            </div> 
             <div className='deals'>
                 <div>FEATURED & RECOMMENDED</div>
                 <div className='images'>
