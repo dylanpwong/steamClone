@@ -38,6 +38,8 @@
 .list {
     display: flex;
     flex-direction: column;
+    background: linear-gradient( to bottom, rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);
+    padding-top: 10px;
 }
 
 .gutterCol {
