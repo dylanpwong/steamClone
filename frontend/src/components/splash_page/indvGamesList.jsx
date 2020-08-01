@@ -19,8 +19,10 @@ class IndvGamesList extends React.Component{
 
     componentDidUpdate(){
         if(!this.equalArray(this.state.currentList,this.props.lists[this.props.listName])){
-            // this.state.updated = "updated";
-            this.setState({currentList: this.props.lists[this.props.listName]});
+            document.getElementById("ListDesc").classList.add("hoveredSelected");
+            document.getElementById("ListTitle").classList.add("hoverTitle2");
+            document.getElementById("ListPrice").classList.add("hoverPrice");
+            this.setState({currentGame: this.props.lists[this.props.listName][0],currentList: this.props.lists[this.props.listName]});
         }
     }
     equalArray(arr1,arr2){
@@ -72,6 +74,7 @@ class IndvGamesList extends React.Component{
 // this.props.listName = "list name"
 //this.props.list
     render(){
+        
         // debugger;
 
         // use this.state.currentList
@@ -87,9 +90,9 @@ class IndvGamesList extends React.Component{
                     <div className="listImg">
                         <img src = {ele.imgUrl}></img>
                     </div>
-                    <div  className={`listDesc ${(idx === 0 ? 'hoveredSelected': '')}`}>
-                        <div className={`listTitle ${idx ===0 ? 'hoverTitle2':''}`}>{ele.title}</div>
-                        <div className={`listPrice ${idx ===0 ? 'hoverPrice':''}`}>{ele.price}</div>
+                    <div  id={'ListDesc'}className={`listDesc ${(idx === 0 ? 'hoveredSelected': '')}`}>
+                        <div id={'ListTitle'}className={`listTitle ${idx ===0 ? 'hoverTitle2':''}`}>{ele.title}</div>
+                        <div id={'ListPrice'}className={`listPrice ${idx ===0 ? 'hoverPrice':''}`}>{ele.price}</div>
                     </div>
                 </div>
                 

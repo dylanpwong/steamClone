@@ -30,7 +30,9 @@ class GameList extends React.Component {
                 document.getElementById(this.state.prevEvent).classList.toggle("tabButton--active");
                 this.state.prevEvent = e.target.id;
             }
-            // debugger;
+            if(document.getElementsByClassName("hoveredSelected").length >0 ) document.getElementsByClassName("hoveredSelected")[0].classList.remove("hoveredSelected");
+            if(document.getElementsByClassName("hoverTitle2").length >0 ) document.getElementsByClassName("hoverTitle2")[0].classList.remove("hoverTitle2");
+            if(document.getElementsByClassName("hoverPrice").length >0 ) document.getElementsByClassName("hoverPrice")[0].classList.remove("hoverPrice");
             this.setState({current: tabName});
         }
 
