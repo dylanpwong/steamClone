@@ -19,6 +19,11 @@
     padding-top: 1%;
 }
 
+.aboutUsContent img {
+    width: 45px;
+    height: 45px;
+}
+
 .aboutSteamContainer {
     display: flex;
     flex-direction: column;
