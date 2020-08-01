@@ -41,7 +41,7 @@ class IndvGamesList extends React.Component{
         }
         // this.setState({currentGame:})
     }
-    hoverColorChange(game){
+    hoverColorChange(game){//not used but as refernce
         // debugger;
         if(this.state.currentGame._id != game._id){
             // debugger
