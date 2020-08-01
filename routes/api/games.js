@@ -43,7 +43,7 @@ router.post('/upVoteGame',(req,res)=>{
 router.get('/randomGames',(req,res)=>{
     
     const amount = 5;
-    Game.find({}).then(games=>{
+    Game.find({}).populate('genres').then(games=>{
         
         let gamesObj={};
         shuffle(games);
@@ -63,21 +63,21 @@ router.post('/genreGame',(req,res)=>{
 })
 router.get('/releaseDate',(req,res)=>{
   const amount = 5;
-    Game.find({}).sort({_id: -1}).limit(amount).then(games=>{
-        res.json(games);
+    Game.find({}).sort({_id: -1}).limit(amount).populate('genres').then(games=>{
+        res.json(games)
     })
 })
 router.get('/topSellers', (req,res)=> {
     const amount =  5;
-    Game.find({}).sort({sales: -1}).limit(amount).then(games=>{
-        res.json(games);
+    Game.find({}).sort({sales: -1}).limit(amount).populate('genres').then(games=>{
+        res.json(games)
     })
 })
 router.get('/popular',(req,res)=>{ //
     const amount = 5;
-    Game.find({}).sort({clicks: -1}).limit(amount).then(games=>{
-        res.json(games);
-    })  
+    Game.find({}).sort({clicks: -1}).limit(amount).populate('genres').then(games=>{
+        res.json(games)
+    })
 })
 router.get('/topRated',(req,res)=>{ // review score
     let perfect = 90;
@@ -85,8 +85,8 @@ router.get('/topRated',(req,res)=>{ // review score
     let mixed = 50;
     let bad = 30;
     const amount = 5;
-    Game.find({reviewScore: {$gte: 80}}).limit(amount).then(games=>{
-        res.json(games);
+    Game.find({reviewScore: {$gte: 80}}).limit(amount).populate('genres').then(games=>{
+        res.json(games)
     }).catch(err=>{
         res.json({error: "failed to get top games"})
     })
