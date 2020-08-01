@@ -6,10 +6,18 @@ class HoverGame extends React.Component{
         super(props)
     }
     render(){
+        const otherImages = this.props.game.otherImgs.map((ele) => {
+            return (
+                <img src={ele}></img>
+            )
+        });
+
         return(
             <>
-            <div>{this.props.game.title}</div>
-            
+            <div className="hoverContainer">
+                <div className="hoverTitle">{this.props.game.title}</div>
+                {otherImages}
+            </div>
             </>
         )
     }

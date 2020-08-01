@@ -10,6 +10,20 @@
     margin-bottom: 5px;
 }
 
+.listGames:hover .listDesc{
+    background: #A1C6DC;
+    padding-right: 21px;
+    margin-right: 0%;
+}
+
+.listGames:hover .listTitle {
+    color: #10161b;
+}
+
+.listGames:hover .listPrice {
+    color:#263645;
+}
+
 .listImg{
     width: 184px;
     height: 69px;
@@ -25,6 +39,7 @@
     flex-direction: column;
     background: rgba( 0, 0, 0, 0.2 ); 
     width: 100%;
+    margin-right: 2%;
     padding: 7px 14px;
 }
 
@@ -42,6 +57,7 @@
 .listContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .leftContainer {
@@ -49,9 +65,28 @@
 }
 
 .rightContainer {
-    width: calc(30% - 14px);
+    width: 30%;
     color: #263645;
-    margin-left: 14px;
     margin-bottom: 5px;
-    background-color: #c6d4df;
+    background-color: #A1C6DC;
+}
+
+.hoverContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding: 5% 0% 1% 7.5%;
+}
+
+.hoverTitle {
+    font-size: 21px;
+    letter-spacing: 0px;
+    color: #263645;
+    padding-bottom: 7%;
+}
+
+.hoverContainer img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 3px;
 }

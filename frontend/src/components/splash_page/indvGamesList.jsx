@@ -44,7 +44,7 @@ class IndvGamesList extends React.Component{
         const listOfGames = this.state.currentList.map((ele, idx)=>{
             return (
                 
-                <div onMouseEnter={this.hoverChanger(ele)} key={idx} className="listGames">
+                <div onMouseEnter={this.hoverChanger(ele)} key={idx} id = {ele} className="listGames">
                     <div className="listImg">
                         <img src = {ele.imgUrl}></img>
                     </div>
@@ -57,7 +57,6 @@ class IndvGamesList extends React.Component{
             )
         })
         
-
         return(
             <>
             <div className="listContainer">
