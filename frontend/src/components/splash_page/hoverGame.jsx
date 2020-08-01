@@ -8,8 +8,11 @@ class HoverGame extends React.Component{
     render(){
         const otherImages = this.props.game.otherImgs.map((ele) => {
             return (
-                <img src={ele}></img>
-            )
+              <img
+                key={Math.random() * this.props.game.otherImgs.length}
+                src={ele}
+              ></img>
+            );
         });
 
         return(

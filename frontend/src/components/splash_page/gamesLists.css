@@ -10,19 +10,20 @@
     margin-bottom: 5px;
 }
 
-.listGames:hover .listDesc{
+/* .listGames:hover .listDesc{
     background: #A1C6DC;
-    padding-right: 21px;
-    margin-right: 0%;
-}
+     padding-right: 21px;
+    margin-right: 0%; 
+} */
 
-.listGames:hover .listTitle {
+/* .listGames:hover .listTitle {
     color: #10161b;
 }
 
 .listGames:hover .listPrice {
     color:#263645;
-}
+} */
+
 
 .listImg{
     width: 184px;
@@ -89,4 +90,16 @@
     width: 100%;
     height: auto;
     padding-bottom: 3px;
+}
+.hoverTitle{
+    color: #10161b;
+}
+.hoverPrice{
+    color:#263645;
+}
+.hoveredSelected{
+    /* color: red; */
+    background-color: #A1C6DC ;
+     padding-right: 21px;
+    margin-right: 0%; 
 }
