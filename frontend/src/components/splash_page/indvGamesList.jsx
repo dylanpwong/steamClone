@@ -12,8 +12,7 @@ class IndvGamesList extends React.Component{
         }
         this.equalArray=this.equalArray.bind(this);
         this.hoverChanger=this.hoverChanger.bind(this);
-        this.hoverColorChange=this.hoverColorChange.bind(this);
-        this.hoverTextChange=this.hoverTextChange.bind(this);
+        
     }
 
 
@@ -43,34 +42,8 @@ class IndvGamesList extends React.Component{
         }
         // this.setState({currentGame:})
     }
-    hoverColorChange(game){//not used but as refernce
-        // debugger;
-        if(this.state.currentGame._id != game._id){
-            // debugger
-            return(e)=>{
-                // debugger;
-               if(document.getElementsByClassName("hoveredSelected").length >0 ) document.getElementsByClassName("hoveredSelected")[0].classList.remove("hoveredSelected");
-                if(document.getElementsByClassName("hoverTitle2").length >0 ) document.getElementsByClassName("hoverTitle2")[0].classList.remove("hoverTitle2");
-                if(document.getElementsByClassName("hoverPrice").length >0 ) document.getElementsByClassName("hoverPrice")[0].classList.remove("hoverPrice");
-                e.target.classList.add("hoveredSelected");
-                e.target.children[0].classList.add("hoverTitle2");
-                e.target.children[1].classList.add("hoverPrice");
-            }
-        }
-    }
-    hoverTextChange(type){
+   
 
-        switch(type){
-            case "price":
-                return(e)=>{
-                    e.target.classList.add("hoverPrice");
-                }
-            case "title":
-                return(e)=>{
-                    e.target.classList.add('hoverTitle2');
-                }
-        };
-    }
 // this.props.listName = "list name"
 //this.props.list
     render(){
