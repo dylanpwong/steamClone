@@ -5,6 +5,7 @@ const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
 const genres =require('./routes/api/genres');
 const games = require('./routes/api/games');
+const reviews = require('./routes/api/reviews')
 const User = require('./models/User');
 const bodyParser = require('body-parser');
 
@@ -32,6 +33,7 @@ mongoose
 app.use("/api/users",users);
 app.use("/api/genres",genres);
 app.use('/api/games',games);
+app.use('/api/reviews',reviews);
 // app.get("/ed", (req, res) => {
 //   res.send("hello ed");
 // });
