@@ -1,0 +1,41 @@
+.aboutUsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    padding-top: 2%;
+}
+
+.aboutUsHeader {
+    color: white;
+    font-size: 21px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #30678A;
+}
+
+.aboutUsContent {
+    color: white;
+    font-size: 14px;
+    padding-top: 1%;
+}
+
+.aboutSteamContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    padding-top: 2%;
+}
+
+.aboutSteamHeader {
+    color: white;
+    font-size: 21px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #30678A;
+}
+
+.aboutSteamContent {
+    color: white;
+    font-size: 14px;
+    padding-top: 1%;
+}

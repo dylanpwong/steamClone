@@ -13,6 +13,8 @@ import gamePage_container from './components/game_page/gamePage_container';
 import header_container from './components/header/header_container';
 import NavBar from './components/header/navBar';
 import Footer from './components/header/footer';
+import about_container from './components/splash_page/about_container';
+import about_steam_container from './components/splash_page/about_steam_container';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
       <Route exact path='/login' component={login_form_container}/>
       <Route exact path='/join' component={signup_form_container}/>
       <Route exact path='/join/completesignup' component={CompleteSignUp_Container}/>
+      <Route exact path='/aboutUs' component={about_container}/>
+      <Route exact path='/aboutSteam' component={about_steam_container}/>
       </div>
       
       <Route path='/' component={Footer}/>
