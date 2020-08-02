@@ -12,7 +12,6 @@ class IndvGamesList extends React.Component{
         }
         this.equalArray=this.equalArray.bind(this);
         this.hoverChanger=this.hoverChanger.bind(this);
-        
     }
 
 
@@ -42,13 +41,10 @@ class IndvGamesList extends React.Component{
         }
         // this.setState({currentGame:})
     }
-   
-
+    
 // this.props.listName = "list name"
 //this.props.list
     render(){
-        
-        // debugger;
 
         // use this.state.currentList
 
@@ -58,8 +54,8 @@ class IndvGamesList extends React.Component{
         //left will hold games image
         const listOfGames = this.state.currentList.map((ele, idx)=>{
             return (
-                
-                <div  onMouseEnter={this.hoverChanger(ele)} key={idx} id = {ele} className="listGames">
+
+                <div onMouseEnter={this.hoverChanger(ele)} key={idx} id = {ele} className="listGames">
                     <div className="listImg">
                         <img src = {ele.imgUrl}></img>
                     </div>
@@ -76,7 +72,7 @@ class IndvGamesList extends React.Component{
             <>
             <div className="listContainer">
             <div className='leftContainer'>
-                {listOfGames}
+                {listOfGames} 
             </div>
             <div className='rightContainer'>
                 <HoverGame game={this.state.currentGame}/>
