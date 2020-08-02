@@ -1,0 +1,54 @@
+.loginSpace {
+    margin:auto;
+    width: 60%;
+    height: 75vh;
+    padding-top: 1.5%;
+}
+
+.loginContainer {
+    display: flex;
+    background: linear-gradient( to bottom, rgba( 64, 128, 183, 0.4) 5%, rgba( 64, 128, 183, 0.2) 95%);
+    width: 100%;
+}
+
+.loginItems {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #2f89bc;
+    padding: 10% 20%;
+    width: 18em;
+}
+
+.signInText {
+    color: white;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.miscText {
+    color: #8F98A0;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.labelInput {
+    margin-bottom: 14px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: rgb(232, 240, 254);
+    width: 208px;
+    height: 21px;
+}
+
+.signInButton {
+    color: #D2E885;
+    background: linear-gradient( to bottom, #a4d007 5%, #536904 95%);
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 2px;
+    width: 75.88px;
+    margin-top: 30px;
+}
