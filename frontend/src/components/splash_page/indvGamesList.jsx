@@ -1,6 +1,7 @@
 import React from 'react';
 import "./gamesLists.css";
 import HoverGame from './hoverGame';
+import { withRouter } from 'react-router-dom';
 
 class IndvGamesList extends React.Component{
     constructor(props){
@@ -12,6 +13,7 @@ class IndvGamesList extends React.Component{
         }
         this.equalArray=this.equalArray.bind(this);
         this.hoverChanger=this.hoverChanger.bind(this);
+        this.toGame=this.toGame.bind(this);
     }
 
 
@@ -41,6 +43,12 @@ class IndvGamesList extends React.Component{
         }
         // this.setState({currentGame:})
     }
+
+    toGame(gameId) {
+        return () => {
+            this.props.history.push(`/game/${gameId}`);
+        }
+    }
     
 // this.props.listName = "list name"
 //this.props.list
@@ -55,7 +63,7 @@ class IndvGamesList extends React.Component{
         const listOfGames = this.state.currentList.map((ele, idx)=>{
             return (
 
-                <div onMouseEnter={this.hoverChanger(ele)} key={idx} id = {ele} className="listGames">
+                <div onClick={this.toGame(ele._id)} onMouseEnter={this.hoverChanger(ele)} key={idx} id = {ele} className="listGames">
                     <div className="listImg">
                         <img src = {ele.imgUrl}></img>
                     </div>
@@ -83,4 +91,4 @@ class IndvGamesList extends React.Component{
     }
 }
 
-export default IndvGamesList;
+export default withRouter(IndvGamesList);
