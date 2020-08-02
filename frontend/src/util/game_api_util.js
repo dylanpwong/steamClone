@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const getGame = (game) => {
+  
     return axios.post('/api/games/showGame', game);
 }
 

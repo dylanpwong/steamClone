@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Game = require('./Game');
 
 const UserSchema = new Schema({
     username: {
@@ -18,7 +19,9 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    games: [{type: Schema.Types.ObjectId,ref: 'Game'}]
+    games: [{type: Schema.Types.ObjectId,ref: Game}],
+    wishlist: [{type: Schema.Types.ObjectId,ref: Game}],
+    cart: [{type: Schema.Types.ObjectId,ref: Game}]
 });
 const User = mongoose.model('users',UserSchema);
 module.exports=User;
