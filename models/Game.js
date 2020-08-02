@@ -3,7 +3,29 @@ const Genre = require('../models/Genre');
 const Review = require('../models/Review');
 const random = require("mongoose-random");
 const Schema = mongoose.Schema;
-
+let calcScore = (score) => {
+  // let score = ups / (ups + downs);
+  console.log(`score is ${score}`);
+  // score=27;
+  
+  switch (true) {
+    case score <= 25:
+      return "OverWhelmingly Negative";
+    case score <= 40:
+      return "Very Negative";
+    case score <= 65:
+      return "Negative";
+    case score <= 75:
+      return "Mixed";
+    case score <= 85:
+      return "Mostly Positive";
+    case score <= 95:
+      return "Very Positive";
+    case score<=100:
+      return "OverWhelmingly Positive";
+  }
+  return "Not Reviewed";
+};
 const GameSchema = new Schema({
   
   title: {
@@ -34,11 +56,13 @@ const GameSchema = new Schema({
   },
   reviewScore:{
     type: Number,
-     default: (!(this.upVotes + this.downVotes)) ? 80 : this.upVotes/(this.upVotes + this.downVotes)
+    //  default: (!(this.upVotes + this.downVotes)) ? 0 : this.upVotes/(this.upVotes + this.downVotes)
+    default:0
     
   },
   recepion:{
-    
+    type: String,
+     default: "Positive"
   },
   sales:{
     type: Number,
@@ -56,6 +80,8 @@ const GameSchema = new Schema({
   reviews: [{type: Schema.Types.ObjectId,ref: Review}],
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }],
 });
+
+
 // GameSchema.plugin(random, { path: "r" });
 const Game = mongoose.model("games", GameSchema);
 module.exports = Game;
