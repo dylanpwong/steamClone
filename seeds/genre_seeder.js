@@ -136,7 +136,7 @@ const games = [
   }),
   new Game({
     title: "Dark Souls",
-    price: "20.00",
+    price: "$20.00",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/dark-souls-remastered-cover.jpg",
     otherImgs: [
@@ -149,7 +149,7 @@ const games = [
   }),
   new Game({
     title: "Persona 5",
-    price: "60.00",
+    price: "$60.00",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/P5-Guide-Cover-Art.jpg",
     otherImgs: [
@@ -162,7 +162,7 @@ const games = [
   }),
   new Game({
     title: "Resident Evil 4",
-    price: "30.00",
+    price: "$30.00",
     imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/RE4+Cover.jpg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/residentEvil4ScreenShot1.jpg",
@@ -174,7 +174,7 @@ const games = [
   }),
   new Game({
     title: "Call Of Duty Black Ops 3",
-    price: "50.00",
+    price: "$50.00",
     imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3.jpeg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/blackOps3ScreenShot1.jpg",
@@ -187,7 +187,7 @@ const games = [
 
   new Game({
     title: "Skullgirls",
-    price: "20.00",
+    price: "$20.00",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsCover.jpg",
     otherImgs: [
@@ -201,7 +201,7 @@ const games = [
 
   new Game({
     title: "Danganronpa V3: Killing Harmony",
-    price: "40:00",
+    price: "$40.00",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/DanganronpaCover.jpg",
     otherImgs: [

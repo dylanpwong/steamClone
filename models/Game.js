@@ -37,6 +37,9 @@ const GameSchema = new Schema({
      default: (!(this.upVotes + this.downVotes)) ? 80 : this.upVotes/(this.upVotes + this.downVotes)
     
   },
+  recepion:{
+    
+  },
   sales:{
     type: Number,
     default:0

@@ -84,7 +84,7 @@ router.get('/topRated',(req,res)=>{ // review score
     let good = 70;
     let mixed = 50;
     let bad = 30;
-    const amount = 5;
+    const amount = 7;
     Game.find({reviewScore: {$gte: 80}}).limit(amount).populate('genres').then(games=>{
         res.json(games)
     }).catch(err=>{
