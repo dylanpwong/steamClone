@@ -54,6 +54,18 @@ const genres = [
     }),
     new Genre({
         name: 'Multiplayer'
+    }),
+    new Genre({
+        name: 'Survival'
+    }),
+    new Genre({
+      name: 'Fighting'
+    }),
+    new Genre({
+      name: "Visual Novel"
+    }),
+    new Genre({
+      name: "Detective"
     })
     
 ]
@@ -64,8 +76,12 @@ let rpgId=genres[2]._id;
 let soulsLikeId=genres[3]._id;
 let adventureId=genres[4]._id;
 let animeId=genres[5]._id;
-let fpsId=genres[6]._id
-let multiPlayeId=genres[7]._id
+let fpsId=genres[6]._id;
+let multiPlayeId=genres[7]._id;
+let survivalId = genres[8]._id;
+let fightingId = genres[9]._id;
+let visualNovelId = genres[10]._id;
+let detectiveId=genres[11]._id;
 
 // finished saves genres into database 
 let finished = 0;
@@ -168,6 +184,34 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3ScreenShot5.jpg",
     ],
   }),
+
+  new Game({
+    title: "Skullgirls",
+    price: "20.00",
+    imgUrl:
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsCover.jpg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot1.png",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot2.jpeg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlScreenShot3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot4.png",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot5.jpg",
+    ],
+  }),
+
+  new Game({
+    title: "Danganronpa V3: Killing Harmony",
+    price: "40:00",
+    imgUrl:
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/DanganronpaCover.jpg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaScreenShot1.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaScreenShot2.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaV3ScreenShot3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaV3ScreenShot4.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaV3ScreenShot5.jpg",
+    ],
+  }),
 ];
 games[0].genres.push(genres[0]); //helltaker
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
@@ -183,6 +227,17 @@ games[2].genres.push(rpgId);
 
 games[3].genres.push(fpsId); //black ops 3
 games[3].genres.push(multiPlayeId);
+
+games[4].genres.push(horrorId); // Resident Evil 4
+games[4].genres.push(actionId);
+games[4].genres.push(survivalId);
+
+games[5].genres.push(fightingId); // Skullgirls
+games[5].genres.push(actionId);
+
+games[6].genres.push(detectiveId); //Danganronpa V3
+games[6].genres.push(animeId);
+games[6].genres.push(visualNovelId);
 // same as finished1, but for games instead
 let finished2 = 0;
 for (let i = 0; i < games.length; i++) {
