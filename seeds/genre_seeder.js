@@ -126,7 +126,7 @@ const games = [
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darkSoulsScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot2.jpg",
-      "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot3.jpeg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot4.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot5.jpg",
     ],
