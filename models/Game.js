@@ -57,7 +57,7 @@ const GameSchema = new Schema({
   reviewScore:{
     type: Number,
     //  default: (!(this.upVotes + this.downVotes)) ? 0 : this.upVotes/(this.upVotes + this.downVotes)
-    default:0
+    default:80
     
   },
   recepion:{
