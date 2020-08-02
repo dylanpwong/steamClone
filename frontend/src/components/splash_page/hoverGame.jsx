@@ -19,7 +19,7 @@ class HoverGame extends React.Component{
             <>
             <div className="hoverContainer">
                 <div className="hoverTitle">{this.props.game.title}</div>
-                {otherImages}
+                {otherImages.slice(0,3)}
             </div>
             </>
         )
