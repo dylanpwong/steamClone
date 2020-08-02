@@ -138,7 +138,7 @@ const games = [
     title: "Dark Souls",
     price: "$20.00",
     imgUrl:
-      "https://dpwong-steamclone-dev.s3.amazonaws.com/dark-souls-remastered-cover.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsv2cover.jpg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darkSoulsScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot2.jpg",
@@ -148,10 +148,10 @@ const games = [
     ],
   }),
   new Game({
-    title: "Persona 5",
+    title: "Persona 5 Royal",
     price: "$60.00",
     imgUrl:
-      "https://dpwong-steamclone-dev.s3.amazonaws.com/P5-Guide-Cover-Art.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5RoyalCover.jpg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/Persona5ScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5ScreenShot2.jpeg",
@@ -163,7 +163,7 @@ const games = [
   new Game({
     title: "Resident Evil 4",
     price: "$30.00",
-    imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/RE4+Cover.jpg",
+    imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/res4newCover.jpg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/residentEvil4ScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/residentevil4ScreenShot2.jpg",
@@ -175,7 +175,8 @@ const games = [
   new Game({
     title: "Call Of Duty Black Ops 3",
     price: "$50.00",
-    imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3.jpeg",
+    imgUrl:
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3+coverv2.jpg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/blackOps3ScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/blackopsScreenShot2.jpg",
@@ -225,12 +226,12 @@ games[1].genres.push(actionId);
 games[2].genres.push(animeId); // persona 5
 games[2].genres.push(rpgId);
 
-games[3].genres.push(fpsId); //black ops 3
-games[3].genres.push(multiPlayeId);
+games[3].genres.push(horrorId); // Resident Evil 4
+games[3].genres.push(actionId);
+games[3].genres.push(survivalId);
 
-games[4].genres.push(horrorId); // Resident Evil 4
-games[4].genres.push(actionId);
-games[4].genres.push(survivalId);
+games[4].genres.push(fpsId); //black ops 3
+games[4].genres.push(multiPlayeId);
 
 games[5].genres.push(fightingId); // Skullgirls
 games[5].genres.push(actionId);
