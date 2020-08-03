@@ -20,10 +20,10 @@ class NavBar extends React.Component {
                 <div className="navbarItems">News</div>
                 <div className="navbarItems">Steam Labs</div> */}
                 <div className="searchbarContainer">
-                <input placeholder="search the store" type="text" />
-                <div className="searchIcon">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png"/>
-                </div>
+                    <input placeholder="search the store" type="text" />
+                    <div className="searchIcon">
+                        <img src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png"/>
+                    </div>
                 </div>
             </div>
             </div>
