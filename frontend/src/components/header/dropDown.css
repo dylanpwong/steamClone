@@ -5,6 +5,7 @@
     background-color: red;
     display: none;
     position: absolute;
+    width: 150%;
     /* display: block; */
     /* position: relative; */
     /* z-index: 1; 
