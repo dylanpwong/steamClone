@@ -97,9 +97,11 @@ router.get('/topRated',(req,res)=>{ // review score
 router.post('/new_and_trending',()=>{
 
 })
-router.get('/search',(req,res)=>{
+router.post('/search',(req,res)=>{
     const gameSearch = Object.keys(req.body)[0];
-    Game.find({ title: { $regex:   gameSearch+ ".*" } }).then(game=>{
+    // console.log(gameSearch);
+    Game.find({ title: { $regex:   `^${gameSearch}.*`,$options: 'i' } }).then(game=>{
+        // debugger;
         res.json(game);
     })
 })

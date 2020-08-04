@@ -8,9 +8,14 @@ class NavBar extends React.Component {
     }
 
     onSearch(e){
-        
+        // debugger;
         e.preventDefault();
-        // this.props.searchGame()
+        let gameObj= {
+            value: e.currentTarget.value,
+        }
+        this.props.searchGame(gameObj.value).then(res=>{
+            // debugger
+        })
     }
 
 

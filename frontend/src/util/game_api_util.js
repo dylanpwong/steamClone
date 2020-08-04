@@ -5,7 +5,7 @@ export const getGame = (game) => {
     return axios.post('/api/games/showGame', game);
 }
 export  const findGames=(game)=>{
-    return axios.get('/api/games/search',game)
+    return axios.post('/api/games/search',game)
 }
 export const Helltaker = () => {
     return axios.get('/api/games/index');

@@ -53,6 +53,7 @@ export const receiveType = type =>{
             })
         case RECEIVE_SEARCH:
             return(games =>{
+                // debugger
                 returnObj.type= RECEIVE_SEARCH;
                 returnObj.games = games.data;
                 return returnObj;
@@ -70,7 +71,7 @@ export const fetchHelltaker = () => dispatch => {
 }
 export const searchGame=(search)=>dispatch=>{
     return APIutil.findGames(search)
-    .then(res=>dispatch(receiveType(RECEIVE_SEARCH)))
+    .then(res=>dispatch(receiveType(RECEIVE_SEARCH)(res)))
 }
 export const fetchGame =(gameId) =>dispatch=>{
     return APIutil.getGame(gameId)

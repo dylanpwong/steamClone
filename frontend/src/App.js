@@ -15,13 +15,14 @@ import NavBar from './components/header/navBar';
 import Footer from './components/header/footer';
 import about_container from './components/splash_page/about_container';
 import about_steam_container from './components/splash_page/about_steam_container';
+import navBar_container from './components/header/navBar_container';
 
 function App() {
   return (
     <div className='mainContentWrapper' >
       <Route path='/' component={header_container}/>
       <div className='contentContainer'>
-      <Route path='/' component={NavBar}/>
+      <Route path='/' component={navBar_container}/>
       <Route exact path='/' component={splashPage_container}/>
       <Route exact path='/game/:gameId' component={gamePage_container}/>
       <Route exact path='/login' component={login_form_container}/>
