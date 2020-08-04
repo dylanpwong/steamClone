@@ -4,7 +4,16 @@ import React from "react";
 class NavBar extends React.Component {
     constructor (props) {
         super (props);
+        this.onSearch=this.onSearch.bind(this);
     }
+
+    onSearch(e){
+        
+        e.preventDefault();
+        // this.props.searchGame()
+    }
+
+
 
     render () {
         return (
@@ -20,7 +29,7 @@ class NavBar extends React.Component {
                 <div className="navbarItems">News</div>
                 <div className="navbarItems">Steam Labs</div> */}
                 <div className="searchbarContainer">
-                    <input placeholder="search the store" type="text" />
+                    <input onChange={this.onSearch}placeholder="search the store" type="text" />
                     <div className="searchIcon">
                         <img src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png"/>
                     </div>
