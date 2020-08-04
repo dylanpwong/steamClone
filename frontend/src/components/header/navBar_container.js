@@ -5,7 +5,9 @@ import { searchGame } from "../../actions/game_actions"
 
 
 const mapStateToProps = (state)=>{
-    return({})
+    return {
+      searchGames: state.entities.RECIEVE_SEARCH ? Object.values(state.entities.RECIEVE_SEARCH): [],
+    };
 }
 
 const  mapDispatchToProps = dispatch=>{

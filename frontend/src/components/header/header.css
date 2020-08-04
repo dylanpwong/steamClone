@@ -126,6 +126,7 @@
     display: flex;
     background-color: #377197;
     border: 1px solid rgba(0,0,0,0.3);
+    /* position: absolute; */
 }
 
 .footContainer {
@@ -163,4 +164,8 @@
     flex-direction: column;
     justify-content: flex-end;
     height: 25vh;
+}
+.dropDownHolder{
+    position: relative;
+    display: inline-block;
 }
