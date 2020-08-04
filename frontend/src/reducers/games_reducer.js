@@ -1,4 +1,4 @@
-import { RECEIVE_GAME, RECEIVE_PLENTY, RECEIVE_POPULAR, RECEIVE_RELEASEDATE, RECEIVE_TOPRATED, RECEIVE_TOPSELLERS } from '../actions/game_actions'
+import { RECEIVE_GAME, RECEIVE_PLENTY, RECEIVE_POPULAR, RECEIVE_RELEASEDATE, RECEIVE_TOPRATED, RECEIVE_TOPSELLERS, RECEIVE_SEARCH } from '../actions/game_actions'
 
 const gameReducer = (state={}, action) => {
     Object.freeze(state);
@@ -17,6 +17,8 @@ const gameReducer = (state={}, action) => {
             return Object.assign({}, state,{RECEIVE_TOPRATED: action.games});
         case RECEIVE_TOPSELLERS:
             return Object.assign({}, state, { RECEIVE_TOPSELLERS: action.games });
+        case RECEIVE_SEARCH:
+            return Object.assign({},state,{RECEIVE_SEARCH: action.games});
         default:
             return state;
 

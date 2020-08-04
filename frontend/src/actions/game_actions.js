@@ -5,6 +5,7 @@ export const RECEIVE_POPULAR ="RECEIVE_POPULAR";
 export const RECEIVE_RELEASEDATE="RECEIVE_RELEASEDATE";
 export const RECEIVE_TOPSELLERS="RECEIVE_TOPSELLERS";
 export const RECEIVE_TOPRATED="RECEIVE_TOPRATED";
+export const RECEIVE_SEARCH="RECEIVE_SEARCH";
 
 export const recieveGame = (game) =>{
     return({
@@ -50,6 +51,12 @@ export const receiveType = type =>{
                 returnObj.games=  games.data;
                 return returnObj;
             })
+        case RECEIVE_SEARCH:
+            return(games =>{
+                returnObj.type= RECEIVE_SEARCH;
+                returnObj.games = games.data;
+                return returnObj;
+            })
     }
 }
 // const error
@@ -60,6 +67,10 @@ export const fetchHelltaker = () => dispatch => {
     .catch((err)=>{
     
     })
+}
+export const searchGame=(search)=>dispatch=>{
+    return APIutil.findGames(search)
+    .then(res=>dispatch(receiveType(RECEIVE_SEARCH)))
 }
 export const fetchGame =(gameId) =>dispatch=>{
     return APIutil.getGame(gameId)
