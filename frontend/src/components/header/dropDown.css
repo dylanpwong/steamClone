@@ -9,10 +9,11 @@
     font-family: sans-serif;
     display: none;
     position: absolute;
-    width: 150%;
+    width: 200%;
     font-size: .8;
     font-weight:520;
     padding: 8px 5px;
+    /* left:0; */
 }
 .show{
      display: inline-block;
@@ -28,10 +29,15 @@
 }
 .searchHoverFlexer{
     border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     padding: 3px 0px;
     display:flex;
     /* justify-content: space-evenly; */
     box-sizing: border-box;
 
+}
+.searchHoverFlexer:hover{
+    background-color: rgb(8, 49, 77);
+    color: white;
+    cursor: pointer;
 }

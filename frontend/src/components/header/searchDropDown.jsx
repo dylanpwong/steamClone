@@ -1,17 +1,28 @@
 import React from 'react';
 import './dropDown.css';
+import { withRouter } from 'react-router-dom';
 
 
 class SearchDropDown extends React.Component{
     constructor(props){
         super(props)
+
+        this.toGame = this.toGame.bind(this);
+    }
+
+
+
+    toGame(ele){
+        return (e)=>{
+            this.props.history.push(`/game/${ele._id}`)
+        }
     }
     
 
     render(){
         let searchResults=this.props.searchGames.map(ele=>{
             return(
-                <div  className="searchHoverFlexer" key={Math.random() * this.props.searchGames.length}>
+                <div  onClick={this.toGame(ele)}className="searchHoverFlexer" key={Math.random() * this.props.searchGames.length}>
                    <img className = "imgResizer"src={ele.imgUrl}/>
                     <div className="titleAndPriceforDropDown">
                         <div>
@@ -34,4 +45,5 @@ class SearchDropDown extends React.Component{
         )
     }
 }
-export default SearchDropDown;
+// withRouter
+export default withRouter(SearchDropDown);
