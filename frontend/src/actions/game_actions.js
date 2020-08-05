@@ -8,6 +8,7 @@ export const RECEIVE_TOPRATED="RECEIVE_TOPRATED";
 export const RECEIVE_SEARCH="RECEIVE_SEARCH";
 
 export const recieveGame = (game) =>{
+    // debugger
     return({
         type: RECEIVE_GAME,
         game: game.data
@@ -84,6 +85,7 @@ export const clearSearchbar=()=>dispatch=>{
     return  dispatch(clearSearch())
 }
 export const fetchGame =(gameId) =>dispatch=>{
+    // debugger;
     return APIutil.getGame(gameId)
     .then((res)=> dispatch(recieveGame(res)))
 }

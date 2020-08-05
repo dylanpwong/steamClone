@@ -32,6 +32,14 @@ const GameSchema = new Schema({
     type: String,
     required: true,
   },
+  description:{
+    type: String,
+    default: "Description Pending",
+  },
+  developer:{
+    type: String,
+    default: "N/A"
+  },
   price: {
     type: String,
     required: true,
@@ -71,6 +79,10 @@ const GameSchema = new Schema({
   releaseDate:{
     type: Date,
     default: Date.now()
+  },
+  safetyDate:{
+    type: Date,
+    default: new Date()
   },
   clicks:{
     type: Number,

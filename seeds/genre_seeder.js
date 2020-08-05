@@ -123,6 +123,7 @@ const games = [
   new Game({
     title: "HellTaker",
     price: "Free",
+    description: "HellTaker is a short game about sharply dressed demon girls.",
     imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/HelltakerImg.jpg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/helltakerScreenShot1.jpg",

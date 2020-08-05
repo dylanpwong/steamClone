@@ -103,3 +103,14 @@
     text-transform: uppercase;
     border-bottom: 1px solid #30678A;
 }
+.allReviews{
+    color: #556772;
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 10px;
+    /* justify-content: space-around; */
+
+}
+.ratingColor{
+    color: #66C0f4;
+}

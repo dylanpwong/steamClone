@@ -18,8 +18,8 @@ router.get('/index',(req,res)=>{
 })
 
 router.post('/showGame',(req,res)=>{
-    // debugger
     const gameId = Object.keys(req.body)[0];
+    // debugger
     Game.findOne({ _id: gameId }).populate('genres reviews')
         .exec((err, genre) => {
             if (err) console.log(`error is: ${err}`)
