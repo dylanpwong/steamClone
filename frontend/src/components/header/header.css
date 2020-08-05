@@ -108,8 +108,12 @@
     border-radius: 3px;
 }
 
-.navBar img {
+/* .navBar img {
     height: 25px;
+    width: 25px;
+} */
+.searchImg{
+     height: 25px;
     width: 25px;
 }
 

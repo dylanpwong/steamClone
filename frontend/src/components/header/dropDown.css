@@ -2,12 +2,36 @@
     display: none;
 }
 .dropdownContainer{
-    background-color: red;
+    box-sizing: border-box;
+    text-shadow: none;
+    background-color: #c6d4df;
+    color: black;
+    font-family: sans-serif;
     display: none;
     position: absolute;
     width: 150%;
-    
+    font-size: .8;
+    font-weight:520;
+    padding: 8px 5px;
 }
 .show{
      display: inline-block;
+}
+.titleAndPriceforDropDown{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 10px;
+}
+.imgResizer{
+    width: 10em
+}
+.searchHoverFlexer{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 3px 0px;
+    display:flex;
+    /* justify-content: space-evenly; */
+    box-sizing: border-box;
+
 }
