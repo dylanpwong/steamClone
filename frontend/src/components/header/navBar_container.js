@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import NavBar from "./navBar"
-import { searchGame } from "../../actions/game_actions"
+import { searchGame,  clearSearchbar } from "../../actions/game_actions"
 
 
 
@@ -12,7 +12,8 @@ const mapStateToProps = (state)=>{
 
 const  mapDispatchToProps = dispatch=>{
     return({
-        searchGame: (game)=> dispatch(searchGame(game))
+        searchGame: (game)=> dispatch(searchGame(game)),
+        clearSearch: ()=>dispatch(clearSearchbar)
     })
 }
 

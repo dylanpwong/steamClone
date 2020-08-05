@@ -60,6 +60,12 @@ export const receiveType = type =>{
             })
     }
 }
+ const clearSearch=()=>{
+    return({
+        type: RECEIVE_SEARCH,
+        games: []
+    })
+}
 // const error
 
 export const fetchHelltaker = () => dispatch => {
@@ -72,6 +78,10 @@ export const fetchHelltaker = () => dispatch => {
 export const searchGame=(search)=>dispatch=>{
     return APIutil.findGames(search)
     .then(res=>dispatch(receiveType(RECEIVE_SEARCH)(res)))
+}
+
+export const clearSearchbar=()=>dispatch=>{
+    return  dispatch(clearSearch())
 }
 export const fetchGame =(gameId) =>dispatch=>{
     return APIutil.getGame(gameId)

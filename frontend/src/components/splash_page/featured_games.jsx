@@ -15,6 +15,7 @@ class FeaturedGames extends React.Component{
     }
 
     componentDidMount(){
+        //  this._isMounted = true;
         setInterval(this.timer,3000);
     }
     timer(){
@@ -36,6 +37,11 @@ class FeaturedGames extends React.Component{
             clearInterval();
             this.props.history.push(`/game/${gameId}`);
         }
+    }
+
+    componentWillUnmount(){
+        this.state.leavePage = true;
+        clearInterval();
     }
 
     render(){

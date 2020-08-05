@@ -7,7 +7,7 @@ class NavBar extends React.Component {
     constructor (props) {
         super (props);
         this.onSearch=this.onSearch.bind(this);
-
+        this.gameClickHandler=this.gameClickHandler();
         this.state={
             search: []
         }
@@ -24,6 +24,15 @@ class NavBar extends React.Component {
             this.setState({search: res.games})
         })
     }
+    gameClickHandler(){
+        return()=>{
+
+            this.setState({search: []});
+        }
+    }
+    // componentWillUnmount(){
+    //     this.setState({ search: [] });
+    // }
 
 
 
@@ -43,12 +52,12 @@ class NavBar extends React.Component {
                     <div className="navbarItems">Steam Labs</div> */}
                     <div className="dropDownHolder">
                     <div className="searchbarContainer">
-                        <input onChange={this.onSearch} placeholder="search the store"type="text"/>
+                        <input id ="searchbar" onChange={this.onSearch} placeholder="search the store"type="text"/>
                         <div className="searchIcon">
                         <img className="searchImg"src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png" />
                         </div>
                     </div>
-                        <SearchDropDown searchGames={this.state.search} />
+                        <SearchDropDown gameClickHandler={this.gameClickHandler}clearSearch={this.props.clearSearch} searchGames={this.state.search} />
                     </div>
                 </div>
                  
