@@ -15,8 +15,8 @@ class SearchDropDown extends React.Component{
     toGame(ele){
         return (e)=>{
             
-        //    document.getElementById("searchbar").value="";
-            // this.props.gameClickHandler();
+           document.getElementById("searchbar").value="";
+            this.props.gameClickHandler();
             this.props.history.push(`/game/${ele._id}`);
         }
     }
