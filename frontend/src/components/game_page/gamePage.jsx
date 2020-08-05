@@ -20,6 +20,15 @@ class GamePage extends React.Component {
         })
         // console.log("IN GAME PAGE");
     }
+    componentDidUpdate(){
+        if(this.state.game._id != this.props.gameId){
+              this.props.fetchGame(this.props.gameId).then((res)=>{
+            this.setState({render: true,game: res.game});
+            // debugger;
+            // this.setState({game: res.game});
+        })
+        }
+    }
 
     render () {
         if (!this.state.render){
