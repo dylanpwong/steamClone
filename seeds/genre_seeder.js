@@ -204,6 +204,11 @@ const games = [
   new Game({
     title: "Danganronpa V3: Killing Harmony",
     price: "$40.00",
+    about:
+      "Welcome to a new world of Danganronpa, and prepare yourself for the biggest, most exhilarating episode yet. Set in a “psycho-cool” environment, a new cast of 16 characters find themselves kidnapped and imprisoned in a school. Inside, some will kill, some will die, and some will be punished. Reimagine what you thought high-stakes, fast-paced investigation was as you investigate twisted murder cases and condemn your new friends to death.",
+    description:
+      "A new cast of 16 characters find themselves kidnapped and imprisoned in a school. Inside, some will kill, some will die, and some will be punished. Reimagine what you thought high-stakes, fast-paced investigation was as you investigate twisted murder cases and condemn your new friends to death.",
+    gif: "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaV3Gif.gif",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/DanganronpaCover.jpg",
     otherImgs: [
@@ -213,6 +218,20 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaV3ScreenShot4.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaV3ScreenShot5.jpg",
     ],
+    minSystem: {
+      OS: "Windows 7 64 Bit",
+      Processor: "Intel Core i3-4170 @ 3.70GHz",
+      Memory: "4 GB RAM",
+      Graphics: "NVIDIA@ GeForce@ GTX 460 or better",
+      Storage: "26 GB available space",
+    },
+    recSystem: {
+      OS: "Windows 7 64 Bit",
+      Processor: "Intel Core i5-4690K @3.50GHz",
+      Memory: "8 GB RAM",
+      Graphics: "NVIDIA@ GeForce@ GTX 960",
+      Storage: "26 GB available space",
+    },
   }),
 ];
 games[0].genres.push(genres[0]); //helltaker

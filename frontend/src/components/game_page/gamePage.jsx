@@ -3,6 +3,7 @@ import './gPage.css';
 import gamePage_container from './gamePage_container';
 import GameImgs from './gamePageImgs';
 import GameRightBox from './gameRightBox';
+import SystemReq from './systemReq';
 
 class GamePage extends React.Component {
     constructor(props) {
@@ -43,16 +44,19 @@ class GamePage extends React.Component {
               return (
                 <>
                   <div className="gameProfile">
-                    <div>GAMES PAGE</div>
-                    <div className="title">{this.state.game.title}</div>
 
-                    <div className="imageProfile">
-                      {/* <img src={this.state.game.imgUrl} /> */}
-                      <GameImgs gameImg={this.state.game.imgUrl} otherImgs={this.state.game.otherImgs} game={this.state.game}/>
-                      <div className="imageRightProf">
-                        <img src={this.state.game.imgUrl} />
-                        <div className="gameSynopsis">
-                          <GameRightBox game={this.state.game}/>
+                    <div className='titleAndImgHolder'>
+                   
+                      <div className="title">{this.state.game.title}</div>
+
+                      <div className="imageProfile">
+                        {/* <img src={this.state.game.imgUrl} /> */}
+                        <GameImgs gameImg={this.state.game.imgUrl} otherImgs={this.state.game.otherImgs} game={this.state.game}/>
+                        <div className="imageRightProf">
+                          <img src={this.state.game.imgUrl} />
+                          <div className="gameSynopsis">
+                            <GameRightBox game={this.state.game}/>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -72,17 +76,18 @@ class GamePage extends React.Component {
 
                       <div className="aboutDesc">
                         <div className="aboutHeader">About This Game</div>
-                        <br></br>
-                        <div>Description goes here</div>
-                        <br></br>
+                        {/* <br></br> */}
+                        <div>{this.state.game.about}</div>
+                        <img src={this.state.game.gif}/>
+                        {/* <br></br> */}
 
                         <div className="aboutHeader">System Requirements</div>
-                        <br></br>
-                        <div>System requirements go here</div>
-                        <br></br>
+                        {/* <br></br> */}
+                        <SystemReq game = {this.state.game}/>
+                        {/* <br></br> */}
 
                         <div className="aboutHeader">Customer Reviews</div>
-                        <br></br>
+                        {/* <br></br> */}
                         <div>Reviews go here</div>
                       </div>
                     </div>

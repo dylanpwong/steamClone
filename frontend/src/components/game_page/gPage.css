@@ -3,18 +3,21 @@
     color: white;
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 75%;
 }
 
 .title {
     font-size: 26px;
     line-height: 32px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .imageProfile {
     display: flex;
     flex-direction: row;
     background: linear-gradient(to right, rgba(0,0,0,0) 50%,rgba(0,0,0,0.4) 100%);
+    height: 20em; /*might have to change this*/
 }
 
 .gameSynopsis {
@@ -30,7 +33,8 @@
 
 .imageProfile img {
     width: 60%;
-    height: 33vh;
+    flex: 1;
+    /* height: 33vh; */
 }
 
 .imageRightProf {
@@ -151,4 +155,19 @@
 }
 .genreBox:not(:first-child){
     margin-left: 5px;
+}
+.sysEles{
+    display: flex;
+}
+.sysKey{
+    color: #61686D;
+}
+.specHolder{
+    display: flex;
+    justify-content: space-between;
+}
+.titleAndImgHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }

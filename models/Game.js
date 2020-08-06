@@ -27,69 +27,88 @@ let calcScore = (score) => {
   return "Not Reviewed";
 };
 const GameSchema = new Schema({
-  
   title: {
     type: String,
     required: true,
   },
-  description:{
+  description: {
     type: String,
     default: "Description Pending",
   },
-  developer:{
+  developer: {
     type: String,
-    default: "N/A"
+    default: "N/A",
   },
   price: {
     type: String,
     required: true,
   },
-  imgUrl:{
+  imgUrl: {
     type: String,
-    required: true
+    required: true,
   },
   // otherImgs:[{type: String}],
-  otherImgs:{
+  otherImgs: {
     type: Array,
     default: [],
   },
+  about: {
+    type: String,
+    default: "About Coming Soon",
+  },
+  gif: {
+    type: String,
+  },
 
-  upVotes:{
+  upVotes: {
     type: Number,
-    default: 0
+    default: 0,
   },
-  downVotes:{
+  downVotes: {
     type: Number,
-    default:0,
+    default: 0,
   },
-  reviewScore:{
+  reviewScore: {
     type: Number,
     //  default: (!(this.upVotes + this.downVotes)) ? 0 : this.upVotes/(this.upVotes + this.downVotes)
-    default:80
-    
+    default: 80,
   },
-  recepion:{
+  recepion: {
     type: String,
-     default: "Positive"
+    default: "Positive",
   },
-  sales:{
+  sales: {
     type: Number,
-    default:0
+    default: 0,
   },
-  releaseDate:{
+  releaseDate: {
     type: Date,
-    default: Date.now()
+    default: Date.now(),
   },
-  safetyDate:{
+  safetyDate: {
     type: Date,
-    default: new Date()
+    default: new Date(),
   },
-  clicks:{
+  clicks: {
     type: Number,
-    default: 0
+    default: 0,
+  },
+  minSystem: {
+    OS: { type: String, default: "Coming Soon" },
+    Processor: { type: String, default: "Coming Soon" },
+    Memory: { type: String, default: "Coming Soon" },
+    Graphics: { type: String, default: "Coming Soon" },
+    Storage: { type: String, default: "Coming Soon" },
+  },
+  recSystem: {
+    OS: { type: String, default: "Coming Soon" },
+    Processor: { type: String, default: "Coming Soon" },
+    Memory: { type: String, default: "Coming Soon" },
+    Graphics: { type: String, default: "Coming Soon" },
+    Storage: { type: String, default: "Coming Soon" },
   },
 
-  reviews: [{type: Schema.Types.ObjectId,ref: Review}],
+  reviews: [{ type: Schema.Types.ObjectId, ref: Review }],
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }],
 });
 
