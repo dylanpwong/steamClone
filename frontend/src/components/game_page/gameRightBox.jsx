@@ -51,20 +51,32 @@ class GameRightBox extends React.Component{
     // }
 
     render(){
-        return(
-            <>
+        let genres = this.props.game.genres.map(ele=>{
+            return(
+                <div key={ele._id}className='genreBox'>
+                    {ele.name}
+                </div>
+            )
+        })
+        return (
+          <>
             <div>{this.props.game.description}</div>
-            <div className="allReviews"> ALL REVIEWS:{this.reviewCalc()}{this.totalCalc()}</div>
-            <div className="allReviews">
-                RELEASE DATE:
-                <GetDatef date={this.props.game.safetyDate}/>
+            <div className="insideBox">
+              <div className="insideLeftBox">
+                <div>ALL REVIEWS</div>
+                <div>RELEASE DATE</div>
+                <div>DEVELOPER</div>
+              </div>
+              <div className="insideRightBox">
+                  <div className="reviewRatingHolder">{this.reviewCalc()}{this.totalCalc()}</div>
+                  <GetDatef date={this.props.game.safetyDate}/>
+                  <div>{this.props.game.developer}</div>
+              </div>
             </div>
-            </>
-        )
-        // return( IN DEV
-        //     <div>{this.props.game.description}</div>
-        //     <div></div>
-        // )
+            <div>Popular Genres</div>
+            <div className='genreHolder'>{genres}</div>
+          </>
+        );
     }
 }
 

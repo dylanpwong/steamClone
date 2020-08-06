@@ -48,7 +48,7 @@ class GamePage extends React.Component {
 
                     <div className="imageProfile">
                       {/* <img src={this.state.game.imgUrl} /> */}
-                      <GameImgs gameImg={this.state.game.imgUrl} otherImgs={this.state.game.otherImgs} />
+                      <GameImgs gameImg={this.state.game.imgUrl} otherImgs={this.state.game.otherImgs} game={this.state.game}/>
                       <div className="imageRightProf">
                         <img src={this.state.game.imgUrl} />
                         <div className="gameSynopsis">
