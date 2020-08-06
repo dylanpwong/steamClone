@@ -1,19 +1,21 @@
 import React from'react';
 
 
-class Review extends React.Component(){
+class Review extends React.Component{
     constructor(props){
         super(props)
     }
 
     render(){
-        return(
-            <>
-                <div>
-                    
-                </div>
-            </>
-        )
+        return (
+          <>
+            <div className="reviewsWrapper GamesContentsWrapper">
+              <div className="aboutHeader">Customer Reviews</div>
+
+              <div>Reviews go here</div>
+            </div>
+          </>
+        );
     }
 }
 

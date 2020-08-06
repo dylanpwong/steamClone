@@ -11,37 +11,37 @@ const dateGetter = (props) => {
       month = "Jan";
       break;
     case 2:
-      month = "Jan";
+      month = "Feb";
       break;
     case 3:
-      month = "Jan";
+      month = "March";
       break;
     case 4:
-      month = "Jan";
+      month = "April";
       break;
     case 5:
-      month = "Jan";
+      month = "May";
       break;
     case 6:
-      month = "Jan";
+      month = "June";
       break;
     case 7:
-      month = "Jan";
+      month = "July";
       break;
     case 8:
-      month = "Jan";
+      month = "Aug";
       break;
     case 9:
-      month = "Jan";
+      month = "Sept";
       break;
     case 10:
-      month = "Jan";
+      month = "Oct";
       break;
     case 11:
-      month = "Jan";
+      month = "Nov";
       break;
     case 12:
-      month = "Jan";
+      month = "Dec";
       break;
   }
   return (

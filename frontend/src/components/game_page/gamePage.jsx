@@ -4,6 +4,9 @@ import gamePage_container from './gamePage_container';
 import GameImgs from './gamePageImgs';
 import GameRightBox from './gameRightBox';
 import SystemReq from './systemReq';
+import AboutGame from './aboutGame';
+import SystemReqWrapper from './systemReqWrapper';
+import Review from './review';
 
 class GamePage extends React.Component {
     constructor(props) {
@@ -75,20 +78,13 @@ class GamePage extends React.Component {
                       </div>
 
                       <div className="aboutDesc">
-                        <div className="aboutHeader">About This Game</div>
-                        {/* <br></br> */}
-                        <div>{this.state.game.about}</div>
-                        <img src={this.state.game.gif}/>
-                        {/* <br></br> */}
-
-                        <div className="aboutHeader">System Requirements</div>
-                        {/* <br></br> */}
-                        <SystemReq game = {this.state.game}/>
-                        {/* <br></br> */}
-
-                        <div className="aboutHeader">Customer Reviews</div>
-                        {/* <br></br> */}
-                        <div>Reviews go here</div>
+                        
+                        <AboutGame game={this.state.game}/>
+                        <SystemReqWrapper game={this.state.game}/>
+                        
+                        
+                        <Review/>
+                        
                       </div>
                     </div>
                   </div>
