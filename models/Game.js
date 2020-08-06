@@ -107,6 +107,9 @@ const GameSchema = new Schema({
     Graphics: { type: String, default: "Coming Soon" },
     Storage: { type: String, default: "Coming Soon" },
   },
+  website:{
+    type: String
+  },
 
   reviews: [{ type: Schema.Types.ObjectId, ref: Review }],
   genres: [{ type: Schema.Types.ObjectId, ref: Genre }],

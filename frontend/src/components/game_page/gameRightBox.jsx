@@ -68,7 +68,7 @@ class GameRightBox extends React.Component{
                 <div>DEVELOPER</div>
               </div>
               <div className="insideRightBox">
-                  <div className="reviewRatingHolder">{this.reviewCalc()}{this.totalCalc()}</div>
+                  <div className="reviewRatingHolder">{this.reviewCalc()}&nbsp;{this.totalCalc()}</div>
                   <GetDatef date={this.props.game.safetyDate}/>
                   <div>{this.props.game.developer}</div>
               </div>

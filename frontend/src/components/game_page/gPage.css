@@ -50,10 +50,10 @@
 }
 
 .gameDesc {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     position: relative; 
-    width: 65%;
-    float: left;
+    width: 65%
+   /*float: left; /* dont use float use flex*/
 }
 
 .buyContainer {
@@ -179,4 +179,42 @@
 }
 .GamesContentsWrapper:first-child{ /* this and above creates 10 px spacing */
     margin-top:5px; 
+}
+.gameDescWrapper{
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+.statsBoxForGame{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+.statsBoxForGame{
+    /* background-color: #2e3a53; */
+}
+.propertyTitle{
+    color: #556772;
+}
+.titleforRightBox{
+    color: #c6d4df
+}
+.blueForRight{
+color: #67C1F5;
+}
+.propertyWrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.visitWeb{
+    color: #67C1f5;
+    background-color: #67c1f51a;
+    padding: 4px 0 4px 8px;
+    cursor: pointer;
+}
+.statsBoxWrapper{
+    padding: 16px;
+    /* background-color: #2e3a53; */
+     background: rgba( 0, 0, 0, 0.2 );
+
 }

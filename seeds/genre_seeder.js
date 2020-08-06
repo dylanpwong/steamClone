@@ -209,6 +209,7 @@ const games = [
     description:
       "A new cast of 16 characters find themselves kidnapped and imprisoned in a school. Inside, some will kill, some will die, and some will be punished. Reimagine what you thought high-stakes, fast-paced investigation was as you investigate twisted murder cases and condemn your new friends to death.",
     gif: "https://dpwong-steamclone-dev.s3.amazonaws.com/danganronpaV3Gif.gif",
+    website: "https://www.spike-chunsoft.co.jp/",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/DanganronpaCover.jpg",
     otherImgs: [

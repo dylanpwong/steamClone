@@ -7,6 +7,7 @@ import SystemReq from './systemReq';
 import AboutGame from './aboutGame';
 import SystemReqWrapper from './systemReqWrapper';
 import Review from './review';
+import RightGameDesc from './rightGameDesc';
 
 class GamePage extends React.Component {
     constructor(props) {
@@ -64,6 +65,7 @@ class GamePage extends React.Component {
                       </div>
                     </div>
 
+                    <div className='gameDescWrapper'>
                     <div className="gameDesc">
                       <div className="buyContainer">
                         <div>Buy {this.state.game.title}</div>
@@ -86,6 +88,9 @@ class GamePage extends React.Component {
                         <Review/>
                         
                       </div>
+                    </div>
+                    <RightGameDesc game={this.state.game}/>
+                    
                     </div>
                   </div>
                 </>
