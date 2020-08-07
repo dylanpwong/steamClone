@@ -82,7 +82,6 @@
 
 .images img {
     width: calc(100% / (3/2));
-    height: calc(100vh / 3);
     z-index: 1;
     box-shadow: 0 0 10px 5px #000;
     cursor: pointer;
