@@ -23,8 +23,7 @@
 .gameSynopsis {
     font-size: 13px;
     color: #c6d4df;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 10px 10px 10px 0;
     box-sizing: border-box;
     flex:1;
     display:flex;
@@ -46,7 +45,7 @@
 
 .imageRightProf img {
     width: 100%;
-    height: 14vh;
+    height: 10em;
 }
 
 .gameDesc {
@@ -121,11 +120,23 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    justify-content: space-around;
+    font-size: 10px;
     /* margin-top: 10px; */
     /* justify-content: space-around; */
 
 }
+
+.leftText {
+    font-size: 10px;
+    margin-top: 10px;
+}
+
+.miscTagDesc {
+    line-height: 19px;
+    font-size: 12px;
+    color: #556772;
+}
+
 .ratingColor{
     color: #66C0f4;
 }
@@ -139,12 +150,17 @@
     display: flex;
 }
 .insideRightBox{
-     display: flex;
+    display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    justify-content: space-around;
     margin-left: 10px;
 }
+
+.rightText {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
 .genreHolder{
     display: flex;
     box-sizing: border-box;

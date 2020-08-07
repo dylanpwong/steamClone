@@ -63,17 +63,17 @@ class GameRightBox extends React.Component{
             <div>{this.props.game.description}</div>
             <div className="insideBox">
               <div className="insideLeftBox">
-                <div>ALL REVIEWS</div>
-                <div>RELEASE DATE</div>
-                <div>DEVELOPER</div>
+                <div className="leftText">ALL REVIEWS:</div>
+                <div className="leftText">RELEASE DATE:</div>
+                <div className="leftText">DEVELOPER:</div>
               </div>
               <div className="insideRightBox">
-                  <div className="reviewRatingHolder">{this.reviewCalc()}&nbsp;{this.totalCalc()}</div>
-                  <GetDatef date={this.props.game.safetyDate}/>
-                  <div>{this.props.game.developer}</div>
+                  <div className="reviewRatingHolder rightText">{this.reviewCalc()}&nbsp;{this.totalCalc()}</div>
+                  <div className="rightText"><GetDatef date={this.props.game.safetyDate}/> </div>
+                  <div className="rightText">{this.props.game.developer}</div>
               </div>
             </div>
-            <div>Popular Genres</div>
+            <div className="miscTagDesc">Popular user-defined tags for this product:</div>
             <div className='genreHolder'>{genres}</div>
           </>
         );
