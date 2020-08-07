@@ -50,14 +50,23 @@ class FeaturedGames extends React.Component{
         // const gamesPrice= this.props.games.map((ele)=><div>{ele.price}</div>);
 
         // Alternate
+
         const gamesImage= this.props.games.map((ele)=>{
+            const screenShots = ele.otherImgs.map((ele2) => {
+                
+                return (
+                    <img key={Math.random() * ele2.length} src={ele2}></img> 
+                )
+            })
             return (
               <>
                 <img onClick={this.toGame(ele._id)} src={ele.imgUrl}></img>
                 <div className="gameInfo">
-                  {/* <div className='infoHeading'><div>{ele.title}</div></div>
-                <div className='infoPrice'><div>{ele.price}</div></div> */}
+                  
                   <div className='infoHeading'>{ele.title}</div>
+                  <div className='screenContainer'>
+                    {screenShots.slice(0,4)}
+                  </div>
                   <div className='infoPrice'>{ele.price}</div>
                 </div>
               </>
