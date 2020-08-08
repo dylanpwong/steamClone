@@ -15,8 +15,19 @@ class SearchPage extends React.Component{
     sorter(a,b,type){
         switch(true){
             case "Popular":
+                if(a.clicks>b.clicks){
+                    return 1;
+                }else{
+                    return -1;
+                }
             case "TopRated":
+                
             case "TopSelling":
+                if(a.sales>b.sales){
+                    return 1;
+                }else{
+                    return -1;
+                }
             default:
                 if(a._id<b._id){
                     return 1
