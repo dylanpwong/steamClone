@@ -60,7 +60,7 @@ class Selector extends React.Component{
             <div onClick={this.reveal}>
               {this.state.value} &#8595;
               <div className={this.state.show? "catDropDown show":'catDropDown'} >
-                <div>{this.state.Release}</div>
+                <div >{this.state.Release}</div>
                 <div>{this.state.Popular}</div>
                 <div>{this.state.TopSellers}</div>
                 <div>{this.state.TopRated}</div>
