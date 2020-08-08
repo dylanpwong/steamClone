@@ -16,6 +16,7 @@ import Footer from './components/header/footer';
 import about_container from './components/splash_page/about_container';
 import about_steam_container from './components/splash_page/about_steam_container';
 import navBar_container from './components/header/navBar_container';
+import searchPage_container from './search_page/searchPage_containter';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path='/' component={header_container}/>
       <div className='contentContainer'>
       <Route path='/' component={navBar_container}/>
+      <Route path='/search/:searchField' component={searchPage_container}/>
       <Route exact path='/' component={splashPage_container}/>
       <Route exact path='/game/:gameId' component={gamePage_container}/>
       <Route exact path='/login' component={login_form_container}/>

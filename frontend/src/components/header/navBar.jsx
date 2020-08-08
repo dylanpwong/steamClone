@@ -1,15 +1,24 @@
 import React from "react";
 import searchdropDown_container from "./searchdropDown_container";
 import SearchDropDown from "./searchDropDown";
+import { withRouter } from "react-router-dom";
 // import "./splash.css";
 
 class NavBar extends React.Component {
     constructor (props) {
         super (props);
         this.onSearch=this.onSearch.bind(this);
+        this.onEnter=this.onEnter.bind(this);
         this.gameClickHandler=this.gameClickHandler();
         this.state={
             search: []
+        }
+    }
+
+    onEnter(e){
+        // debugger;
+        if(e.key =='Enter'){
+            this.props.history.push(`/search/${e.currentTarget.value}`)
         }
     }
 
@@ -52,7 +61,7 @@ class NavBar extends React.Component {
                     <div className="navbarItems">Steam Labs</div> */}
                     <div className="dropDownHolder">
                     <div className="searchbarContainer">
-                        <input id ="searchbar" onChange={this.onSearch} placeholder="search the store"type="text"/>
+                        <input id ="searchbar" onChange={this.onSearch} onKeyUp={this.onEnter}  placeholder="search the store"type="text"/>
                         <div className="searchIcon">
                         <img className="searchImg"src="https://cdn.pixabay.com/photo/2017/01/13/01/22/magnifying-glass-1976105_1280.png" />
                         </div>
@@ -68,5 +77,5 @@ class NavBar extends React.Component {
         );
     }
 }
-
+// withRouter?
 export default NavBar;

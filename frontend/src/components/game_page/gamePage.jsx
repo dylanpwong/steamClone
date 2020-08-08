@@ -14,27 +14,31 @@ class GamePage extends React.Component {
         super (props);
         this.state={
             render: false,
-            game: null
+            game: null,
+            leavePage: ""
         }
     }
 
     // Runs after render runs first, fetches game then rerenders.
     componentDidMount () {
+      if(this.state.leavePage==""){
         this.props.fetchGame(this.props.gameId).then((res)=>{
             this.setState({render: true,game: res.game});
-            // debugger;
-            // this.setState({game: res.game});
         })
+      }
         // console.log("IN GAME PAGE");
     }
     componentDidUpdate(){
-        if(this.state.game._id != this.props.gameId){
+        if((this.state.leavePage =="")&&this.state.game._id != this.props.gameId){
               this.props.fetchGame(this.props.gameId).then((res)=>{
             this.setState({render: true,game: res.game});
             // debugger;
             // this.setState({game: res.game});
         })
         }
+    }
+    componentWillUnmount(){
+      this.state.leavePage = "Don't Render";
     }
 
     render () {

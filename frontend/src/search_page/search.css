@@ -1,0 +1,31 @@
+.searchGameBox{
+    height: 7em;
+    display: grid;
+    grid-row: auto;
+    /* justify-content: space-between; */
+    background-color: #16202D;
+    color: #C6D4DF;
+    /* grid-template-areas: 
+    "a a a a x x x x"
+    "a a a a b b b b"
+    "a a a a d d d d"
+    "a a a a d d d d"; */
+    grid-template-areas: 
+    "a b c d";
+}
+.searchGameBox > div{
+    width: 7em;
+}
+.searchGameImg{
+    height: 100%;
+    width:15em;
+    grid-area: a;
+}
+.searchWrapper{
+    width: 75%;
+    margin:auto;
+}
+.searchGameTitle{
+    /* width: 5em; */
+    grid-area: b;
+}
