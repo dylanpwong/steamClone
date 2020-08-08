@@ -15,6 +15,8 @@
 }
 .searchGameBox > div{
     width: 7em;
+    display: flex;
+    align-items: center;
 }
 .searchGameImg{
     height: 100%;
@@ -29,4 +31,53 @@
 .searchGameTitle{
     /* width: 5em; */
     grid-area: b;
+}
+.navWrapper{
+    padding: 6px;
+    background-color: #111822;
+    margin-bottom: 5px;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+.searchButton{
+    border: none;
+        color: #67c1f5;
+    background: rgba( 103, 193, 245, 0.2 )
+}
+.searchButton:hover{
+    color: white;
+    background-color: #67c1f5;
+}
+.searchNavInput{
+    border: 1px solid black;
+    background-color: #22394b;
+    margin-right:3px;
+}
+.selectorWrapper{
+    color: #4c6c8c;
+    display: flex;
+    /* position: relative; */
+}
+.selector{
+    background-color: #1a2a38;
+    color: #529ac4;
+    margin-left: 8px;
+    position: relative;
+}
+/* .selector  option{
+    color:red;
+    background-color: #1a2a38;
+} */
+.options{     
+    color: red;  
+    background-color: #1a2a38;
+}
+.catDropDown{
+    display: none;
+    position: absolute;
+}
+.show{
+    display: block;
 }

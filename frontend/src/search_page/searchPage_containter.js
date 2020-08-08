@@ -6,6 +6,7 @@ import { searchGame } from "../actions/game_actions"
 const mapStateToProps = (state,ownProps)=>{
     return({
         search: ownProps.match.params.searchField,
+        category: ownProps.match.params.orderBy
     })
 }
 

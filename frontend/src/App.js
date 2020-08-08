@@ -24,7 +24,8 @@ function App() {
       <Route path='/' component={header_container}/>
       <div className='contentContainer'>
       <Route path='/' component={navBar_container}/>
-      <Route path='/search/:searchField' component={searchPage_container}/>
+      <Route exact path='/search/:searchField' component={searchPage_container}/>
+      <Route exact path='/search/:searchField/order/:orderBy' component={searchPage_container}/>
       <Route exact path='/' component={splashPage_container}/>
       <Route exact path='/game/:gameId' component={gamePage_container}/>
       <Route exact path='/login' component={login_form_container}/>

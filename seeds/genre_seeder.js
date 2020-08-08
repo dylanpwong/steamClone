@@ -172,6 +172,7 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/ResidentEvil4ScreenShot4.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/ResidentEvil4ScreenShot5.jpg",
     ],
+    sales: 5,
   }),
   new Game({
     title: "Call Of Duty Black Ops 3",
@@ -233,6 +234,7 @@ const games = [
       Graphics: "NVIDIA@ GeForce@ GTX 960",
       Storage: "26 GB available space",
     },
+    clicks: 5,
   }),
 ];
 games[0].genres.push(genres[0]); //helltaker
