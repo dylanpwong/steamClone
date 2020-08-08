@@ -75,9 +75,19 @@
     background-color: #1a2a38;
 }
 .catDropDown{
+    width: 150%;
     display: none;
     position: absolute;
+    color: white;
+    background-color: #417a9b;
+    padding: 2px 0px 3px 5px;
 }
 .show{
     display: block;
+}
+.catDropDown > div:hover{
+    background-color: #66bff3;
+}
+.catDropDown > div:not(:last-child){
+    margin-bottom: 3px;
 }
