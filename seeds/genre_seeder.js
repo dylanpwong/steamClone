@@ -195,6 +195,10 @@ const games = [
     title: "Resident Evil 4",
     price: "$30.00",
     imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/res4newCover.jpg",
+    description:
+      "Special agent Leon S. Kennedy is sent on a mission to rescue the U.S. President’s daughter who has been kidnapped.",
+    about:
+      "In resident evil 4, special agent Leon S. Kennedy is sent on a mission to rescue the U.S. President’s daughter who has been kidnapped. Finding his way to a rural village in Europe, he faces new threats that are a departure from the traditional lumbering zombie enemies of the earlier instalments in the series. Leon battles horrific new creatures infested by a new threat called Las Plagas and faces off against an aggressive group of enemies including mind-controlled villagers that are tied to Los Illuminados, the mysterious cult which is behind the abduction.",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/residentEvil4ScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/residentevil4ScreenShot2.jpg",
@@ -240,7 +244,7 @@ const games = [
       "Skullgirls is a fast-paced 2-D fighting game that puts players in control of fierce warriors in an extraordinary Dark Deco world. Featuring all-new game systems which test the skills of veteran fighting game fans while also making the genre enjoyable and accessible to newcomers. Skullgirls is a modern take on classic arcade fighters with a hand-drawn high-definition twist. It’s a one-of-a-kind, action-packed competition complete with awesome combos and an intriguing backstory.",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsCover.jpg",
-    gif:"https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsGif.gif",
+    gif: "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsGif.gif",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot1.png",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot2.jpeg",
