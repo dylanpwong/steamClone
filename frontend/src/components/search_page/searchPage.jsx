@@ -9,24 +9,29 @@ class SearchPage extends React.Component{
 
         this.state={
             results: [],
-            topic: this.props.search
+            topic: this.props.search,
+            category: this.props.category
         }
     }
     sorter(a,b,type){
-        switch(true){
+        switch(type){
             case "Popular":
                 if(a.clicks>b.clicks){
-                    return 1;
-                }else{
                     return -1;
+                }else{
+                    return 1;
                 }
             case "TopRated":
-                
+                if(a.reviewScore>b.reviewScore){
+                    return -1
+                }else{
+                    return 1;
+                }
             case "TopSelling":
                 if(a.sales>b.sales){
-                    return 1;
-                }else{
                     return -1;
+                }else{
+                    return 1;
                 }
             default:
                 if(a._id<b._id){
@@ -43,14 +48,16 @@ class SearchPage extends React.Component{
                 let newList=res.games;
                 newList = res.games.sort((a,b)=>this.sorter(a,b,this.props.category))
                 // debugger;
-                this.setState({results: res.games});
+                this.setState({results: newList,category: this.props.category});
             })
         
     }
     componentDidUpdate(){
-        if(this.props.search != this.state.topic){
+        if((this.props.category!=this.state.category)||this.props.search != this.state.topic){
              this.props.searchGame(this.props.search).then(res=>{
-                this.setState({results: res.games,topic: this.props.search});
+                let newList=res.games;
+                newList = res.games.sort((a,b)=>this.sorter(a,b,this.props.category))
+                this.setState({results: newList,topic: this.props.search,category: this.props.category});
              })
         }
     }

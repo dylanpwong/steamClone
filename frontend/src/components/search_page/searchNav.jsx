@@ -25,4 +25,5 @@ class SearchNav extends React.Component{
         )
     }
 }
+
 export default SearchNav

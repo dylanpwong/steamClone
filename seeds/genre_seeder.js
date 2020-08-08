@@ -147,6 +147,7 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot4.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot5.jpg",
     ],
+    sales: 2,
   }),
   new Game({
     title: "Persona 5 Royal",
