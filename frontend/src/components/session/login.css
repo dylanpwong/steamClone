@@ -1,6 +1,5 @@
 .loginSpace {
-    margin:auto;
-    width: 70%;
+    width: 100%;
     height: 75vh;
     padding-top: 1.5%;
 }
@@ -8,7 +7,8 @@
 .loginContainer {
     display: flex;
     background: linear-gradient( to bottom, rgba( 64, 128, 183, 0.4) 5%, rgba( 64, 128, 183, 0.2) 95%);
-    min-width: 100%;
+    width: 70%;
+    margin: auto;
 }
 
 .loginForm {
@@ -44,6 +44,13 @@
     margin-bottom: 14px;
 }
 
+.miscDesc {
+    color: #8F98A0;
+    font-size: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
 .labelInput {
     margin-bottom: 14px;
     border: 1px solid #000;
@@ -62,7 +69,13 @@
     border: none;
     border-radius: 2px;
     width: 75.88px;
-    margin-top: 30px;
+    justify-self:flex-end;
+    margin-top: auto;
+}
+
+.signInButton:hover {
+    background: #B4D607;
+    cursor: pointer;
 }
 
 .createItems {
@@ -70,19 +83,19 @@
     padding: 2.5% 5% 5% 5%;
 }
 
-.createContainer {
-    width: 100%;
-    padding-bottom: 15%;
-}
-
 .joinButton {
-    color: #D2E885;
-    background: linear-gradient( to bottom, #a4d007 5%, #536904 95%);
+    color: #A4D7F5;
+    background: linear-gradient( to bottom, rgba(33,101,138,1) 5%, rgba(23,67,92,1) 95%);
     font-size: 15px;
     line-height: 30px;
     padding: 0 15px;
-    border: none;
     border-radius: 2px;
     width: 75.88px;
-    margin-top: 30px;
+    border: 1px solid #2F89BC;
+    margin-top: 20%;
+}
+
+.joinButton:hover {
+    background: #5DB7EB;
+    cursor: pointer;
 }

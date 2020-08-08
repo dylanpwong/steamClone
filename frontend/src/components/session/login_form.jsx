@@ -13,6 +13,7 @@ class LoginForm extends React.Component{
         }
 
         this.handleOnChange=this.handleOnChange.bind(this);
+        this.onJoinClick=this.onJoinClick.bind(this);
     }
 
     handleOnChange(type){
@@ -28,7 +29,9 @@ class LoginForm extends React.Component{
 
     }
 
-
+    onJoinClick() {
+        this.props.history.push('/join');
+    }
 
     render(){
         return(
@@ -54,13 +57,11 @@ class LoginForm extends React.Component{
                 <div className='loginPadding'></div>
 
                 <div className='createItems'>
-                    <div className='createContainer'>
                         <div className="signInText">Create</div>
                         <div className="miscText">A new free account</div>
-                        <div className="miscText">It's free to join and easy to use. Continue on to create your Steam account and get Steam, the leading digital solution for PC, Mac, and Linux games and Software.</div>
-                    </div>
+                        <div className="miscDesc">It's free to join and easy to use. Continue on to create your Steam account and get Steam, the leading digital solution for PC, Mac, and Linux games and Software.</div>
 
-                    <div className="joinButton">Join Steam</div>
+                    <div onClick={this.onJoinClick.bind(this)} className="joinButton">Join Steam</div>
                     
                 </div>
             </form>
