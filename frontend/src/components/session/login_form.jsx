@@ -35,20 +35,33 @@ class LoginForm extends React.Component{
             <>
             <div className='loginSpace'>
             <div className='loginContainer'>
-            <form onSubmit={this.submitHandler.bind(this)}>
+                <form className="loginForm" onSubmit={this.submitHandler.bind(this)}>
 
                 <div className='loginItems'>
 
-                <div className="signInText">Sign In</div>
-                <div className="miscText">To an existing Steam account</div>
+                    <div className="signInText">Sign In</div>
+                    <div className="miscText">To an existing Steam account</div>
 
-                <label htmlFor="email">Email Address</label>
-                <input className="labelInput" type='text'id='email' onChange={(this.handleOnChange('email'))} value={this.state.email}/>
+                    <label htmlFor="email">Email Address</label>
+                    <input className="labelInput" type='text'id='email' onChange={(this.handleOnChange('email'))} value={this.state.email}/>
 
-                <label htmlFor="password">Password</label>
-                <input className="labelInput" type='password'id='password' onChange={(this.handleOnChange('password'))} value={this.state.password}/>
+                    <label htmlFor="password">Password</label>
+                    <input className="labelInput" type='password'id='password' onChange={(this.handleOnChange('password'))} value={this.state.password}/>
 
-                <input className="signInButton" type="submit" value='Sign In'/>
+                    <input className="signInButton" type="submit" value='Sign In'/>
+                </div>
+
+                <div className='loginPadding'></div>
+
+                <div className='createItems'>
+                    <div className='createContainer'>
+                        <div className="signInText">Create</div>
+                        <div className="miscText">A new free account</div>
+                        <div className="miscText">It's free to join and easy to use. Continue on to create your Steam account and get Steam, the leading digital solution for PC, Mac, and Linux games and Software.</div>
+                    </div>
+
+                    <div className="joinButton">Join Steam</div>
+                    
                 </div>
             </form>
             </div>
