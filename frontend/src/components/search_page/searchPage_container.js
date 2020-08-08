@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import SearchPage from "./searchPage"
-import { searchGame } from "../actions/game_actions"
+import { searchGame } from "../../actions/game_actions"
 
 
 const mapStateToProps = (state,ownProps)=>{

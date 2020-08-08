@@ -1,5 +1,5 @@
 import React from 'react';
-import DateGetter from '../components/functions/date';
+import DateGetter from '../functions/date';
 
 class SearchGameBox extends React.Component{
     constructor(props){

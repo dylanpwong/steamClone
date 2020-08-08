@@ -16,7 +16,7 @@ import Footer from './components/header/footer';
 import about_container from './components/splash_page/about_container';
 import about_steam_container from './components/splash_page/about_steam_container';
 import navBar_container from './components/header/navBar_container';
-import searchPage_container from './search_page/searchPage_containter';
+import searchPage_container from './components/search_page/searchPage_container';
 
 function App() {
   return (
