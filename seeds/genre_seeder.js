@@ -66,6 +66,9 @@ const genres = [
     }),
     new Genre({
       name: "Detective"
+    }),
+    new Genre({
+      name: 'Open World'
     })
     
 ]
@@ -82,6 +85,7 @@ let survivalId = genres[8]._id;
 let fightingId = genres[9]._id;
 let visualNovelId = genres[10]._id;
 let detectiveId=genres[11]._id;
+let openWorldId=genres[12]._id;
 
 // finished saves genres into database 
 let finished = 0;
@@ -124,6 +128,9 @@ const games = [
     title: "HellTaker",
     price: "Free",
     description: "HellTaker is a short game about sharply dressed demon girls.",
+    about:
+      "You woke up one day with a dream. Harem full of demon girls. You've opened the portal in hopes of fulfilling your wildest desires. Hellfire burns through your lungs, death awaits around every corner and everything looks like from a cutesy mobile game. You are in hell.",
+
     imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/HelltakerImg.jpg",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/helltakerScreenShot1.jpg",
@@ -132,14 +139,22 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot4.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/HellTakerScreenShot5.png",
     ],
+    minSystem: {
+      Storage: "300 MB available space",
+    },
 
     // genres:
   }),
   new Game({
     title: "Dark Souls",
     price: "$20.00",
+    description:
+      "Then, there was fire. Re-experience the critically acclaimed, genre-defining game that started it all. Beautifully remastered, return to Lordran in stunning high-definition detail running at 60fps.",
+    about:
+      "Then, there was fire. Re-experience the critically acclaimed, genre-defining game that started it all. Beautifully remastered, return to Lordran in stunning high-definition detail running at 60fps. Dark Souls Remastered includes the main game plus the Artorias of the Abyss DLC.",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsv2cover.jpg",
+    gif: "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsHit.gif",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darkSoulsScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot2.jpg",
@@ -148,6 +163,20 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/darksoulsScreenShot5.jpg",
     ],
     sales: 2,
+    minSystem: {
+      OS: "Windows 7 64-bit, Service Pack 1",
+      Processor: "IIntel Core i5-2300 2.8 GHz / AMD FX-6300, 3.5 GHz",
+      Memory: "6 GB RAM",
+      Graphics: "GeForce GTX 460, 1 GB / Radeon HD 6870, 1 GB",
+      Storage: "8 GB available space",
+    },
+    recSystem: {
+      OS: "Windows 10 64 Bit",
+      Processor: "IIntel Core i5-4570 3.2 GHz / AMD FX-8350 4.2 GHz",
+      Memory: "8 GB RAM",
+      Graphics: "GeForce GTX 660, 2 GB / Radeon HD 7870, 2 GB",
+      Storage: "8 GB available space",
+    },
   }),
   new Game({
     title: "Persona 5 Royal",
@@ -178,6 +207,11 @@ const games = [
   new Game({
     title: "Call Of Duty Black Ops 3",
     price: "$50.00",
+    description:
+      "Call of Duty®: Black Ops III Zombies Chronicles Edition includes the full base game plus the Zombies Chronicles content expansion.",
+    about:
+      "Call of Duty®: Black Ops III Zombies Chronicles Edition includes the full base game and the Zombies Chronicles content expansion. Call of Duty: Black Ops III combines three unique game modes: Campaign, Multiplayer, and Zombies, providing fans with the deepest and most ambitious Call of Duty ever. The Zombies Chronicles content expansion delivers 8 remastered classic Zombies maps from Call of Duty®: World at War, Call of Duty®: Black Ops and Call of Duty®: Black Ops II. Complete maps from the original saga are fully remastered and HD playable within Call of Duty®: Black Ops III.",
+
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3+coverv2.jpg",
     otherImgs: [
@@ -187,13 +221,26 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3ScreenShot4.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/blackops3ScreenShot5.jpg",
     ],
+    minSystem: {
+      OS: "Windows 7 64-Bit / Windows 8 64-Bit / Windows 8.1 64-Bit",
+      Processor:
+        "Intel® Core™ i3-530 @ 2.93 GHz / AMD Phenom™ II X4 810 @ 2.60 GHz",
+      Memory: "6 GB RAM",
+      Graphics: "NVIDIA® GeForce® GTX 470 @ 1GB / ATI® Radeon™ HD 6970 @ 1GB",
+      Storage: "100 GB available space",
+    },
   }),
 
   new Game({
     title: "Skullgirls",
     price: "$20.00",
+    description:
+      "Skullgirls is a fast-paced 2-D fighting game that puts players in control of fierce warriors in an extraordinary Dark Deco world. Featuring all-new game systems which test the skills of veteran fighting game fans while also making the genre enjoyable and accessible to newcomers.",
+    about:
+      "Skullgirls is a fast-paced 2-D fighting game that puts players in control of fierce warriors in an extraordinary Dark Deco world. Featuring all-new game systems which test the skills of veteran fighting game fans while also making the genre enjoyable and accessible to newcomers. Skullgirls is a modern take on classic arcade fighters with a hand-drawn high-definition twist. It’s a one-of-a-kind, action-packed competition complete with awesome combos and an intriguing backstory.",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsCover.jpg",
+    gif:"https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsGif.gif",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot1.png",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot2.jpeg",
@@ -201,6 +248,13 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot4.png",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/skullgirlsScreenShot5.jpg",
     ],
+    minSystem: {
+      OS: "Windows XP, Window Vista, Windows 7, Windows 8",
+      Processor: "Dual-core CPU",
+      Memory: "2 GB RAM",
+      Graphics: "Intel HD3000",
+      Storage: "2 GB available space",
+    },
   }),
 
   new Game({
@@ -237,6 +291,37 @@ const games = [
     },
     clicks: 5,
   }),
+
+  new Game({
+    title: "Red Dead Redemption 2",
+    price: "$60.00",
+    description:
+      "Winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores, RDR2 is the epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age. Also includes access to the shared living world of Red Dead Online.",
+    about:
+      "America, 1899. Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him. Now featuring additional Story Mode content and a fully-featured Photo Mode, Red Dead Redemption 2 also includes free access to the shared living world of Red Dead Online, where players take on an array of roles to carve their own unique path on the frontier as they track wanted criminals as a Bounty Hunter, create a business as a Trader, unearth exotic treasures as a Collector or run an underground distillery as a Moonshiner and much more. With all new graphical and technical enhancements for deeper immersion, Red Dead Redemption 2 for PC takes full advantage of the power of the PC to bring every corner of this massive, rich and detailed world to life including increased draw distances; higher quality global illumination and ambient occlusion for improved day and night lighting; improved reflections and deeper, higher resolution shadows at all distances; tessellated tree textures and improved grass and fur textures for added realism in every plant and animal. Red Dead Redemption 2 for PC also offers HDR support, the ability to run high-end display setups with 4K resolution and beyond, multi-monitor configurations, widescreen configurations, faster frame rates and more.",
+    imgUrl: "https://dpwong-steamclone-dev.s3.amazonaws.com/ReadDeadCover.jpg",
+    otherImgs: [
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/ReadeadSS1.png",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/ReaddeadSS2.png",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/ReaddeadSS3.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/ReaddeadSS4.jpg",
+      "https://dpwong-steamclone-dev.s3.amazonaws.com/ReaddeadSS5.png",
+    ],
+    minSystem: {
+      OS: "Windows 7 - Service Pack 1 (6.1.7601)",
+      Processor: "Intel® Core™ i5-2500K / AMD FX-6300",
+      Memory: "8 GB RAM",
+      Graphics: "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB",
+      Storage: "150 GB available space",
+    },
+    recSystem: {
+      OS: "Windows 10 - April 2018 Update (v1803)",
+      Processor: "Intel® Core™ i7-4770K / AMD Ryzen 5 1500X",
+      Memory: "12 GB RAM",
+      Graphics: "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB",
+      Storage: "150 GB available space",
+    },
+  }),
 ];
 games[0].genres.push(genres[0]); //helltaker
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
@@ -263,6 +348,10 @@ games[5].genres.push(actionId);
 games[6].genres.push(detectiveId); //Danganronpa V3
 games[6].genres.push(animeId);
 games[6].genres.push(visualNovelId);
+
+games[7].genres.push(actionId);//Red Dead 2
+games[7].genres.push(adventureId);
+games[7].genres.push(openWorldId);
 // same as finished1, but for games instead
 let finished2 = 0;
 for (let i = 0; i < games.length; i++) {

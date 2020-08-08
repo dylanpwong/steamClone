@@ -1,11 +1,16 @@
 import React from 'react';
 import DateGetter from '../functions/date';
+import { withRouter } from 'react-router-dom';
 
 class SearchGameBox extends React.Component{
     constructor(props){
         super(props)
 
-       
+       this.toGame=this.toGame.bind(this);
+    }
+
+    toGame(){
+      this.props.history.push(`/game/${this.props.game._id}`)
     }
 
     render(){
@@ -13,7 +18,7 @@ class SearchGameBox extends React.Component{
         
         return (
           <>
-            <div className="searchGameBox">
+            <div onClick={this.toGame}className="searchGameBox">
               <img className='searchGameImg' src={this.props.game.imgUrl} />
               <div className='searchGameTitle'>{this.props.game.title}</div>
               <DateGetter className='searchDate'date={this.props.game.releaseDate} />
@@ -24,4 +29,5 @@ class SearchGameBox extends React.Component{
        
     }
 }
-export default SearchGameBox;
+// withRouter
+export default withRouter(SearchGameBox);

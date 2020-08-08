@@ -9,7 +9,8 @@ class GameImgs extends React.Component{
             gameId: this.props.game._id,
             imgIndex: 0,
             allImgs : [this.props.gameImg,...this.props.otherImgs],
-            stopRender: ""
+            stopRender: "",
+            gameTimer:null,
         }
 
         this.timer=this.timer.bind(this);
@@ -27,14 +28,16 @@ timer(){
 
 }
 componentDidMount(){
-    if(this.stopRender==""){
-        setInterval(this.timer, 5000);
+    if(this.state.stopRender===""){
+        // debugger;
+        this.state.gameTimer=setInterval(this.timer, 5000);
     }
 }
 
 componentWillUnmount(){
-    this.state.stopRender= "Don't Render";
-    clearInterval();
+    this.state.stopRender = "Don't Render";
+    // debugger;
+    clearInterval(this.state.gameTimer);
 }
 
 render(){
