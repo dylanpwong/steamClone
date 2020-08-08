@@ -7,7 +7,8 @@ class SearchPage extends React.Component{
         super(props)
 
         this.state={
-            results: []
+            results: [],
+            topic: this.props.search
         }
     }
 
@@ -15,6 +16,13 @@ class SearchPage extends React.Component{
         this.props.searchGame(this.props.search).then(res=>{
             this.setState({results: res.games});
         })
+    }
+    componentDidUpdate(){
+        if(this.props.search != this.state.topic){
+             this.props.searchGame(this.props.search).then(res=>{
+                this.setState({results: res.games,topic: this.props.search});
+             })
+        }
     }
 
     render(){

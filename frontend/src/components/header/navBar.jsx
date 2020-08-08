@@ -19,6 +19,8 @@ class NavBar extends React.Component {
         // debugger;
         if(e.key =='Enter'){
             this.props.history.push(`/search/${e.currentTarget.value}`)
+            e.currentTarget.value="";
+            this.setState({search:[]});
         }
     }
 
