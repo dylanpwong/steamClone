@@ -194,3 +194,17 @@
     height: 0.5em;
     border-bottom: 2px solid #363636;
 }
+
+.errorContainer--active {
+    border: 2px solid #b44040;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+    padding: 10px;
+    font-size: 15px;
+    width: 35%;
+    margin-top: 2.5%;
+}
+
+.errorText {
+    color: white;
+}

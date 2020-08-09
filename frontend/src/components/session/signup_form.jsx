@@ -19,18 +19,22 @@ class SignupForm extends React.Component{
     }
 
 handleError() {
-    if (this.state.error) {
+
+    let currError = this.state.error + "";
+
+    if (currError.includes("noInput")) {
         return (
-            <div>ERROR</div>
+            <div>Please enter a valid email address.</div>
         )
     }
 }
 
 handleSubmit (e) {
     e.preventDefault();
-    
+    var currentError = this.state.error;
+
     if (this.state.email == null) {
-        this.setState({error: "true"});
+        this.setState({error: "noInput"});
     }
     else {
         this.props.checkEmail(this.state).then((res)=>{
@@ -50,7 +54,11 @@ handleChange(type){
     render(){
         return(
             <>
-            {this.handleError()}
+            <div className={this.state.error != null ? "errorContainer--active" : ""}>
+                <div className = "errorText">
+                    {this.handleError()}
+                </div>
+            </div>
             <form className='signUpContainer' onSubmit = {this.handleSubmit}>
 
                 <div className = "signUpHeading">Create an Account</div>
