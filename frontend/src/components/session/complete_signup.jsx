@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './login.css'
 
 
 class CompleteSignUp extends React.Component{
@@ -20,17 +20,23 @@ class CompleteSignUp extends React.Component{
     render(){
         return(
             <>
-            <form >
-                <label htmlFor="username"> STEAM ACCOUNT NAME</label>
-                <input id="username" type="text"/>
+            <form className='signUpContainer'>
+                <div className = "signUpHeading">Create an Account</div>
 
-                <label htmlFor="password"> CHOOSE PASSWORD</label>
-                <input id="password" type="text"/>
+                <label className = "signUpText" htmlFor="username"> STEAM ACCOUNT NAME</label>
+                <input className = "signUpInput" id="username" type="text"/>
 
-                <label htmlFor="password2">RE-ENTER PASSWORD</label>
-                <input id='password2' type="text"/>
+                <div className = "borderContainer"></div>
 
-                <input type="submit" value='COMPLETE SIGN UP'/>
+                <label className = "signUpText" htmlFor="password"> CHOOSE PASSWORD</label>
+                <input className = "signUpInput" id="password" type="text"/>
+
+                <label className = "signUpText" htmlFor="password2">RE-ENTER PASSWORD</label>
+                <input className = "signUpInput" id='password2' type="text"/>
+
+                <div className = "borderContainer"></div>
+
+                <input className = "signUpComplete" type="submit" value='COMPLETE SIGN UP'/>
 
             </form>
             </>
