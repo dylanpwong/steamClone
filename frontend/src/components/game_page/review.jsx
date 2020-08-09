@@ -13,6 +13,13 @@ class Review extends React.Component{
 
     render(){
       // debugger
+      if(this.props.rev.length==0) {
+        return(
+          <>
+          no reviews
+          </>
+        )
+      }
 
       let reviews = this.props.rev.map(ele=>{
 
