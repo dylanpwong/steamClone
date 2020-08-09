@@ -99,3 +99,68 @@
     background: #5DB7EB;
     cursor: pointer;
 }
+
+.signUpContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background: #18181D;
+    width: 60%;
+    height: 50vh;
+    padding: 20px 16px;
+    margin-top: 2.5%;
+}
+
+.signUpHeading {
+    text-transform: uppercase;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;
+    color: #d6d7d8;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.signUpText {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #E9E9E9;
+    font-weight: normal;
+}
+
+.signUpInput {
+    margin-bottom: 14px;
+    border: none;
+    border-radius: 3px;
+    background-color: #32353C;
+    width: 310px;
+    height: 32px;
+}
+
+.signUpDesc {
+    color: #B3B3B3;
+    font-size: 12px;
+    margin-bottom: 2.5%;
+}
+
+.signUpContinue {
+    align-self: flex-end;
+    margin-top: auto;
+    border: none;
+    color: white;
+    width: 136.36px;
+    height: 38px;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 30px;
+    text-shadow: 1px 1px 0px rgba( 0, 0, 0, 0.3 );
+    border-radius: 2px;
+    background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    background-position: 25%;
+    background-size: 330% 100%;
+}
+
+.signUpContinue:hover {
+    background-position: 0%;
+    cursor: pointer;
+}

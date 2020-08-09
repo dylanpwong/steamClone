@@ -1,7 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
-
-
+import './login.css'
 
 class SignupForm extends React.Component{
     constructor(props){
@@ -10,21 +9,36 @@ class SignupForm extends React.Component{
             // username: null,
             email: null,
             email2: null,
+            error: null,
             // password: null,
             // password2: null,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleError = this.handleError.bind(this);
     }
+
+handleError() {
+    if (this.state.error) {
+        return (
+            <div>ERROR</div>
+        )
+    }
+}
 
 handleSubmit (e) {
     e.preventDefault();
-    // debugger;
-    this.props.checkEmail(this.state).then((res)=>{
-        // debugger;
-        this.props.history.push('/join/completesignup');
-    })
-    // this.props.signup(this.state)
+    
+    if (this.state.email == null) {
+        this.setState({error: "true"});
+    }
+    else {
+        this.props.checkEmail(this.state).then((res)=>{
+
+            this.props.history.push('/join/completesignup');
+        })
+    }
+
 }
 
 handleChange(type){
@@ -35,25 +49,24 @@ handleChange(type){
 
     render(){
         return(
-            <form onSubmit = {this.handleSubmit}>
-                {/* <label htmlFor="username">Username</label>
-                <input type='text' id = 'username' onChange={this.handleChange("username")}/> */}
+            <>
+            {this.handleError()}
+            <form className='signUpContainer' onSubmit = {this.handleSubmit}>
 
-                <label htmlFor="email">Email</label>
-                <input type='text' id ='email' onChange={this.handleChange("email")}/> 
+                <div className = "signUpHeading">Create an Account</div>
+
+                <label className = "signUpText" htmlFor="email">Email Address</label>
+                <input className = "signUpInput" type='text' id ='email' onChange={this.handleChange("email")}/> 
+                <div className = "signUpDesc">Your email address is used to confirm purchases and help you manage access to your Steam account.</div>
                 
-                <label htmlFor='confirmEmail'>Confirm Email</label>
-                <input type='text' id = 'confirmEmail' onChange={this.handleChange("email2")}/>
+                <label className = "signUpText" htmlFor='confirmEmail'>Confirm Email Address</label>
+                <input className = "signUpInput" type='text' id = 'confirmEmail' onChange={this.handleChange("email2")}/>
+                <div className = "signUpDesc">Steam will send a confirmation email to this account. Please follow the link in the mail to verify your email account with Steam.</div>
 
-                {/* <label htmlFor="password">Password</label>
-                <input type='password' id ='password' onChange={this.handleChange("password")}/> */}
-
-                {/* <label htmlFor="confirmPassword">Confirm Password</label>
-                <input type='password' id = 'confirmPassword' onChange={this.handleChange("password2")}/> */}
-
-                <input type="submit" value='Continue'/>
+                <input className = "signUpContinue" type="submit" value='Continue'/>
 
             </form>
+            </>
         )
     }
 }
