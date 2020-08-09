@@ -3,7 +3,7 @@ const router = express.Router();
 const Genre = require('../../models/Genre');
 const Game = require('../../models/Game');
 const User = require("../../models/User");
-
+const Review=require("../../models/Review");
 router.get('/index',(req,res)=>{
     // Game.find()
     //     .then((games)=>{
@@ -23,8 +23,7 @@ router.post('/showGame',(req,res)=>{
     Game.findOne({ _id: gameId }).populate('genres reviews')
         .exec((err, genre) => {
             if (err) console.log(`error is: ${err}`)
-            // console.log(`Genre is ${genre}`)
-            // debugger
+            // Review.find({})
             res.json(genre);
         });
     // debugger

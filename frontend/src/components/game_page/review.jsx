@@ -40,7 +40,7 @@ class Review extends React.Component{
       }
 
       let reviews = this.props.rev.map(ele=>{
-        // debugger;
+        debugger;
         return(
           
           <div key={ this.strShuffler(ele._id)}>
@@ -48,10 +48,10 @@ class Review extends React.Component{
               <div className="thumbsContainer">
                   <img src={this.thumbsDecider(ele)}/>
               </div>
-                  <div>{ele.recommendation? "Recommended": "Not Recommended"}</div>
+                  <div className='recSpace'>{ele.recommendation? "Recommended": "Not Recommended"}</div>
             </div>
             <div className='dateWrapper'>
-              POSTED ON: &NBSP;
+              POSTED ON: &nbsp;
               <DateGetter date={ele.date}/>
             </div>
 
