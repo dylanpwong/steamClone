@@ -89,7 +89,7 @@ class GamePage extends React.Component {
                         <SystemReqWrapper game={this.state.game}/>
                         
                         
-                        <Review/>
+                        <Review rev= {this.state.game.reviews}/>
                         
                       </div>
                     </div>

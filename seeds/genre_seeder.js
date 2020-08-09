@@ -105,6 +105,7 @@ for (let i = 0; i < genres.length; i++) {
 const reviews=[
     new Review({
         content: 'THIS IS GREAT PLEASE TRY IT!!!!',
+        recommendation: true,
         helpfulYes: 50,
         helpfulNo: 10,
         user: user
@@ -183,6 +184,10 @@ const games = [
     price: "$60.00",
     imgUrl:
       "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5RoyalCover.jpg",
+      description:"You should go to sleep",
+      developer: "Atlus",
+      about:
+      "Persona 5[a] is a role-playing video game developed by Atlus. It is the sixth installment in the Persona series, which is part of the larger Megami Tensei franchise. The game was released for the PlayStation 3 and PlayStation 4 in Japan in September 2016, and worldwide in April 2017. It was published by Atlus in Japan and North America and by Deep Silver in Europe and Australia. An expanded version featuring new content, Persona 5 Royal,[b] was released for PlayStation 4 in Japan in October 2019 and worldwide in March 2020.",
     otherImgs: [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/Persona5ScreenShot1.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/persona5ScreenShot2.jpeg",
@@ -311,6 +316,7 @@ const games = [
       "https://dpwong-steamclone-dev.s3.amazonaws.com/ReaddeadSS4.jpg",
       "https://dpwong-steamclone-dev.s3.amazonaws.com/ReaddeadSS5.png",
     ],
+    developer: "Rockstar Games",
     minSystem: {
       OS: "Windows 7 - Service Pack 1 (6.1.7601)",
       Processor: "Intel® Core™ i5-2500K / AMD FX-6300",
