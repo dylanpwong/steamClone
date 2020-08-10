@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Game = require('../models/Game');
 const User = require('../models/User');
+const deepPopulate = require("mongoose-deep-populate")(mongoose);
 
 const ReviewSchema = new Schema({
     content: {
@@ -30,5 +31,6 @@ const ReviewSchema = new Schema({
         default: Date.now()
     }
 });
+ReviewSchema.plugin(deepPopulate);
 const Review = mongoose.model("reviews", ReviewSchema);
 module.exports = Review;

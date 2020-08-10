@@ -4,28 +4,36 @@ const Genre = require('../../models/Genre');
 const Game = require('../../models/Game');
 const User = require("../../models/User");
 const Review=require("../../models/Review");
+const { json } = require("body-parser");
+
+// const mongoose = require("mongoose");
+// const deepPopulate = require("mongoose-deep-populate")(mongoose);
+// Review.plugin(deepPopulate /* more on options below */);
+
 router.get('/index',(req,res)=>{
-    // Game.find()
-    //     .then((games)=>{
-    //         res.json(games)
-    //     })
-    Game.findOne({ title: 'HellTaker' }).populate('genres reviews')
-        .exec((err, genre) => {
-            if (err) console.log(`error is: ${err}`)
-            // console.log(`Genre is ${genre}`)
-            res.json(genre);
-        });
+   
+    Game.findOne({ title: 'HellTaker' }).populate({
+        path: 'reviews genres',
+        populate:{
+            path: 'user',
+            model: User,
+           
+        }
+    }).then(game=>res.json(game))
+        
 })
 
 router.post('/showGame',(req,res)=>{
     const gameId = Object.keys(req.body)[0];
     // debugger
-    Game.findOne({ _id: gameId }).populate('genres reviews')
-        .exec((err, genre) => {
-            if (err) console.log(`error is: ${err}`)
-            // Review.find({})
-            res.json(genre);
-        });
+    Game.findOne({ _id: gameId }).populate({
+        path: 'reviews genres',
+        populate:{
+            path: 'user',
+            model: User
+        }
+    }).then(game=>res.json(game))
+      
     // debugger
     // Game.findOne({_id: gameId}).then((game)=>{
     //     res.json(game)

@@ -2,6 +2,7 @@ import React from'react';
 import DateGetter from '../functions/date';
 
 
+
 class Review extends React.Component{
     constructor(props){
         super(props);
@@ -33,34 +34,57 @@ class Review extends React.Component{
       // debugger
       if(this.props.rev.length==0) {
         return(
-          <>
-          no reviews
-          </>
+          <div className='aboutHeader'>
+          No Reviews
+          </div>
         )
       }
 
       let reviews = this.props.rev.map(ele=>{
-        debugger;
-        return(
-          
-          <div key={ this.strShuffler(ele._id)}>
-            <div className="reviewTop">
-              <div className="thumbsContainer">
-                  <img src={this.thumbsDecider(ele)}/>
+        // debugger;
+        return (
+          <div className='reviewHolder'key={this.strShuffler(ele._id)}>
+            <div className='leftSideReview'>
+              <img className='userImgSize' src={ele.user[0].profilePicture} />
+              <div>{ele.user[0].username}</div>
+            </div>
+            <div className='rightSideReview'>
+              <div className="reviewTop">
+                <div className="thumbsContainer">
+                  <img src={this.thumbsDecider(ele)} />
+                </div>
+                <div className="recSpace">
+                  {ele.recommendation ? "Recommended" : "Not Recommended"}
+                </div>
               </div>
-                  <div className='recSpace'>{ele.recommendation? "Recommended": "Not Recommended"}</div>
-            </div>
-            <div className='dateWrapper'>
-              POSTED ON: &nbsp;
-              <DateGetter date={ele.date}/>
-            </div>
+              <div className='contentHalf'>
+              <div className="dateWrapper">
+                POSTED ON: &nbsp;
+                <DateGetter date={ele.date} />
+              </div>
 
-            <div>
-              {ele.content}
+              <div className="reviewContentWrapper">{ele.content}</div>
+              </div>
+              <div className="reviewButtonHolder">
+                <div>Was This review Helpful?</div>
+
+                <div className="reviewHelpfulButtons">
+                  <div>Yes</div>
+                  <div>No</div>
+                  <div> Funny</div>
+                </div>
+                <div className="helpful">
+                  <div>
+                    {ele.helpfulYes}&nbsp; people found this review helpful
+                  </div>
+                  <div>
+                    {ele.helpfulFunny}&nbsp; people found this review funy
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          
-        )
+        );
       }) 
         return (
           <>

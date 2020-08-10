@@ -23,6 +23,7 @@ class GamePage extends React.Component {
     componentDidMount () {
       if(this.state.leavePage==""){
         this.props.fetchGame(this.props.gameId).then((res)=>{
+          // debugger;
             this.setState({render: true,game: res.game});
         })
       }
