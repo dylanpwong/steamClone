@@ -22,26 +22,73 @@ handleError() {
 
     let currError = this.state.error + "";
 
+    let errorMess1 = "";
+    let errorMess2 = "";
+    let errorMess3 = "";
+
     if (currError.includes("noInput")) {
-        return (
-            <div>Please enter a valid email address.</div>
-        )
+        errorMess1 = "Please enter a valid email address.";
     }
+    else {
+        errorMess1 = "";
+    }
+
+    if (currError.includes("noConfirm")) {
+        errorMess2 = "Please fill in the Confirm email address field.";
+    }
+    else {
+        errorMess2 = "";
+    }
+
+    if (currError.includes("noMatch")) {
+        errorMess3 = "Please enter the same address in both email address fields.";
+    }
+    else {
+        errorMess3 = "";
+    }
+
+    return (
+        <>
+        <div>{errorMess1}</div>
+        <div>{errorMess2}</div>
+        <div>{errorMess3}</div>
+        </>
+    )
 }
 
 handleSubmit (e) {
     e.preventDefault();
-    var currentError = this.state.error;
+    let currError = "";
 
-    if (this.state.email == null) {
-        this.setState({error: "noInput"});
+    if (!this.state.email) {
+        let newError = currError + "noInput ";
+        currError = newError;
+        console.log("byeah");
+    }
+    
+    if (!this.state.email2) {
+        let newError = currError + "noConfirm ";
+        currError = newError;
+    }
+
+    if (this.state.email != this.state.email2) {
+        if (!currError.includes("noInput") && !currError.includes("noConfirm")) {
+            let newError = currError + "noMatch ";
+            currError = newError;
+        }
+    }
+
+    this.setState({error: currError});
+
+    if (currError != "") {
+        return;
     }
     else {
         this.props.checkEmail(this.state).then((res)=>{
-
             this.props.history.push('/join/completesignup');
         })
     }
+
 
 }
 
