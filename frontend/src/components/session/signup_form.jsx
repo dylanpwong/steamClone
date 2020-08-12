@@ -63,7 +63,6 @@ handleSubmit (e) {
     if (!this.state.email) {
         let newError = currError + "noInput ";
         currError = newError;
-        console.log("byeah");
     }
     
     if (!this.state.email2) {

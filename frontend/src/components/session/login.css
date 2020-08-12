@@ -78,6 +78,24 @@
     cursor: pointer;
 }
 
+.demoButton {
+    color: #D2E885;
+    background: linear-gradient( to bottom, #a4d007 5%, #536904 95%);
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 2px;
+    width: 85px;
+    justify-self:flex-end;
+    margin-top: auto;
+}
+
+.demoButton:hover {
+    background: #B4D607;
+    cursor: pointer;
+}
+
 .createItems {
     min-width: 20%;
     padding: 2.5% 5% 5% 5%;
@@ -128,12 +146,18 @@
 }
 
 .signUpInput {
+    color: white;
     margin-bottom: 14px;
     border: none;
     border-radius: 3px;
     background-color: #32353C;
     width: 310px;
     height: 32px;
+}
+
+.signUpPass {
+    -webkit-text-security: disc;
+    letter-spacing: 1px;
 }
 
 .signUpDesc {
