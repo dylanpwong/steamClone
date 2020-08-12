@@ -14,6 +14,7 @@ class LoginForm extends React.Component{
 
         this.handleOnChange=this.handleOnChange.bind(this);
         this.onJoinClick=this.onJoinClick.bind(this);
+        this.onDemoClick=this.onDemoClick.bind(this);
     }
 
     handleOnChange(type){
@@ -31,6 +32,10 @@ class LoginForm extends React.Component{
 
     onJoinClick() {
         this.props.history.push('/join');
+    }
+
+    onDemoClick() {
+        this.props.history.push('/');
     }
 
     render(){
@@ -52,6 +57,7 @@ class LoginForm extends React.Component{
                     <input className="labelInput" type='password'id='password' onChange={(this.handleOnChange('password'))} value={this.state.password}/>
 
                     <input className="signInButton" type="submit" value='Sign In'/>
+                    <div className="demoButton" onClick={this.onDemoClick.bind(this)}>Demo Login</div>
                 </div>
 
                 <div className='loginPadding'></div>
