@@ -11,18 +11,7 @@ User.deleteMany({})
   .then(() => console.log("deleted Users"))
   .catch((error) => console.log(error));
 
-let myPass = '123456';
-let newPas;
-const getPass = (password)=>{
-  bcrypt.genSalt(10, (err, salt) => {
-    bcrypt.hash(password, salt, (err, hash) => {
-      if (err) throw err;
-      doTheRest(password);
-      
-  })
-  })
-// console.log(getPass('123456'));
-}
+
 
 
 
@@ -39,16 +28,33 @@ const getPass = (password)=>{
 
 let finished = 0;
 for (let i = 0; i < users.length; i++) {
-  users[i]
-    .save()
-    .then((user) => {
-      finished++;
-      if (finished === users.length) {
-        exit();
-      }
+  bcrypt.genSalt(10, (err, salt) => {
+    bcrypt.hash(users[i].password, salt, (err, hash) => {
+      if (err) throw err;
+      // doTheRest(password);
+      users[i].password = hash;
+      users[i]
+        .save()
+        .then((user) => {
+          finished++;
+          if (finished === users.length) {
+            exit();
+          }
+        })
+        .catch((error) => console.log(error));
     })
-    .catch((error) => console.log(error));
+  })
 }
+
+// users[i]
+//   .save()
+//   .then((user) => {
+//     finished++;
+//     if (finished === users.length) {
+//       exit();
+//     }
+//   })
+//   .catch((error) => console.log(error));
 
 function exit() {
   mongoose
