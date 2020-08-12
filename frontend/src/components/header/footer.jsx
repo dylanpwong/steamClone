@@ -27,6 +27,43 @@ class Footer extends React.Component {
                     <div className="navButton">Help</div>
                     <div className="navButton">New Feeds</div>
                 </div>
+                <div className="footInfoContainer">
+                    <div className="creatorInfo">
+                        <div>Dylan Wong</div> 
+                        <div className="border">|</div>
+                        <a className = "linkStuff" href = "https://github.com/dylanpwong">
+                            <img src="https://www.iconsdb.com/icons/preview/white/github-10-xxl.png"></img>
+                            &nbsp;
+                            <div>Github</div>
+                        </a>
+
+                        <div className="border">|</div>
+
+                        <a className = "linkStuff" href = "https://www.linkedin.com/in/dylan-wong-857139127/">
+                            <img src="https://image.flaticon.com/icons/svg/174/174857.svg"></img>
+                            &nbsp;
+                            <div>LinkedIn</div>
+                        </a>
+                    </div>
+
+                    <div className="creatorInfo">
+                        <div>Edward Kim </div>
+                        <div className="border">|</div>
+                        <a className = "linkStuff" href = "https://github.com/eykim5">
+                            <img src="https://www.iconsdb.com/icons/preview/white/github-10-xxl.png"></img>
+                            &nbsp;
+                            <div>Github</div>
+                        </a>
+
+                        <div className="border">|</div>
+
+                        <a className = "linkStuff" href = "https://www.linkedin.com/in/edward-kim-51469012a/">
+                            <img src="https://image.flaticon.com/icons/svg/174/174857.svg"></img>
+                            &nbsp;
+                            <div>LinkedIn</div>
+                        </a>
+                    </div>
+                </div>
             </div>
             </div>
             </>

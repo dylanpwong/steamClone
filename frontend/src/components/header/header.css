@@ -150,7 +150,9 @@
     flex-direction: row;
     width: 60%;
     border-top: 1px solid #363c44;
-    padding-top: 9px;
+    padding: 9px 0;
+    border-bottom: 1px solid #363c44;
+    margin-bottom: 2%;
 }
 
 .navButton {
@@ -173,4 +175,37 @@
 .dropDownHolder{
     position: relative;
     display: inline-block;
+}
+
+.footInfoContainer {
+    width: 60%;
+}
+
+.creatorInfo {
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    color: #C6D4DF;
+}
+
+.creatorInfo img {
+    width: 16px;
+    height: 16px;
+
+}
+
+.linkStuff {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: #C6D4DF;
+}
+
+.linkStuff:hover {
+    color:white;
+}
+
+.border {
+    padding: 0 10px;
+    color: #363c44;
 }
