@@ -18,7 +18,7 @@ class AboutPage extends React.Component {
                         <a href = "https://github.com/dylanpwong">
                         <img src="https://image.flaticon.com/icons/svg/25/25231.svg"></img>
                         </a>
-
+                        
                         <a href = "https://www.linkedin.com/in/dylan-wong-857139127/">
                             <img src="https://image.flaticon.com/icons/svg/174/174857.svg"></img>
                         </a>
