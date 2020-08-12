@@ -8,6 +8,7 @@ import AboutGame from './aboutGame';
 import SystemReqWrapper from './systemReqWrapper';
 import Review from './review';
 import RightGameDesc from './rightGameDesc';
+import WriteReview from './writeReview';
 
 class GamePage extends React.Component {
     constructor(props) {
@@ -46,6 +47,7 @@ class GamePage extends React.Component {
         if (!this.state.render){
             return(
                 <>
+                Loading ...
                 </>
             )
         } else{
@@ -69,7 +71,9 @@ class GamePage extends React.Component {
                         </div>
                       </div>
                     </div>
-
+                      <div> {/*/ write a review container */}
+                      <WriteReview game = {this.state.game}user={this.props.currentUser}/>
+                      </div>
                     <div className='gameDescWrapper'>
                     <div className="gameDesc">
                       <div className="buyContainer">

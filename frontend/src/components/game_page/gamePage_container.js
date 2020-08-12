@@ -7,7 +7,8 @@ import { fetchHelltaker, fetchGame } from "../../actions/game_actions"
 const mapStateToProps=(state,ownProps)=>{
     
     return({
-        gameId: ownProps.match.params.gameId
+        gameId: ownProps.match.params.gameId,
+        currentUser: state.session.user
         // gameHelltaker: state.entities.game
     })
 }
