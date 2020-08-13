@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Footer extends React.Component {
     constructor (props) {
         super (props);
@@ -19,6 +20,9 @@ class Footer extends React.Component {
     render () {
         return (
             <>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css"></link>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css"></link>
+
             <div className="footSpace">
             <div className="footContainer">
                 <div className="footNav">
@@ -32,7 +36,7 @@ class Footer extends React.Component {
                         <div>Dylan Wong</div> 
                         <div className="border">|</div>
                         <a className = "linkStuff" target="_blank"href = "https://github.com/dylanpwong">
-                            <img src="https://www.iconsdb.com/icons/preview/white/github-10-xxl.png"></img>
+                            <i class="devicon-github-plain"></i>
                             &nbsp;
                             <div>Github</div>
                         </a>
@@ -40,7 +44,7 @@ class Footer extends React.Component {
                         <div className="border">|</div>
 
                         <a className = "linkStuff"target="_blank" href = "https://www.linkedin.com/in/dylan-wong-857139127/">
-                            <img src="https://image.flaticon.com/icons/svg/174/174857.svg"></img>
+                            <i class="devicon-linkedin-plain colored"></i>
                             &nbsp;
                             <div>LinkedIn</div>
                         </a>
@@ -50,7 +54,7 @@ class Footer extends React.Component {
                         <div>Edward Kim </div>
                         <div className="border">|</div>
                                 <a className="linkStuff" target="_blank"href = "https://github.com/eykim5">
-                            <img src="https://www.iconsdb.com/icons/preview/white/github-10-xxl.png"></img>
+                                <i class="devicon-github-plain"></i>
                             &nbsp;
                             <div>Github</div>
                         </a>
@@ -58,7 +62,7 @@ class Footer extends React.Component {
                         <div className="border">|</div>
 
                         <a className = "linkStuff" target="_blank" href = "https://www.linkedin.com/in/edward-kim-51469012a/">
-                            <img src="https://image.flaticon.com/icons/svg/174/174857.svg"></img>
+                            <i class="devicon-linkedin-plain colored"></i>
                             &nbsp;
                             <div>LinkedIn</div>
                         </a>
