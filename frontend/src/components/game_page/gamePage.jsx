@@ -56,7 +56,7 @@ class GamePage extends React.Component {
                 </>
             )
         } else{
-            // debugger;j
+            // debugger;
               return (
                 <>
                   <div className="gameProfile">

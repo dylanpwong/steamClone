@@ -9,14 +9,16 @@ class Review extends React.Component{
 
         this.state={
           thumbsUp:"https://steamstore-a.akamaihd.net/public/shared/images/userreviews/icon_thumbsUp_v6.png",
-          thumbsDown:"https://steamstore-a.akamaihd.net/public/shared/images/userreviews/icon_thumbsUp_v6.png",
+          thumbsDown: "https://steamstore-a.akamaihd.net/public/shared/images/userreviews/icon_thumbsDown_v6.png",
+          
         }
 
         this.thumbsDecider=this.thumbsDecider.bind(this);
     }
 
     thumbsDecider(rev){
-      if(rev.recommendation){
+      // debugger
+      if(rev){
         return this.state.thumbsUp;
       }else{
         return this.state.thumbsDown;
@@ -51,7 +53,7 @@ class Review extends React.Component{
             <div className='rightSideReview'>
               <div className="reviewTop">
                 <div className="thumbsContainer">
-                  <img src={this.thumbsDecider(ele)} />
+                  <img src={this.thumbsDecider(ele.recommendation)} />
                 </div>
                 <div className="recSpace">
                   {ele.recommendation ? "Recommended" : "Not Recommended"}

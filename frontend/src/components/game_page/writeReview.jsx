@@ -6,6 +6,11 @@ class WriteReview extends React.Component{
         this.state={
             userReviews: this.props.user ? {...this.props.user.reviews} : null,
         }
+        this.haveReview=this.haveReview.bind(this);
+    }
+
+    haveReview(){
+        // this.props.game.reviews.find()  
     }
 
     render(){

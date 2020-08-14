@@ -344,6 +344,7 @@ const games = [
 games[0].genres.push(genres[0]); //helltaker
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
 games[0].reviews.push(reviews[0]);
+games[0].reviews.push(reviews[1]);
 reviews[0].game = games[0];
 reviews[1].game=games[0];
 user.games.push(games[0]);
