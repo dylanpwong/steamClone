@@ -5,7 +5,8 @@ const gameReducer = (state={}, action) => {
     // debugger
     switch(action.type) {
         case RECEIVE_GAME:
-            return {[action.game._id]: action.game};
+                const game = ((!action.games)? "No Game":action.game._id)
+            return {[game]: action.game};
             break;
         case RECEIVE_PLENTY:
             return Object.assign({},state,{'RECEIVE_RANDOM': action.games});

@@ -22,10 +22,15 @@ class GamePage extends React.Component {
 
     // Runs after render runs first, fetches game then rerenders.
     componentDidMount () {
+      
       if(this.state.leavePage==""){
         this.props.fetchGame(this.props.gameId).then((res)=>{
           // debugger;
-            this.setState({render: true,game: res.game});
+            if(!res.game){
+              this.props.history.push("/")
+            }else{
+              this.setState({render: true,game: res.game});
+            }
         })
       }
         // console.log("IN GAME PAGE");
@@ -51,10 +56,11 @@ class GamePage extends React.Component {
                 </>
             )
         } else{
-            // debugger;
+            // debugger;j
               return (
                 <>
                   <div className="gameProfile">
+                    
 
                     <div className='titleAndImgHolder'>
                    

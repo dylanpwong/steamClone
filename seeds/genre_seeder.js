@@ -110,6 +110,14 @@ const reviews=[
         helpfulNo: 10,
         user: user
     }),
+    new Review({
+      content: 'Why are you looking at negative Reviews This game is great!',
+      recommendation: false,
+      helpfulYes: 10,
+      helpfulNo: 0,
+      helpfulFunny: 20,
+      user: user
+    }),
     
 ]
 
@@ -337,9 +345,17 @@ games[0].genres.push(genres[0]); //helltaker
 games[0].genres.push(genres[1]);    // just gives IDs of genres, NOT actual values
 games[0].reviews.push(reviews[0]);
 reviews[0].game = games[0];
+reviews[1].game=games[0];
 user.games.push(games[0]);
 user.games.push(games[1]);
+user.reviews.push(reviews[0]);
+user.reviews.push(reviews[1]);
+// user.reviewList=Object.assign({},user.reviewList, reviews[0] );
+// user.reviewList = Object.assign({}, user.reviewList, games[1]);
+// user.reviewList=reviews[0];
+
 user.save();
+
 
 // games[0].otherImgs= hellTakerImgs;
 
@@ -385,13 +401,15 @@ for (let i = 0; i < reviews.length; i++) {
   reviews[i]
     .save()
     .then((review) => {
-      finished3++;
-      if (finished3 === reviews.length) {
-        // exit();
-      }
+        finished3++;
+        if (finished3 === reviews.length) {
+          // exit();
+        }
+    
     })
     .catch((error) => console.log(error));
 }//end of loop for reviews
+
 
 })
 // console.log(`Game's Genre: ${games[0].genres}`)

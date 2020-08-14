@@ -36,7 +36,7 @@ class Footer extends React.Component {
                         <div>Dylan Wong</div> 
                         <div className="border">|</div>
                         <a className = "linkStuff" target="_blank"href = "https://github.com/dylanpwong">
-                            <i class="devicon-github-plain"></i>
+                            <i className="devicon-github-plain"></i>
                             &nbsp;
                             <div>Github</div>
                         </a>
@@ -44,7 +44,7 @@ class Footer extends React.Component {
                         <div className="border">|</div>
 
                         <a className = "linkStuff"target="_blank" href = "https://www.linkedin.com/in/dylan-wong-857139127/">
-                            <i class="devicon-linkedin-plain colored"></i>
+                            <i className="devicon-linkedin-plain colored"></i>
                             &nbsp;
                             <div>LinkedIn</div>
                         </a>
@@ -54,7 +54,7 @@ class Footer extends React.Component {
                         <div>Edward Kim </div>
                         <div className="border">|</div>
                                 <a className="linkStuff" target="_blank"href = "https://github.com/eykim5">
-                                <i class="devicon-github-plain"></i>
+                                <i className="devicon-github-plain"></i>
                             &nbsp;
                             <div>Github</div>
                         </a>
@@ -62,7 +62,7 @@ class Footer extends React.Component {
                         <div className="border">|</div>
 
                         <a className = "linkStuff" target="_blank" href = "https://www.linkedin.com/in/edward-kim-51469012a/">
-                            <i class="devicon-linkedin-plain colored"></i>
+                            <i className="devicon-linkedin-plain colored"></i>
                             &nbsp;
                             <div>LinkedIn</div>
                         </a>

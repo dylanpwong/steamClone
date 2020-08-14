@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Game = require('./Game');
+const Review= require('./Review');
+// const { default: Review } = require('../frontend/src/components/game_page/review');
 const deepPopulate = require("mongoose-deep-populate")(mongoose);
 
 const UserSchema = new Schema({
@@ -24,6 +26,10 @@ const UserSchema = new Schema({
     type: String,
     default: "https://dpwong-steamclone-dev.s3.amazonaws.com/prinny.jpg",
   },
+  // reviewList:{
+  //   type: Schema.Types.ObjectId,
+  // },
+  reviews: [{type:Schema.Types.ObjectId,ref: Review}],
   games: [{ type: Schema.Types.ObjectId, ref: Game }],
   wishlist: [{ type: Schema.Types.ObjectId, ref: Game }],
   cart: [{ type: Schema.Types.ObjectId, ref: Game }],

@@ -103,11 +103,16 @@ router.post('/login',(req,res)=>{
             }else{
                 bcrypt.compare(password, user.password)
                 .then(isMatch => {
-                    if(isMatch){
+                    if(isMatch){//load up user in current user state
                         const payload = {
                             id: user.id,
                             username: user.username,
-                            email: user.email
+                            email: user.email,
+                            reviews: user.reviews,
+                            games: user.games,
+                            wishlist: user.wishlist,
+                            cart: user.cart,
+                            reviewList: user.reviewList
                         }
                         jwt.sign(
                             payload,

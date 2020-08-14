@@ -3,10 +3,14 @@ import React from 'react';
 class WriteReview extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            userReviews: this.props.user ? {...this.props.user.reviews} : null,
+        }
     }
 
     render(){
-        if(!this.props.user) return <> </>
+        // debugger
+        if(!this.props.user ) return <> </>
         return(
             <>
                 <div>
