@@ -10,7 +10,10 @@ class WriteReview extends React.Component{
     }
 
     haveReview(){
-        // this.props.game.reviews.find()  
+        // for(let i =0;i<this.props.reviews.length;i++){
+
+        // }
+            // this.props.game.reviews  
     }
 
     render(){
