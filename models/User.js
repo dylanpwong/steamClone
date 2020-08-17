@@ -26,9 +26,10 @@ const UserSchema = new Schema({
     type: String,
     default: "https://dpwong-steamclone-dev.s3.amazonaws.com/prinny.jpg",
   },
-  // reviewList:{
-  //   type: Schema.Types.ObjectId,
-  // },
+  reviewList:{
+    type: Schema.Types.ObjectId,
+    ref: Game,
+  },
   reviews: [{type:Schema.Types.ObjectId,ref: Review}],
   games: [{ type: Schema.Types.ObjectId, ref: Game }],
   wishlist: [{ type: Schema.Types.ObjectId, ref: Game }],
