@@ -113,5 +113,21 @@ router.post('/search',(req,res)=>{
     })
 })
 
+router.post('/userOwnGame',(req,res)=>{
+    const userId = req.body[0];
+    const gameId = req.body[0];
+
+    const response={
+        hasGame: false,
+        hasReview: false,
+    }
+
+    User.findOne(userId).then(user=>{
+       response.hasGame =  user.games.find(gameId)? true:false;
+       response.hasReview = user.reviewList.find(gameId)? true: false
+       res.json(response);
+    })
+})
+
 
 module.exports = router;

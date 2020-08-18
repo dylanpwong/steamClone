@@ -10,6 +10,9 @@ class WriteReview extends React.Component{
     }
 
     haveReview(){
+        
+        const reviewGames = Object.assign({},{[this.props.user.reviewList[0]]:""});
+        // debugger
         // for(let i =0;i<this.props.reviews.length;i++){
 
         // }
@@ -17,6 +20,7 @@ class WriteReview extends React.Component{
     }
 
     render(){
+        this.haveReview();
         // debugger
         if(!this.props.user ) return <> </>
         return(
