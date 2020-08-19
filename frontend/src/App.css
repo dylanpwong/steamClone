@@ -45,9 +45,7 @@
   min-height: 100vh;
   /* border: 1px solid transparent; */
 }
-.contentContainer{
-  padding-top: 36px;
-}
+
 *{
   font-family: sans-serif;
 }
