@@ -9,11 +9,12 @@ class WriteReview extends React.Component{
         this.haveReview=this.haveReview.bind(this);
     }
 
+
     haveReview(){
         
         // const reviewGames = Object.assign({},{[this.props.user.reviewList[0]]:""});
         const data={
-            userId: this.props.user.id,
+            userId: this.props.user._id,
             gameId: this.props.game._id
         }
         
@@ -27,9 +28,11 @@ class WriteReview extends React.Component{
     }
 
     render(){
+        if(!this.props.user) {
+            console.log("Current user is null");
+            return <> </>
+        }
         this.haveReview();
-        // debugger
-        if(!this.props.user ) return <> </>
         return(
             <>
                 <div>
