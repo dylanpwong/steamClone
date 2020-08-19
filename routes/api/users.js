@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require('../../models/User');
+const Game = require('../../models/Game');
 const bcrypt  =require('bcryptjs');
 const keys = require('../../config/keys');
 const jwt = require('jsonwebtoken');
@@ -96,7 +97,10 @@ router.post('/login',(req,res)=>{
     const email = req.body.email;
     const password = req.body.password;
 
-    User.findOne({email: email})
+    User.findOne({email: email}).populate({
+        path: "games reviewList",
+        model: Game
+    })
         .then(user=>{
             if(!user){
                 return res.status(404).json({email: 'Email Not found'});
@@ -104,6 +108,7 @@ router.post('/login',(req,res)=>{
                 bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if(isMatch){//load up user in current user state
+                        // debugger;
                         const payload = {
                             id: user.id,
                             username: user.username,
@@ -113,6 +118,7 @@ router.post('/login',(req,res)=>{
                             wishlist: user.wishlist,
                             cart: user.cart,
                             reviewList: user.reviewList
+                            // reviewList: "pie"
                         }
                         jwt.sign(
                             payload,

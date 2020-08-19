@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import GamePage from "./gamePage"
 import {  } from "../../actions/session_actions"
-import { fetchHelltaker, fetchGame } from "../../actions/game_actions"
+import { fetchHelltaker, fetchGame, userhasGame } from "../../actions/game_actions"
 
 
 const mapStateToProps=(state,ownProps)=>{
@@ -17,6 +17,7 @@ const mapDispatchToProps=(dispatch)=>{
     return({
         Helltaker: () => dispatch(fetchHelltaker()),
         fetchGame:(gameId) =>dispatch(fetchGame(gameId)),
+        checkReview: (data)=>dispatch(userhasGame(data)),
         //hello: () => console.log("Hello")
     })
 }

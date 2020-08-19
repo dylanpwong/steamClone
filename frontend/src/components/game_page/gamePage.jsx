@@ -78,7 +78,7 @@ class GamePage extends React.Component {
                       </div>
                     </div>
                       <div> {/*/ write a review container */}
-                      <WriteReview game = {this.state.game}user={this.props.currentUser}/>
+                      <WriteReview checkReview={this.props.checkReview}game = {this.state.game}user={this.props.currentUser}/>
                       </div>
                     <div className='gameDescWrapper'>
                     <div className="gameDesc">

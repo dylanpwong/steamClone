@@ -6,6 +6,7 @@ export const RECEIVE_RELEASEDATE="RECEIVE_RELEASEDATE";
 export const RECEIVE_TOPSELLERS="RECEIVE_TOPSELLERS";
 export const RECEIVE_TOPRATED="RECEIVE_TOPRATED";
 export const RECEIVE_SEARCH="RECEIVE_SEARCH";
+export const RECEIVE_USER_REVIEW="RECEIVE_USER_REVIEW";
 
 export const recieveGame = (game) =>{
     // debugger
@@ -18,6 +19,12 @@ export const receiveMore = games =>{
     return({
         type: RECEIVE_PLENTY,
         games: games.data
+    })
+}
+export const recieveUserReview = data =>{
+    return({
+        type: RECEIVE_USER_REVIEW,
+        info: data.data,
     })
 }
 export const receiveType = type =>{
@@ -108,4 +115,9 @@ export const getReleaseDate = ()=> dispatch=>{
 export const getTopSellers = ()=> dispatch =>{
     return APIutil.getTopSellers()
     .then((res)=> dispatch(receiveType(RECEIVE_TOPSELLERS)(res)))
+}
+
+export const userhasGame = (data)=> dispatch=>{
+    return APIutil.userHasGame(data)
+    .then(res=>dispatch(recieveUserReview(res)))
 }

@@ -114,18 +114,28 @@ router.post('/search',(req,res)=>{
 })
 
 router.post('/userOwnGame',(req,res)=>{
-    const userId = req.body[0];
-    const gameId = req.body[0];
+    const userId = req.body.userId
+    const gameId = req.body.gameId;
+    
 
     const response={
         hasGame: false,
         hasReview: false,
+        review: null,
     }
 
-    User.findOne(userId).then(user=>{
-       response.hasGame =  user.games.find(gameId)? true:false;
-       response.hasReview = user.reviewList.find(gameId)? true: false
-       res.json(response);
+    User.findOne({_id: userId}).lean().populate({
+        path: "games reviewList",
+        model: Game
+    }).populate("reviews")
+    .then(user=>{
+        // const jsonUser = JSON.stringify(user);
+        debugger
+        // response.hasGame =  user.games.find(gameId)? true:false;
+        // response.hasReview = user.reviewList.find(gameId)? true: false
+        // response.review = user.reviews.filter(ele=> ele.gameId == gameId);
+    //    res.json(response);
+        res.json(user);
     })
 })
 

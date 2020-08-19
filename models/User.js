@@ -4,7 +4,7 @@ const Game = require('./Game');
 const Review= require('./Review');
 // const { default: Review } = require('../frontend/src/components/game_page/review');
 const deepPopulate = require("mongoose-deep-populate")(mongoose);
-
+// var reviewGameSchema = new Schema({ name: {type: Schema.Types.ObjectId, ref: Game }});
 const UserSchema = new Schema({
   username: {
     type: String,
@@ -27,6 +27,7 @@ const UserSchema = new Schema({
     default: "https://dpwong-steamclone-dev.s3.amazonaws.com/prinny.jpg",
   },
   reviewList:[{
+   
     type: Schema.Types.ObjectId,
     ref: Game,
   }],
