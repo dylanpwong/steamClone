@@ -11,6 +11,8 @@ class Header extends React.Component {
         this.onLogin=this.onLogin.bind(this);
         this.onLogout=this.onLogout.bind(this);
         this.addStoreContent=this.addStoreContent.bind(this);
+        this.onWishClick=this.onWishClick.bind(this);
+        this.onCartClick=this.onCartClick.bind(this);
     }
     
     onSignUpClick(){
@@ -54,13 +56,21 @@ class Header extends React.Component {
         this.props.history.push('/');
     }
 
+    onWishClick() {
+        this.props.history.push('/wishlist');
+    }
+
+    onCartClick() {
+        this.props.history.push('/cart');
+    }
+
     addStoreContent() {
         if (this.props.currentUser) {
             return (
                 <>
                 <div className='storeContainer'>
-                    <div className='wishButton'>Wishlist(?)</div>
-                    <div className='cartButton'>Cart(?)</div>
+                    <div className='wishButton' onClick={this.onWishClick.bind(this)}>Wishlist(?)</div>
+                    <div className='cartButton' onClick={this.onCartClick.bind(this)}>Cart(?)</div>
                 </div>
 
                 </>
