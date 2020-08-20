@@ -356,6 +356,8 @@ user.reviewList.push(games[0]);
 // user.reviewList=Object.assign({},user.reviewList, reviews[0] );
 // user.reviewList = Object.assign({}, user.reviewList, games[1]);
 // user.reviewList=reviews[0];
+user.wishlist.push(games[6]);
+user.wishlist.push(games[2]);
 
 user.save();
 
