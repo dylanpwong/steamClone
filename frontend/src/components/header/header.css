@@ -220,6 +220,7 @@
 }
 
 .wishButton {
+    opacity: 100%;
     padding: 0 25px;
     margin: 0 1px;
     line-height: 20px;
@@ -232,6 +233,7 @@
 }
 
 .cartButton {
+    opacity: 100%;
     padding: 0 25px;
     margin: 0 1px;
     line-height: 20px;
@@ -253,4 +255,12 @@
     cursor: pointer;
     color: black;
     background-color: #89AD05;
+}
+
+.wishButton--none {
+    opacity: 0;
+}
+
+.cartButton--none {
+    opacity: 0;
 }

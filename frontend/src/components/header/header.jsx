@@ -65,12 +65,17 @@ class Header extends React.Component {
     }
 
     addStoreContent() {
+
         if (this.props.currentUser) {
             return (
                 <>
                 <div className='storeContainer'>
-                    <div className='wishButton' onClick={this.onWishClick.bind(this)}>Wishlist(?)</div>
-                    <div className='cartButton' onClick={this.onCartClick.bind(this)}>Cart(?)</div>
+                    {/* We will use these instead of the statements below once we sort out manipulating the number of games in wishlist/cart */}
+                    {/* <div className={this.props.currentUser.wishlist.length != 0 ? 'wishButton' : 'wishButton--none'} onClick={this.onWishClick.bind(this)}>Wishlist({this.props.currentUser.wishlist.length})</div>
+                    <div className={this.props.currentUser.cart.length != 0 ? 'cartButton' : 'cartButton--none'} onClick={this.onCartClick.bind(this)}>Cart({this.props.currentUser.cart.length})</div> */}
+
+                    <div className='wishButton'onClick={this.onWishClick.bind(this)}>Wishlist({this.props.currentUser.wishlist.length})</div>
+                    <div className='cartButton'onClick={this.onCartClick.bind(this)}>Cart({this.props.currentUser.cart.length})</div> 
                 </div>
 
                 </>
