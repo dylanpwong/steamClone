@@ -40,31 +40,29 @@ class WriteReview extends React.Component{
         // this.haveReview();
         // debugger;
         if(!this.state.hasGame) return <> </>
-        return(
-            <>
+        return (
+          <>
+            <div className="reviewWriteHolder">
+              <div>
+                <div>Write a Review for {this.props.game.title}</div>
                 <div>
-                    <div>
-                        Write a Review for {this.props.game.title}
-                    </div>
-                    <div>
-                        Please describe what you liked or disliked about this game and whether you recommend it to others.
-                        Please remember to be polite and follow the Rules and Guidelines.
-                    </div>
+                  Please describe what you liked or disliked about this game and
+                  whether you recommend it to others. Please remember to be
+                  polite and follow the Rules and Guidelines.
                 </div>
+              </div>
 
-                <div>
-                        <div>
+              <div>
+                <div></div>
 
-                        </div>
-
-                        <form >
-                            <textarea type="text" name="" id=""/>
-                            <input type="submit" value='Post Review'/>
-                        </form>
-                </div>
-
-            </>
-        )
+                <form>
+                  <textarea type="text" name="" id="" />
+                  <input type="submit" value="Post Review" />
+                </form>
+              </div>
+            </div>
+          </>
+        );
     }
 }
 export default WriteReview;
