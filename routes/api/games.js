@@ -123,20 +123,29 @@ router.post('/userOwnGame',(req,res)=>{
         hasReview: false,
         review: null,
     }
-
-    User.findOne({_id: userId}).lean().populate({
+    usefulInfo={
+        response: response,
+        userId: userId,
+        gameId: gameId
+    }
+    User.findOne({_id: userId}).populate({
         path: "games reviewList",
         model: Game
-    }).populate("reviews")
-    .then(user=>{
-        // const jsonUser = JSON.stringify(user);
-        debugger
-        // response.hasGame =  user.games.find(gameId)? true:false;
-        // response.hasReview = user.reviewList.find(gameId)? true: false
-        // response.review = user.reviews.filter(ele=> ele.gameId == gameId);
-    //    res.json(response);
-        res.json(user);
-    })
+    }).populate({
+        path:"reviews",
+        model: Review,
+        populate:({
+            path: "game",
+            model: Game
+        }),
+        })
+    .then(function(user){
+        // debugger;
+        this.response.hasGame = user.games.filter(ele=> ele.id == this.gameId).length === 0? false:true;
+        this.response.review = user.reviews.filter(ele=> ele.game[0].id ==this.gameId)[0].toJSON();
+        this.response.hasReview = (!!this.response.review);
+        res.json(this.response);
+    }.bind(usefulInfo))
 })
 
 

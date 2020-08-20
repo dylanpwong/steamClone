@@ -5,8 +5,14 @@ class WriteReview extends React.Component{
         super(props)
         this.state={
             userReviews: this.props.user ? {...this.props.user.reviews} : null,
+            review: null,
+            response: null,
+            hasGame: null,
         }
         this.haveReview=this.haveReview.bind(this);
+    }
+    componentDidMount(){
+        this.haveReview();
     }
 
 
@@ -14,25 +20,26 @@ class WriteReview extends React.Component{
         
         // const reviewGames = Object.assign({},{[this.props.user.reviewList[0]]:""});
         const data={
-            userId: this.props.user._id,
+            userId: this.props.user.id,
             gameId: this.props.game._id
         }
-        
-        this.props.checkReview(data).then(res=>{
-            // debugger;
-        })
-        // for(let i =0;i<this.props.reviews.length;i++){
-
-        // }
-            // this.props.game.reviews  
+        if(this.props.user){
+            this.props.checkReview(data).then(res=>{
+                // debugger
+                this.setState({review: res.info.review,hasGame: res.info.hasGame})
+            })
+        }
+    
     }
 
     render(){
         if(!this.props.user) {
-            console.log("Current user is null");
+            // console.log("Current user is null");
             return <> </>
         }
-        this.haveReview();
+        // this.haveReview();
+        // debugger;
+        if(!this.state.hasGame) return <> </>
         return(
             <>
                 <div>
@@ -51,7 +58,7 @@ class WriteReview extends React.Component{
                         </div>
 
                         <form >
-                            <input type="text" name="" id=""/>
+                            <textarea type="text" name="" id=""/>
                             <input type="submit" value='Post Review'/>
                         </form>
                 </div>
