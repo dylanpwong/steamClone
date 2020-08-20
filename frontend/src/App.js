@@ -17,6 +17,8 @@ import about_container from './components/splash_page/about_container';
 import about_steam_container from './components/splash_page/about_steam_container';
 import navBar_container from './components/header/navBar_container';
 import searchPage_container from './components/search_page/searchPage_container';
+import wishList_container from './components/session/wishList_container';
+import cart_container from './components/session/cart_container';
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
       <Route exact path='/join/completesignup' component={CompleteSignUp_Container}/>
       <Route exact path='/aboutUs' component={about_container}/>
       <Route exact path='/aboutSteam' component={about_steam_container}/>
+      <Route exact path='/wishlist' component={wishList_container}/>
+      <Route exact path='/cart' component={cart_container}/>
       </div>
       
       <Route path='/' component={Footer}/>
