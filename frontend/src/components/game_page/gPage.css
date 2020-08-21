@@ -312,5 +312,23 @@ color: #67C1F5;
     height:5em;
 }
 .reviewWriteHolder{
-    background-color: #344857;
+    background-color: #475260;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.writeColor{
+    color: #747e88;
+}
+.reviewTitle{
+    color:#60b4e3;
+}
+.writeReviewText{
+    background-color: #222b35;
+    box-shadow: inset 0px 0px 7px rgba( 0, 0, 0, 0.5 );
+    width: calc( 100% - 24px );
+    /* height:  */
+}
+.textboxAndPicHolder{
+    width: 100%;
 }

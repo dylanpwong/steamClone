@@ -44,19 +44,19 @@ class WriteReview extends React.Component{
           <>
             <div className="reviewWriteHolder">
               <div>
-                <div>Write a Review for {this.props.game.title}</div>
-                <div>
+                <div className="reviewTitle">Write a Review for {this.props.game.title}</div>
+                <div className='writeColor'>
                   Please describe what you liked or disliked about this game and
                   whether you recommend it to others. Please remember to be
                   polite and follow the Rules and Guidelines.
                 </div>
               </div>
 
-              <div>
+              <div className='textboxAndPicHolder'>
                 <div></div>
 
                 <form>
-                  <textarea type="text" name="" id="" />
+                  <textarea className="writeReviewText"type="text" name="" id="" />
                   <input type="submit" value="Post Review" />
                 </form>
               </div>
