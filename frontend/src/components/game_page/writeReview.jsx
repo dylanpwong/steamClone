@@ -43,6 +43,9 @@ class WriteReview extends React.Component{
         return (
           <>
             <div className="reviewWriteHolder">
+                <div>
+                    {this.props.game.title}&nbsp; is already in your Library
+                </div>
               <div>
                 <div className="reviewTitle">Write a Review for {this.props.game.title}</div>
                 <div className='writeColor'>
@@ -57,7 +60,10 @@ class WriteReview extends React.Component{
 
                 <form>
                   <textarea className="writeReviewText"type="text" name="" id="" />
-                  <input type="submit" value="Post Review" />
+                  <div className='flexender'>
+                  <input className="postButtoncss" type="submit" value="Post Review" />
+
+                  </div>
                 </form>
               </div>
             </div>

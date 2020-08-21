@@ -316,19 +316,48 @@ color: #67C1F5;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: .5em 2em;
 }
 .writeColor{
     color: #747e88;
+    padding-bottom: .5em;
 }
 .reviewTitle{
-    color:#60b4e3;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 3px;
+    color: #66c0f4;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 300;
+    width: 100%;
+    border-top: 1px solid #212c3d;
+    padding-top: 10px;
 }
 .writeReviewText{
     background-color: #222b35;
     box-shadow: inset 0px 0px 7px rgba( 0, 0, 0, 0.5 );
-    width: calc( 100% - 24px );
-    /* height:  */
+    /* width: calc( 100% - 24px ); */
+    width: 100%;
+    height: 12em;
 }
 .textboxAndPicHolder{
     width: 100%;
+}
+.postButtoncss{
+    text-shadow: 1px 1px 0px rgba( 255, 255, 255, 0.1 );
+    padding: .5em 1em;
+    height:3em;
+    cursor: pointer;
+    font-family: Arial, Helvetica;
+    border-radius: 3px;
+    font-size: 15px;
+    color: #2B5066;
+    background: linear-gradient( to bottom, rgba(193,228,249,1) 5%, rgba(148,183,202,1) 95%);
+}
+.flexender{
+    display: flex;
+    justify-content: flex-end;
+}
+.reviewWriteSpacer{
+    padding-top: 2em;
 }
