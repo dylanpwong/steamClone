@@ -42,10 +42,10 @@ class WriteReview extends React.Component{
         if(!this.state.hasGame) return <> </>
         return (
           <>
-            <div className="reviewWriteHolder">
-                <div>
+                <div className="alreadyIn">
                     {this.props.game.title}&nbsp; is already in your Library
                 </div>
+            <div className="reviewWriteHolder">
               <div>
                 <div className="reviewTitle">Write a Review for {this.props.game.title}</div>
                 <div className='writeColor'>

@@ -361,3 +361,12 @@ color: #67C1F5;
 .reviewWriteSpacer{
     padding-top: 2em;
 }
+.alreadyIn{
+    
+    padding: .5em 0;
+    padding-left: .5em;
+    font: 18px;
+    width: calc( 100% - .5em); /* the minus part has to be what padding left is */
+    color: rgb(163, 207, 6);
+        background: linear-gradient(to right, rgba(163,207,6,0.6) 0%,rgba(75,106,33,0.6) 100%);
+}
