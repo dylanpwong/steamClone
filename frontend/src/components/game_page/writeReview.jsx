@@ -6,13 +6,20 @@ class WriteReview extends React.Component{
         this.state={
             userReviews: this.props.user ? {...this.props.user.reviews} : null,
             review: null,
+            content: null,
             response: null,
             hasGame: null,
         }
         this.haveReview=this.haveReview.bind(this);
+        this.reviewEditor=this.reviewEditor.bind(this);
     }
     componentDidMount(){
         this.haveReview();
+    }
+
+    reviewEditor(e){
+       const  val = e.currentTarget.value;
+       this.setState({content: val});
     }
 
 
@@ -26,7 +33,7 @@ class WriteReview extends React.Component{
         if(this.props.user){
             this.props.checkReview(data).then(res=>{
                 // debugger
-                this.setState({review: res.info.review,hasGame: res.info.hasGame})
+                this.setState({review: res.info.review,hasGame: res.info.hasGame,content: res.info.review.content})
             })
         }
     
@@ -59,7 +66,7 @@ class WriteReview extends React.Component{
                 <div></div>
 
                 <form>
-                  <textarea className="writeReviewText"type="text" name="" id="" />
+                  <textarea onChange={this.reviewEditor} className="writeReviewText"type="text" value={this.state.review.content} />
                   <div className='flexender'>
                   <input className="postButtoncss" type="submit" value="Post Review" />
 
