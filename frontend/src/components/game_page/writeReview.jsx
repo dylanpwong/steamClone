@@ -9,6 +9,7 @@ class WriteReview extends React.Component{
             content: null,
             response: null,
             hasGame: null,
+            initial: null,
         }
         this.haveReview=this.haveReview.bind(this);
         this.reviewEditor=this.reviewEditor.bind(this);
@@ -33,7 +34,20 @@ class WriteReview extends React.Component{
         if(this.props.user){
             this.props.checkReview(data).then(res=>{
                 // debugger
-                this.setState({review: res.info.review,hasGame: res.info.hasGame,content: res.info.review.content})
+                if(res.info.review){
+                    this.setState({review: res.info.review,
+                        hasGame: res.info.hasGame,
+                        content: res.info.review.content,
+                        initial: "Edit"
+                    })
+                }else{
+                    this.setState({
+                      review: res.info.review,
+                      hasGame: res.info.hasGame,
+                      content: res.info.review.content,
+
+                    });
+                }
             })
         }
     
@@ -47,6 +61,7 @@ class WriteReview extends React.Component{
         // this.haveReview();
         // debugger;
         if(!this.state.hasGame) return <> </>
+        // debugger;
         return (
           <>
                 <div className="alreadyIn">
@@ -68,7 +83,7 @@ class WriteReview extends React.Component{
                 <form>
                   <textarea onChange={this.reviewEditor} className="writeReviewText"type="text" value={this.state.review.content} />
                   <div className='flexender'>
-                  <input className="postButtoncss" type="submit" value="Post Review" />
+                  <input className="postButtoncss" type="submit" value={this.state.initial? "Edit Review" : "Post Review"} />
 
                   </div>
                 </form>

@@ -339,6 +339,7 @@ color: #67C1F5;
     /* width: calc( 100% - 24px ); */
     width: 100%;
     height: 12em;
+    color: white;
 }
 .textboxAndPicHolder{
     width: 100%;
