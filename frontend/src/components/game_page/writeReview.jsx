@@ -13,6 +13,7 @@ class WriteReview extends React.Component{
         }
         this.haveReview=this.haveReview.bind(this);
         this.reviewEditor=this.reviewEditor.bind(this);
+        this.submitHandeler=this.submitHandeler.bind(this);
     }
     componentDidMount(){
         this.haveReview();
@@ -21,6 +22,15 @@ class WriteReview extends React.Component{
     reviewEditor(e){
        const  val = e.currentTarget.value;
        this.setState({content: val});
+    }
+    submitHandeler(e){
+        const toBeSub = {
+            content: this.state.content,
+            gameId: this.props.game._id,
+            userId: this.props.user.id,
+            reviewId: this.state.review._id
+        }
+        this.props.editReview(toBeSub)
     }
 
 
@@ -80,8 +90,8 @@ class WriteReview extends React.Component{
               <div className='textboxAndPicHolder'>
                 <div></div>
 
-                <form>
-                  <textarea onChange={this.reviewEditor} className="writeReviewText"type="text" value={this.state.review.content} />
+                <form onSubmit={this.submitHandeler}> 
+                  <textarea onChange={this.reviewEditor} className="writeReviewText"type="text" value={this.state.content} />
                   <div className='flexender'>
                   <input className="postButtoncss" type="submit" value={this.state.initial? "Edit Review" : "Post Review"} />
 
