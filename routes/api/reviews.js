@@ -29,4 +29,12 @@ router.post("/create",(req,res)=>{
     })
   })
 })
+router.patch("editReview",(req,res)=>{
+  const gameId = req.body.gameId;
+  const userId = req.body.userId;
+  const reviewId = req.body.reviewId;
+  Review.findOne({_id: reviewId}).then(review=>{
+
+  })
+})
 module.exports = router;
