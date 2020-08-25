@@ -140,9 +140,9 @@ router.post('/userOwnGame',(req,res)=>{
         }),
         })
     .then(function(user){
-        // debugger;
+        const reviews= user.reviews.filter(ele=> ele.game[0].id ==this.gameId);
         this.response.hasGame = user.games.filter(ele=> ele.id == this.gameId).length === 0? false:true;
-        this.response.review = user.reviews.filter(ele=> ele.game[0].id ==this.gameId)[0].toJSON();
+        this.response.review =  reviews.length==0? null:reviews[0].toJSON();
         this.response.hasReview = (!!this.response.review);
         res.json(this.response);
     }.bind(usefulInfo))

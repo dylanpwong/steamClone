@@ -25,22 +25,30 @@ class WriteReview extends React.Component{
     }
     submitHandeler(e){
         const toBeSub = {
-            content: this.state.content,
-            gameId: this.props.game._id,
-            userId: this.props.user.id,
-            reviewId: this.state.review._id
+          content: this.state.content,
+          gameId: this.props.game._id,
+          userId: this.props.user.id,
+          reviewId: this.state.review? this.state.review._id: null,
+        };
+        // debugger;
+        if(this.state.initial){
+            this.props.editReview(toBeSub);
+        }else{
+            this.props.createReview(toBeSub).then(res=>{
+               window.location.reload();
+            });
         }
-        this.props.editReview(toBeSub)
     }
 
 
     haveReview(){
         
         // const reviewGames = Object.assign({},{[this.props.user.reviewList[0]]:""});
-        const data={
-            userId: this.props.user.id,
-            gameId: this.props.game._id
-        }
+        const data = {
+          userId: this.props.user ? this.props.user.id : null,
+          gameId: this.props.game? this.props.game._id: null,
+        };
+        // debugger;
         if(this.props.user){
             this.props.checkReview(data).then(res=>{
                 // debugger
@@ -51,10 +59,11 @@ class WriteReview extends React.Component{
                         initial: "Edit"
                     })
                 }else{
+                    
                     this.setState({
                       review: res.info.review,
                       hasGame: res.info.hasGame,
-                      content: res.info.review.content,
+                      content: "",
 
                     });
                 }
@@ -93,6 +102,13 @@ class WriteReview extends React.Component{
                 <form onSubmit={this.submitHandeler}> 
                   <textarea onChange={this.reviewEditor} className="writeReviewText"type="text" value={this.state.content} />
                   <div className='flexender'>
+                      <div>
+                          Do you recommend this game?
+                          <div>
+                              <button>Yes</button>
+                              <button>No</button>
+                          </div>
+                      </div>
                   <input className="postButtoncss" type="submit" value={this.state.initial? "Edit Review" : "Post Review"} />
 
                   </div>

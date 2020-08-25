@@ -16,12 +16,14 @@ export const recieveGame = (game) =>{
     })
 };
 export const receiveMore = games =>{
+    // debugger;
     return({
         type: RECEIVE_PLENTY,
         games: games.data
     })
 }
 export const recieveUserReview = data =>{
+    // debugger;
     return({
         type: RECEIVE_USER_REVIEW,
         info: data.data,
@@ -118,6 +120,9 @@ export const getTopSellers = ()=> dispatch =>{
 }
 
 export const userhasGame = (data)=> dispatch=>{
+
     return APIutil.userHasGame(data)
-    .then(res=>dispatch(recieveUserReview(res)))
+    .then(function(res){
+        // debugger;
+       return dispatch(recieveUserReview(res))})
 }

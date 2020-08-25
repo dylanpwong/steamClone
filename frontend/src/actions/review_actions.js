@@ -9,5 +9,8 @@ const receiveReview=(review)=>{
 }
 
 export const editReview = (review) => dispatch=>{
-    return APIutil.editReview(review).then(dispatch(receiveReview(review)))
+    return APIutil.editReview(review).then(res=>dispatch(receiveReview(res)))
+}
+export const createReview = review=>dispatch=>{
+    return APIutil.createReview(review).then(res=>dispatch(receiveReview(res)))
 }

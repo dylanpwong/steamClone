@@ -357,7 +357,7 @@ color: #67C1F5;
 }
 .flexender{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 .reviewWriteSpacer{
     padding-top: 2em;

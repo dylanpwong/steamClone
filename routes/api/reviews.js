@@ -16,16 +16,20 @@ router.get("/index", (req, res) => {
 });
 
 router.post("/create",(req,res)=>{
-  const gameId = Object.keys(req.body)[0];
-  const userId = Object.keys(req.body)[1];
+  const gameId = req.body.gameId;
+  const userId = req.body.userId;
+  const content = req.body.content;
   Game.findOne({_id: gameId}).then(game=>{
     User.findOne({_id: userId}).then(user=>{
-      let newReview={
+      let newReview= new Review({
         content: req.body.content,
         Game: game,
         user: user
-      }
-
+      })
+      newReview.save().then(review=>{
+        // debugger;
+        res.json(review)
+      })
     })
   })
 })
