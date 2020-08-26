@@ -31,44 +31,6 @@ class CompleteSignUp extends React.Component{
         let errorMess1 = "";
         let errorMess2 = "";
         let errorMess3 = "";
-    
-        if (currError.includes("noInput")) {
-            errorMess1 = "Please enter a valid email address.";
-        }
-        else {
-            errorMess1 = "";
-        }
-    
-        if (currError.includes("noConfirm")) {
-            errorMess2 = "Please fill in the Confirm email address field.";
-        }
-        else {
-            errorMess2 = "";
-        }
-    
-        if (currError.includes("noMatch")) {
-            errorMess3 = "Please enter the same address in both email address fields.";
-        }
-        else {
-            errorMess3 = "";
-        }
-    
-        return (
-            <>
-            <div>{errorMess1}</div>
-            <div>{errorMess2}</div>
-            <div>{errorMess3}</div>
-            </>
-        )
-    }
-
-    handleError() {
-
-        let currError = this.state.error + "";
-    
-        let errorMess1 = "";
-        let errorMess2 = "";
-        let errorMess3 = "";
         let errorMess4 = "";
     
         if (currError.includes("badUser")) {
