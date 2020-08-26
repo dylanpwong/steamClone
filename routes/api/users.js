@@ -117,7 +117,8 @@ router.post('/login',(req,res)=>{
                             games: user.games,
                             wishlist: user.wishlist,
                             cart: user.cart,
-                            reviewList: user.reviewList
+                            reviewList: user.reviewList,
+                            profilePicture: user.profilePicture
                             // reviewList: "pie"
                         }
                         jwt.sign(
