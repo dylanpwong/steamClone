@@ -31,10 +31,14 @@ class Header extends React.Component {
             return(
                 <>
                 <div className='loggedIn'>
-                    <div>
+                    <div className='userInfo'>
                     {this.props.currentUser.username}
-    
+                    {this.props.currentUser.balance}
                     </div>
+                    &nbsp; &nbsp;
+
+                    <img className="profilePic" src={this.props.currentUser.profilePicture}></img>
+
                     &nbsp; &nbsp;
                     <div onClick={this.onLogout}>
                         logout
