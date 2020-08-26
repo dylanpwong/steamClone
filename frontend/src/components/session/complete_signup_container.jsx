@@ -1,6 +1,6 @@
 import CompleteSignUp from "./complete_signup"
 import { connect } from "react-redux";
-import { signup } from "../../util/session_api_util";
+import { signup } from "../../actions/session_actions"
 
 
 const mapStatetoProps =(state)=>{

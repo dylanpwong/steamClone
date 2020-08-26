@@ -20,14 +20,19 @@ router.get('/edkim',(req,res)=>{
 //destroy destroys info
 
 router.post('/join',(req,res)=>{
+    
     const{errors, isValid} = validateRegisterInput(req.body);
+    // debugger;
     if(!isValid){
         return res.status(400).json(errors);
     }
+    const email = req.body.email.email;
     // Checks database if user with email already exists.
-    User.findOne({email: req.body.email})
+    User.findOne({email: email})
     .then(user =>{
+        // debugger;
         if(user){
+            // debugger;
             return res.status(400).json({email: "A User already has that email"})
             //300 OK
             //400 Not found 404
@@ -39,6 +44,7 @@ router.post('/join',(req,res)=>{
                 email: req.body.email,
                 password: req.body.password
             });
+            // debugger;
             // Encrypts new user password using salt. (Randomizes key val and places password into hash).
             bcrypt.genSalt(10, (err,salt)=>{
                 bcrypt.hash(newUser.password,salt,(err,hash)=>{

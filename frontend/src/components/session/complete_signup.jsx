@@ -10,11 +10,18 @@ class CompleteSignUp extends React.Component{
             username: '',
             password: '',
             password2: '',
+            email: this.props.email? this.props.email.email:null,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleError = this.handleError.bind(this);
+    }
+
+    componentDidMount(){
+        if(!this.state.email){
+            this.props.history.push("/join");
+        }
     }
 
     handleError() {
@@ -135,7 +142,9 @@ class CompleteSignUp extends React.Component{
             return;
         }
         else {
-            this.props.history.push('/');
+            this.props.signup(this.state).then(res=>{
+                this.props.history.push('/login');
+            })
         }
     
     

@@ -23,9 +23,9 @@ module.exports = function validateRegisterInput(data){
     if(!Validator.isEmail(data.email)){
         errors.email = 'Email is invalid';
     }
-    if(data.email != data.email2) {
-        errors.email2 = 'Confirmed email is not identical';
-    }
+    // if(data.email != data.email2) {
+    //     errors.email2 = 'Confirmed email is not identical';
+    // }
     if(Validator.isEmpty(data.password)) {
         errors.password = 'Password field is required';
     }
