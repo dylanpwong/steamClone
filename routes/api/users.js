@@ -118,7 +118,8 @@ router.post('/login',(req,res)=>{
                             wishlist: user.wishlist,
                             cart: user.cart,
                             reviewList: user.reviewList,
-                            profilePicture: user.profilePicture
+                            profilePicture: user.profilePicture,
+                            balance: user.balance
                             // reviewList: "pie"
                         }
                         jwt.sign(
