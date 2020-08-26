@@ -10,13 +10,32 @@ class WriteReview extends React.Component{
             response: null,
             hasGame: null,
             initial: null,
+            rec: "yes",
+            thumbsUp:"https://steamstore-a.akamaihd.net/public/shared/images/userreviews/icon_thumbsUp_v6.png",
+            thumbsDown: "https://steamstore-a.akamaihd.net/public/shared/images/userreviews/icon_thumbsDown_v6.png",
         }
         this.haveReview=this.haveReview.bind(this);
         this.reviewEditor=this.reviewEditor.bind(this);
         this.submitHandeler=this.submitHandeler.bind(this);
+        this.recYesNo=this.recYesNo.bind(this);
     }
     componentDidMount(){
         this.haveReview();
+    }
+
+    recYesNo(type){
+        return (e)=>{
+            const sel = e.currentTarget.id;
+            if(sel == "deselectYes"){
+                document.getElementById("deselectNo").classList.remove("butSelected")
+            }
+            else{
+                document.getElementById("deselectYes").classList.remove("butSelected")
+            }
+            e.currentTarget.classList.add("butSelected");
+            
+            this.setState({rec: [type]})
+        }
     }
 
     reviewEditor(e){
@@ -26,15 +45,23 @@ class WriteReview extends React.Component{
     submitHandeler(e){
         const toBeSub = {
           content: this.state.content,
+          rec: this.state.rec,
           gameId: this.props.game._id,
           userId: this.props.user.id,
           reviewId: this.state.review? this.state.review._id: null,
         };
         // debugger;
+        if(toBeSub.content ==""){
+            toBeSub.content=toBeSub.rec=="yes"?`${this.props.user.username} likes this!`: `${this.props.user.username} dislikes this!`
+        }
         if(this.state.initial){
-            this.props.editReview(toBeSub);
+            this.props.editReview(toBeSub).then(res=>{
+                // debugger;
+                window.location.reload();
+            });
         }else{
             this.props.createReview(toBeSub).then(res=>{
+                // debugger;
                window.location.reload();
             });
         }
@@ -104,9 +131,12 @@ class WriteReview extends React.Component{
                   <div className='flexender'>
                       <div>
                           Do you recommend this game?
-                          <div>
-                              <button>Yes</button>
-                              <button>No</button>
+                          <div className='buttonSpacer'>
+                              <div id="deselectYes"onClick={this.recYesNo("yes")} className="recProp">
+                                  {/* <img src={this.state.thumbsUp}></img> */}
+                                  Yes
+                                </div>
+                              <div id="deselectNo"onClick={this.recYesNo("no")}className="recProp">No</div>
                           </div>
                       </div>
                   <input className="postButtoncss" type="submit" value={this.state.initial? "Edit Review" : "Post Review"} />

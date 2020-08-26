@@ -370,3 +370,27 @@ color: #67C1F5;
     color: rgb(163, 207, 6);
         background: linear-gradient(to right, rgba(163,207,6,0.6) 0%,rgba(75,106,33,0.6) 100%);
 }
+.recProp{
+    background-color: #4b657b;
+    /* background-color: #3b6d8f; */
+    color: #62b7e8;
+    padding: 0 15px;
+    font-size: 1.5em;
+    line-height: 30px;
+    border: none;
+    border-radius: .2em;
+    /* background: url(https://steamstore-a.akamaihd.net/public/shared/images/buttons/icons_18.png?v=3); */
+}
+.recProp:hover{
+    background-color: #62b7e8;
+    color:white;
+    cursor: pointer;
+}
+.butSelected{
+     background-color: #62b7e8;
+    color:white;
+}
+.buttonSpacer{
+    display: flex;
+    justify-content: space-around;
+}

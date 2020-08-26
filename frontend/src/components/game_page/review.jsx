@@ -80,7 +80,7 @@ class Review extends React.Component{
                     {ele.helpfulYes}&nbsp; people found this review helpful
                   </div>
                   <div>
-                    {ele.helpfulFunny}&nbsp; people found this review funy
+                    {ele.helpfulFunny}&nbsp; people found this review funny
                   </div>
                 </div>
               </div>

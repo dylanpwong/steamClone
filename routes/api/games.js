@@ -117,7 +117,7 @@ router.post('/userOwnGame',(req,res)=>{
     const userId = req.body.userId
     const gameId = req.body.gameId;
     
-
+    // debugger;
     const response={
         hasGame: false,
         hasReview: false,
