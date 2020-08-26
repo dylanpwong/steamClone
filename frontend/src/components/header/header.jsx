@@ -25,6 +25,12 @@ class Header extends React.Component {
         this.props.logout();
     }
     checkLogin(){
+        let currBalance = 0;
+
+        if (this.props.currentUser.balance != null) {
+            currBalance = this.props.currentUser.balance;
+        }
+
         if (this.props.currentUser) {
             // debugger;
             // console.log('Logged In')
@@ -32,8 +38,8 @@ class Header extends React.Component {
                 <>
                 <div className='loggedIn'>
                     <div className='userInfo'>
-                    {this.props.currentUser.username}
-                    {this.props.currentUser.balance}
+                        <div>{this.props.currentUser.username}</div>
+                        <div>${currBalance}</div>
                     </div>
                     &nbsp; &nbsp;
 
