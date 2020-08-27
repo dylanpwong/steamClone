@@ -148,5 +148,22 @@ router.post('/userOwnGame',(req,res)=>{
     }.bind(usefulInfo))
 })
 
+router.post('/buyGame',(req,res)=>{
+    const price = req.body.price;
+    const gameId = req.body.gameId;
+    const balance = req.body.balance;
+    const userId = req.body.userId;
+
+    User.findOne({id: userId}).then(user=>{
+        Game.findOne({id: gameId}).then(game=>{
+            user.games.push(game)
+            user.balance = balance - price;
+            user.save().then(newUser=>{
+                res.json(newUser);
+            })
+        })
+    })
+})
+
 
 module.exports = router;

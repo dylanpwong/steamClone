@@ -232,3 +232,7 @@
 .errorText {
     color: white;
 }
+.signDemoFlex{
+    display: flex;
+    justify-content: space-between;
+}

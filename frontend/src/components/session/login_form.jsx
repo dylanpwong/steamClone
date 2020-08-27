@@ -64,8 +64,10 @@ class LoginForm extends React.Component{
                     <label htmlFor="password">Password</label>
                     <input className="labelInput" type='password'id='password' onChange={(this.handleOnChange('password'))} value={this.state.password}/>
 
-                    <input className="signInButton" type="submit" value='Sign In'/>
-                    <div className="demoButton" onClick={this.onDemoClick.bind(this)}>Demo Login</div>
+                    <div className="signDemoFlex">
+                        <input className="signInButton" type="submit" value='Sign In'/>
+                        <div className="demoButton" onClick={this.onDemoClick.bind(this)}>Demo Login</div>
+                    </div>
                 </div>
 
                 <div className='loginPadding'></div>
