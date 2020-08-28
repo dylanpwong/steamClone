@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 // import errorsReducer from "./session_errors_reducer";
 import userReducer from "./user_reducer";
 import {RECEIVE_CURRENT_USER, RECEIVE_USER_LOGOUT} from '../actions/session_actions'
+import { UPDATE_USER } from "../actions/game_actions";
 
 
 const preloadedState={
@@ -33,6 +34,12 @@ const sessionReducer = (state = preloadedState, action) => {
         isAuthenticated: false,
         user: null
         }
+      case UPDATE_USER:
+        return {
+          ...state,
+          isAuthenticated: !!action.user,
+          user: action.user,
+        };
     default:
       return state;
   }

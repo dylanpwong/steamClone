@@ -29,3 +29,9 @@ export const userHasGame=(data)=>{
     // debugger;
     return axios.post('/api/games/userOwnGame',data)
 }
+export const addToCart=(data=>{
+    return axios.post("/api/games/addToCart",data);
+})
+export const getCart=(data)=> {
+    return axios.post("/api/games/getCart", data);
+}

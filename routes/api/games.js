@@ -148,14 +148,30 @@ router.post('/userOwnGame',(req,res)=>{
     }.bind(usefulInfo))
 })
 
-router.post('addToCart',(req,res)=>{
+// When site goes to "url", executes body of code which is basically an entire argument.
+router.post('/addToCart',(req,res)=>{
     const gameId = req.body.gameId;
     const userId = req.body.userId;
 
     User.findOne({id: userId}).then(user=>{
-        Game.findOne({id: gameId}).then(game=>{
+        Game.findOne({_id: gameId}).then(game=>{
             user.cart.push(game);
+            user.save().then(newUser=>{
+                res.json(newUser);
+            })
         })
+    })
+})
+
+router.post('/getCart',(req,res)=>{
+    const userId = req.body.userId;
+    
+    User.findOne({id: userId}).populate({
+        path: 'cart games reviewList',
+        model: Game,
+    })
+    .then(user=> {
+        res.json(user);
     })
 })
 

@@ -7,6 +7,8 @@ export const RECEIVE_TOPSELLERS="RECEIVE_TOPSELLERS";
 export const RECEIVE_TOPRATED="RECEIVE_TOPRATED";
 export const RECEIVE_SEARCH="RECEIVE_SEARCH";
 export const RECEIVE_USER_REVIEW="RECEIVE_USER_REVIEW";
+export const RECEIVE_CART="RECEIVE_CART";
+export const UPDATE_USER="UPDATE_USER";
 
 export const recieveGame = (game) =>{
     // debugger
@@ -15,6 +17,21 @@ export const recieveGame = (game) =>{
         game: game.data
     })
 };
+
+export const updateUser=(user)=>{
+    return({
+        type: UPDATE_USER,
+        user: user.data,
+    })
+}
+
+const receiveCart = (data)=>{
+   
+    return {
+      type: RECEIVE_CART,
+      game: data.data,
+    };
+}
 export const receiveMore = games =>{
     // debugger;
     return({
@@ -125,4 +142,14 @@ export const userhasGame = (data)=> dispatch=>{
     .then(function(res){
         // debugger;
        return dispatch(recieveUserReview(res))})
+}
+
+export const addToCart = (data) => dispatch => {
+    return APIutil.addToCart(data)
+    .then((res)=> dispatch(receiveCart(res)))
+}
+
+export const getCart = (data) => dispatch => {
+    return APIutil.getCart(data)
+    .then((res)=> dispatch(updateUser(res)))
 }

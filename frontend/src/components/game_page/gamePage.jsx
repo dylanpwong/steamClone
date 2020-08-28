@@ -16,7 +16,8 @@ class GamePage extends React.Component {
         this.state={
             render: false,
             game: null,
-            leavePage: ""
+            leavePage: "",
+            inCart: null
         }
     }
 
@@ -29,7 +30,11 @@ class GamePage extends React.Component {
             if(!res.game){
               this.props.history.push("/")
             }else{
-              this.setState({render: true,game: res.game});
+               if(this.props.currentUser.cart.filter(ele=>ele._id===this.props.gameId).length <1){
+                this.setState({render: true,game: res.game,cart: true})
+               }else{
+                 this.setState({render: true,game: res.game});
+               }
             }
         })
       }
@@ -49,7 +54,16 @@ class GamePage extends React.Component {
     }
 
     toCart(){
-      this.props.history.push('/cart')
+      let currGame ={
+          userId: this.props.currentUser._id,
+          gameId: this.props.gameId 
+      } 
+      
+        this.props.addToCart(currGame).then(res=>{
+            this.props.history.push('/cart');
+        })
+      
+
     }
 
     render () {
@@ -93,7 +107,7 @@ class GamePage extends React.Component {
                             <div className="priceBox">
                               {this.state.game.price}
                             </div>
-                            <div onClick={this.toCart.bind(this)} className="buyButton">Add to Cart</div>
+                            <div onClick={this.state.cart? null:this.toCart.bind(this)} className="buyButton">{this.state.cart? "Already In Cart": "Add to Cart"}</div>
                           </div>
                         </div>
                       </div>

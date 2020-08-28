@@ -351,6 +351,7 @@ user.games.push(games[0]);
 user.games.push(games[1]);
 user.reviews.push(reviews[0]);
 user.reviews.push(reviews[1]);
+user.cart.push(games[6])
 // user.reviewList[reviews[0]]=reviews[0];
 user.reviewList.push(games[0]);
 // user.reviewList=Object.assign({},user.reviewList, reviews[0] );
