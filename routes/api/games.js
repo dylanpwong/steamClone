@@ -148,20 +148,31 @@ router.post('/userOwnGame',(req,res)=>{
     }.bind(usefulInfo))
 })
 
-router.post('/buyGame',(req,res)=>{
-    const price = req.body.price;
+router.post('addToCart',(req,res)=>{
     const gameId = req.body.gameId;
-    const balance = req.body.balance;
     const userId = req.body.userId;
 
     User.findOne({id: userId}).then(user=>{
         Game.findOne({id: gameId}).then(game=>{
-            user.games.push(game)
-            user.balance = balance - price;
+            user.cart.push(game);
+        })
+    })
+})
+
+router.post('/buyGames',(req,res)=>{
+    const price = req.body.price;
+    const gameIds = req.body.gameIds;
+    const cost = req.body.cost;
+    const userId = req.body.userId;
+
+    User.findOne({id: userId}).then(user=>{
+      
+            user.games.push(...gameIds)
+            user.cost = cost - price;
             user.save().then(newUser=>{
                 res.json(newUser);
             })
-        })
+        
     })
 })
 

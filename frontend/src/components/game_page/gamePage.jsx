@@ -48,6 +48,10 @@ class GamePage extends React.Component {
       this.state.leavePage = "Don't Render";
     }
 
+    toCart(){
+      this.props.history.push('/cart')
+    }
+
     render () {
         if (!this.state.render){
             return(
