@@ -93,7 +93,7 @@ class GamePage extends React.Component {
                             <div className="priceBox">
                               {this.state.game.price}
                             </div>
-                            <div className="buyButton">Add to Cart</div>
+                            <div onClick={this.toCart.bind(this)} className="buyButton">Add to Cart</div>
                           </div>
                         </div>
                       </div>
