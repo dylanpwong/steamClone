@@ -1,10 +1,15 @@
 import React from 'react';
 import Login from './login.jsx';
 import NavBar from './navBar.jsx';
+import ComingSoonDD from '../dropDowns/comingSoon.jsx';
 
 class Header extends React.Component {
     constructor (props) {
         super(props);
+
+        this.state={
+            hover: null
+        }
 
         this.onSignUpClick=this.onSignUpClick.bind(this);
         this.checkLogin=this.checkLogin.bind(this);
@@ -13,6 +18,8 @@ class Header extends React.Component {
         this.addStoreContent=this.addStoreContent.bind(this);
         this.onWishClick=this.onWishClick.bind(this);
         this.onCartClick=this.onCartClick.bind(this);
+        this.hoverHandler=this.hoverHandler.bind(this);
+        this.mouseLeaverHandle=this.mouseLeaverHandle.bind(this);
     }
     
     onSignUpClick(){
@@ -94,6 +101,16 @@ class Header extends React.Component {
             )
         }
     }
+
+    hoverHandler(type){
+        return(e)=>{
+            // debugger;
+            this.setState({hover: [type][0]})
+        }
+    }
+    mouseLeaverHandle(){
+        this.setState({hover: null});
+    }
     
     render(){
         return (
@@ -106,10 +123,24 @@ class Header extends React.Component {
                 <div className='header'>
                    <img onClick={this.onLogoClick.bind(this)}className='steamLogo' src="https://royal-crossing-dev.s3.amazonaws.com/SteamLogo.png"/>
                    <div className='headerTopics'>
-                        <div>STORE</div>
-                        <div>COMMUNITY</div>
-                        <div>ABOUT</div>
-                        <div>SUPPORT</div>
+                        <div onMouseEnter={this.hoverHandler("STORE")} onMouseLeave={this.mouseLeaverHandle}>
+                           <div>
+                            STORE
+                            <ComingSoonDD setting={this.state.hover} type="STORE"/>
+                            </div>
+                        </div>
+                        <div onMouseEnter={this.hoverHandler("COMMUNITY")} onMouseLeave={this.mouseLeaverHandle}>
+                            COMMUNITY
+                            <ComingSoonDD setting={this.state.hover} type="COMMUNITY"/>
+                        </div>
+                        <div onMouseEnter={this.hoverHandler("ABOUT")} onMouseLeave={this.mouseLeaverHandle}>
+                            ABOUT
+                            <ComingSoonDD setting={this.state.hover} type="ABOUT"/>
+                        </div>
+                        <div onMouseEnter={this.hoverHandler("SUPPORT")} onMouseLeave={this.mouseLeaverHandle}>
+                            SUPPORT
+                            <ComingSoonDD setting={this.state.hover} type="SUPPORT"/>
+                        </div>
                     </div>
                 </div>
             
