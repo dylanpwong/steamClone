@@ -95,6 +95,7 @@ class Header extends React.Component {
 
                     <div className='wishButton'onClick={this.onWishClick.bind(this)}>Wishlist({this.props.currentUser.wishlist.length})</div>
                     <div className='cartButton'onClick={this.onCartClick.bind(this)}>Cart({this.props.currentUser.cart.length})</div> 
+                    {/* <div className='cartButton'>work</div> */}
                 </div>
 
                 </>

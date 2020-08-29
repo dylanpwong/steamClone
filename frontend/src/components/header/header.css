@@ -262,13 +262,13 @@
     background-color: #89AD05;
 }
 
-.wishButton--none {
+/* .wishButton--none {
     opacity: 0;
 }
 
 .cartButton--none {
     opacity: 0;
-}
+} */
 
 .profilePic {
     width: 32px;
