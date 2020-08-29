@@ -24,6 +24,7 @@ class CompleteSignUp extends React.Component{
         }
     }
 
+
     handleError() {
 
         let currError = this.state.error + "";
