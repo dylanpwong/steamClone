@@ -30,7 +30,7 @@ class GamePage extends React.Component {
             if(!res.game){
               this.props.history.push("/")
             }else{
-               if(this.props.currentUser.cart.filter(ele=>ele._id===this.props.gameId).length <1){
+               if(this.props.currentUser &&this.props.currentUser.cart.filter(ele=>ele._id===this.props.gameId).length <1){
                 this.setState({render: true,game: res.game,cart: true})
                }else{
                  this.setState({render: true,game: res.game});
