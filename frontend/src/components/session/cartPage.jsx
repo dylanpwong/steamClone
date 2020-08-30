@@ -18,11 +18,18 @@ class cartPage extends React.Component {
             })
         }
     }
+
+    stringToFloat(num){
+        return parseFloat(num.substring(1));
+    }
     
 
     render() {
         if (!this.state.cart) return <> </>
+        let totalPrice=0;
+
         const cartGames = this.state.cart.map((ele) => {
+            totalPrice += this.stringToFloat(ele.price);
             return (
                 <>
                 <div className="cartGame">
