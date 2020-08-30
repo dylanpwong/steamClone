@@ -30,8 +30,13 @@ class cartPage extends React.Component {
         <>
           <div className="cartGame">
             <img className="cartImage" src={ele.imgUrl}></img>
-            <div className="cartTitle">{ele.title}</div>
-            <div className="cartPrice">{ele.price}</div>
+            <div className="cartInfo">
+                <div className="cartDescContainer">
+                    <div className="cartTitle">{ele.title}</div>
+                    <div className="cartPrice">{ele.price}</div>
+                </div>
+                <div className="removeText">Remove</div>
+            </div>
           </div>
         </>
       );
@@ -45,6 +50,7 @@ class cartPage extends React.Component {
           <div className="cartFooter">
             <div className="totalContainer">
               <div>Estimated total</div>
+              <div className="totalPrice">${totalPrice}</div>
             </div>
             <div>
               Is this a purchase for yourself or is it a gift? Select one to

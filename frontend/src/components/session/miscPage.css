@@ -62,10 +62,6 @@
     margin-bottom: 0.5%;
 }
 
-.cartTitle {
-    padding: 0 2%;
-}
-
 .cartPrice {
     margin-left: auto;
 }
@@ -86,6 +82,8 @@
 }
 
 .totalContainer {
+    display: flex;
+    flex-direction: row;
     color: #c7d5e0;
     font-weight: bold;
     padding-bottom: 2%;
@@ -133,4 +131,36 @@
     cursor: pointer;
     color: white;
     background: #66C0F4;
+}
+
+.totalPrice {
+    margin-left: auto;
+}
+
+.cartDescContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.cartInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 13px;
+    width: 100%;
+    padding: 2%;
+    line-height: 16px;
+    margin-bottom: 0.5%;
+}
+
+.removeText {
+    color: #56707f;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+.removeText:hover {
+    cursor: pointer;
+    color: #67C1F5;
 }
