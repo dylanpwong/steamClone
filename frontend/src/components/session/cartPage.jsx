@@ -25,7 +25,7 @@ class cartPage extends React.Component {
 
     let totalPrice=0;
     const cartGames = this.state.cart.map((ele) => {
-        totalPrice+= this.stringToFloat(ele.price);
+        totalPrice += this.stringToFloat(ele.price);
       return (
         <>
           <div className="cartGame">
