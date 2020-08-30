@@ -50,7 +50,7 @@ class cartPage extends React.Component {
           <div className="cartFooter">
             <div className="totalContainer">
               <div>Estimated total</div>
-              <div className="totalPrice">${totalPrice}</div>
+              <div className="totalPrice">${totalPrice}.00</div>
             </div>
             <div>
               Is this a purchase for yourself or is it a gift? Select one to
