@@ -163,6 +163,22 @@ router.post('/addToCart',(req,res)=>{
     })
 })
 
+router.post('/removeFromCart',(req,res)=>{
+    const gameId = req.body.gameId;
+    const userId = req.body.userId;
+
+    User.findOne({_id: userId}).populate({
+        path: 'cart',
+        model: Game,
+    })
+    .then(function(user){
+            user.cart = user.cart.filter(ele => ele.id != this);
+            user.save().then(newUser=>{
+                res.json(newUser);
+            })
+    }.bind(gameId))
+})
+
 router.post('/getCart',(req,res)=>{
     const userId = req.body.userId;
     

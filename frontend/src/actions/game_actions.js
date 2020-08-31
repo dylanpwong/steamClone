@@ -153,3 +153,8 @@ export const getCart = (data) => dispatch => {
     return APIutil.getCart(data)
     .then((res)=> dispatch(updateUser(res)))
 }
+
+export const removeFromCart = (data) => dispatch => {
+    return APIutil.removeFromCart(data)
+    .then((res)=> dispatch(updateUser(res)))
+}

@@ -8,7 +8,8 @@ class Header extends React.Component {
         super(props);
 
         this.state={
-            hover: null
+            hover: null,
+            cart: []
         }
 
         this.onSignUpClick=this.onSignUpClick.bind(this);
@@ -20,6 +21,12 @@ class Header extends React.Component {
         this.onCartClick=this.onCartClick.bind(this);
         this.hoverHandler=this.hoverHandler.bind(this);
         this.mouseLeaverHandle=this.mouseLeaverHandle.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.getCart().then(res => {
+          this.setState({cart: res.user.cart});  
+        })
     }
     
     onSignUpClick(){
@@ -94,7 +101,7 @@ class Header extends React.Component {
                     <div className={this.props.currentUser.cart.length != 0 ? 'cartButton' : 'cartButton--none'} onClick={this.onCartClick.bind(this)}>Cart({this.props.currentUser.cart.length})</div> */}
 
                     <div className='wishButton'onClick={this.onWishClick.bind(this)}>Wishlist({this.props.currentUser.wishlist.length})</div>
-                    <div className='cartButton'onClick={this.onCartClick.bind(this)}>Cart({this.props.currentUser.cart.length})</div> 
+                    <div className='cartButton'onClick={this.onCartClick.bind(this)}>Cart({this.state.cart.length})</div> 
                     {/* <div className='cartButton'>work</div> */}
                 </div>
 

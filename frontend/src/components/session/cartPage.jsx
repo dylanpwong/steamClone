@@ -1,5 +1,6 @@
 import React from 'react'
 import './miscPage.css'
+import { removeFromCart } from '../../actions/game_actions';
 
 class cartPage extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class cartPage extends React.Component {
       };
       
       this.onReturn = this.onReturn.bind(this);
+      this.removeGame = this.removeGame.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +28,20 @@ class cartPage extends React.Component {
     this.props.history.push("/");
   }
 
+  removeGame(data) {
+    return (e) => {
+      const newData = {
+        userId: this.props.currentUser._id, 
+        gameId: data._id
+      }
+
+      this.props.removeFromCart(newData)
+      .then(res => {
+
+      })
+    }
+  }
+
   render() {
     if (!this.state.cart) return <> </>;
 
@@ -41,7 +57,7 @@ class cartPage extends React.Component {
                     <div className="cartTitle">{ele.title}</div>
                     <div className="cartPrice">{ele.price}</div>
                 </div>
-                <div className="removeText">Remove</div>
+                <div className="removeText" onClick={this.removeGame(ele).bind(this)}>Remove</div>
             </div>
           </div>
         </>
