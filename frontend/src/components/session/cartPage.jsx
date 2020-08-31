@@ -3,10 +3,12 @@ import './miscPage.css'
 
 class cartPage extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      cart: null,
-    };
+      super(props);
+      this.state = {
+        cart: null,
+      };
+      
+      this.onReturn = this.onReturn.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +20,10 @@ class cartPage extends React.Component {
   }
   stringToFloat(num) {
     return parseFloat(num.substring(1));
+  }
+
+  onReturn() {
+    this.props.history.push("/");
   }
 
   render() {
@@ -62,7 +68,7 @@ class cartPage extends React.Component {
             </div>
           </div>
 
-          <div className="continueButton">Continue Shopping</div>
+          <div className="continueButton" onClick={this.onReturn.bind(this)}>Continue Shopping</div>
         </div>
       </>
     );
