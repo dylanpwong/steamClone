@@ -49,8 +49,8 @@ class cartPage extends React.Component {
     const cartGames = this.state.cart.map((ele) => {
         totalPrice += this.stringToFloat(ele.price);
       return (
-        <>
-          <div className="cartGame">
+        
+          <div key={ele._id}className="cartGame">
             <img className="cartImage" src={ele.imgUrl}></img>
             <div className="cartInfo">
                 <div className="cartDescContainer">
@@ -60,7 +60,7 @@ class cartPage extends React.Component {
                 <div className="removeText" onClick={this.removeGame(ele).bind(this)}>Remove</div>
             </div>
           </div>
-        </>
+        
       );
     });
 

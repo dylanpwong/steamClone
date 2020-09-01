@@ -17,7 +17,7 @@ class GamePage extends React.Component {
             render: false,
             game: null,
             leavePage: "",
-            inCart: null
+            cart: null
         }
     }
 
@@ -30,7 +30,7 @@ class GamePage extends React.Component {
             if(!res.game){
               this.props.history.push("/")
             }else{
-               if(this.props.currentUser &&this.props.currentUser.cart.filter(ele=>ele._id===this.props.gameId).length <1){
+               if(this.props.currentUser &&this.props.currentUser.cart.filter(ele=>ele._id===this.props.gameId).length >=1){
                 this.setState({render: true,game: res.game,cart: true})
                }else{
                  this.setState({render: true,game: res.game});
@@ -41,7 +41,8 @@ class GamePage extends React.Component {
         // console.log("IN GAME PAGE");
     }
     componentDidUpdate(){
-        if((this.state.leavePage =="")&&this.state.game._id != this.props.gameId){
+      
+        if((this.state.leavePage =="")&& (!this.state.game || this.state.game._id != this.props.gameId)){
               this.props.fetchGame(this.props.gameId).then((res)=>{
             this.setState({render: true,game: res.game});
             // debugger;

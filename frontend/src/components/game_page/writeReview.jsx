@@ -72,7 +72,7 @@ class WriteReview extends React.Component{
         
         // const reviewGames = Object.assign({},{[this.props.user.reviewList[0]]:""});
         const data = {
-          userId: this.props.user ? this.props.user.id : null,
+            userId: this.props.user ? this.props.user.id ? this.props.user.id : this.props.user._id : null,
           gameId: this.props.game? this.props.game._id: null,
         };
         // debugger;
