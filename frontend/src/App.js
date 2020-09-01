@@ -19,6 +19,7 @@ import navBar_container from './components/header/navBar_container';
 import searchPage_container from './components/search_page/searchPage_container';
 import wishList_container from './components/session/wishList_container';
 import cart_container from './components/session/cart_container';
+import funds_container from './components/session/funds_container';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
       <Route exact path='/aboutSteam' component={about_steam_container}/>
       <Route exact path='/wishlist' component={wishList_container}/>
       <Route exact path='/cart' component={cart_container}/>
+      <Route exact path='/funds' component={funds_container}/>
       </div>
       
       <Route path='/' component={Footer}/>

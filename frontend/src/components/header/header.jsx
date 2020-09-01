@@ -15,6 +15,7 @@ class Header extends React.Component {
         this.onSignUpClick=this.onSignUpClick.bind(this);
         this.checkLogin=this.checkLogin.bind(this);
         this.onLogin=this.onLogin.bind(this);
+        this.onFunds=this.onFunds.bind(this);
         this.onLogout=this.onLogout.bind(this);
         this.addStoreContent=this.addStoreContent.bind(this);
         this.onWishClick=this.onWishClick.bind(this);
@@ -51,6 +52,9 @@ class Header extends React.Component {
     onLogin(){
         this.props.history.push('/login')
     }
+    onFunds() {
+        this.props.history.push('/funds');
+    }
     onLogout(){
         this.props.logout();
     }
@@ -75,7 +79,8 @@ class Header extends React.Component {
                     </div>
                     &nbsp; &nbsp;
 
-                    <img className="profilePic" src={this.props.currentUser.profilePicture}></img>
+                    {/* IMPORTANT! CLICKING ON PROFILE PIC WILL LOAD FUNDS. KEEP THIS IN MIND IF YOU WANT TO CHANGE THIS LATER. */}
+                    <img className="profilePic" onClick={this.onFunds.bind(this)} src={this.props.currentUser.profilePicture}></img>
 
                     &nbsp; &nbsp;
                     <div onClick={this.onLogout}>

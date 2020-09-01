@@ -164,3 +164,93 @@
     cursor: pointer;
     color: #67C1F5;
 }
+
+.fundsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+}
+
+.fundsHeader {
+    font-weight: 300;
+    text-shadow: 1px 1px 0 rgba( 0, 0, 0, 0.4 );
+    text-transform: uppercase;
+    color: white;
+    font-size: 34px;
+    padding-bottom: 5%;
+}
+
+.fundsDescHead {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+.fundsDesc {
+    font-size: 14px;
+    color: #c6d4df;
+    padding-top: 1.5%;
+}
+
+.addFund {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: -webkit-linear-gradient( 150deg, rgba(226,244,255,0.3) 5%,rgba(84, 107, 115, 0.3) 95%);
+    border-radius: 4px;
+    font-weight: normal;
+    font-size: 13px;
+    margin-bottom: 16px;
+    padding: 16px;
+    color: #c6d4df;
+    padding-bottom: 3.5%;
+}
+
+.addContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    width: 60%;
+}
+
+.addText {
+    font-size: 21px;
+    color: white;
+    font-weight: normal;
+}
+
+.blackBox {
+    display: flex;
+    background-color: black;
+    padding: 2px 2px 2px 0px;
+    border-radius: 2px;
+}
+
+.fundAmount {
+    background-color: black;
+    font-size: 13px;
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 24px;
+}
+
+.fundButton {
+    background: linear-gradient( to bottom, rgba(121,153,5,1) 5%, rgba(83,105,4,1) 95%);
+    font-size: 15px;
+    line-height: 30px;
+    padding: 0 15px;
+    border-radius: 2px;
+    color: #D2E885;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: -1px -1px 0px rgba( 0, 0, 0, 0.1 );
+}
+
+.fundButton:hover {
+    color: white;
+    background: rgba(164,208,7,1);
+}
