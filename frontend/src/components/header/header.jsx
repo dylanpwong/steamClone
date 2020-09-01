@@ -24,11 +24,26 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getCart().then(res => {
-            
+        const data={
+            userId: this.props.currentUser._id
+        }
+        this.props.getCart(data).then(res => {
+
           this.setState({cart: res.user.cart});  
         })
     }
+    // componentDidUpdate(){
+    //     const userId = this.props.currentUser? this.props.currentUser._id ? this.props.currentUser._id : this.props.currentUser.id :null
+    //     const data = {
+    //         userId: userId
+    //     }
+    //     this.props.getCart(data).then(res => {
+            
+    //         if(this.state.cart.length != res.user.cart.length){
+    //             this.setState({ cart: res.user.cart });
+    //         }
+    //     })
+    // }
     
     onSignUpClick(){
         this.props.history('/join');

@@ -17,7 +17,8 @@ class GamePage extends React.Component {
             render: false,
             game: null,
             leavePage: "",
-            cart: null
+            cart: null,
+            hasGame:null,
         }
     }
 
