@@ -14,11 +14,13 @@ class cartPage extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     if (this.props.currentUser != null) {
       this.props.getCart(this.props.currentUser.id).then((res) => {
         this.setState({ cart: res.user.cart });
       });
     }
+    
   }
   stringToFloat(num) {
     return parseFloat(num.substring(1));
@@ -43,8 +45,8 @@ class cartPage extends React.Component {
   }
 
   render() {
+    // debugger
     if (!this.state.cart) return <> </>;
-
     let totalPrice=0;
     const cartGames = this.state.cart.map((ele) => {
         totalPrice += this.stringToFloat(ele.price);

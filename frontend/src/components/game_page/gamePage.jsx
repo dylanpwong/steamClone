@@ -59,7 +59,7 @@ class GamePage extends React.Component {
           userId: this.props.currentUser._id,
           gameId: this.props.gameId 
       } 
-      
+      // debugger
         this.props.addToCart(currGame).then(res=>{
             this.props.history.push('/cart');
         })

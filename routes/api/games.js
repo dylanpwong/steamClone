@@ -153,7 +153,7 @@ router.post('/addToCart',(req,res)=>{
     const gameId = req.body.gameId;
     const userId = req.body.userId;
 
-    User.findOne({id: userId}).then(user=>{
+    User.findOne({_id: userId}).then(user=>{
         Game.findOne({_id: gameId}).then(game=>{
             user.cart.push(game);
             user.save().then(newUser=>{
