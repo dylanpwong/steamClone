@@ -56,14 +56,18 @@ class GamePage extends React.Component {
     }
 
     toCart(){
-      let currGame ={
-          userId: this.props.currentUser._id,
-          gameId: this.props.gameId 
-      } 
-      // debugger
-        this.props.addToCart(currGame).then(res=>{
-            this.props.history.push('/cart');
-        })
+      if(!this.props.currentUser){
+        this.props.history.push('/login')
+      }else{
+        let currGame ={
+            userId: this.props.currentUser._id,
+            gameId: this.props.gameId 
+        } 
+        // debugger
+          this.props.addToCart(currGame).then(res=>{
+              this.props.history.push('/cart');
+          })
+      }
       
 
     }
