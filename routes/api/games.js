@@ -168,11 +168,20 @@ router.post('/removeFromCart',(req,res)=>{
     const userId = req.body.userId;
 
     User.findOne({_id: userId}).populate({
-        path: 'cart',
+        path: 'cart games, reviewList',
         model: Game,
     })
     .then(function(user){
-            user.cart = user.cart.filter(ele => ele.id != this);
+        // let removeIdx=0;
+        //    for(let i =0; i< user.cart.length;i++){
+        //        if(user.cart[i].id == this){
+        //            removeIdx= i;
+        //            break;
+        //        }
+        //    }
+            user.cart = user.cart.filter(ele=>ele.id !=this)
+            
+            // user.cart = user.cart.splice(removeIdx,removeIdx+1);
             user.save().then(newUser=>{
                 res.json(newUser);
             })
@@ -187,6 +196,7 @@ router.post('/getCart',(req,res)=>{
         model: Game,
     })
     .then(user=> {
+        // debugger
         res.json(user);
     })
 })

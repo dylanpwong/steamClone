@@ -25,6 +25,7 @@ class Header extends React.Component {
 
     componentDidMount() {
         this.props.getCart().then(res => {
+            
           this.setState({cart: res.user.cart});  
         })
     }

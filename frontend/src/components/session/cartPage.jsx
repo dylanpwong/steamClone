@@ -39,7 +39,10 @@ class cartPage extends React.Component {
 
       this.props.removeFromCart(newData)
       .then(res => {
-
+        this.props.getCart(newData).then(res=>{
+          // debugger;
+          this.setState({cart: res.user.cart});
+        })
       })
     }
   }
