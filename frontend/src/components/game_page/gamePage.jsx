@@ -32,9 +32,19 @@ class GamePage extends React.Component {
               this.props.history.push("/")
             }else{
                if(this.props.currentUser &&this.props.currentUser.cart.filter(ele=>ele._id===this.props.gameId).length >=1){
-                this.setState({render: true,game: res.game,cart: true})
+                 const hasGame = this.props.currentUser.games.filter(game=>game._id==this.props.gameId).length;
+                 if(hasGame>=1){
+                   this.setState({ render: true, game: res.game, hasGame: true,cart:"ownGame" });
+                 }else{
+                   this.setState({render: true,game: res.game,cart: true})
+                 }
                }else{
-                 this.setState({render: true,game: res.game});
+                 const hasGame = this.props.currentUser.games.filter(game=>game._id==this.props.gameId).length;
+                 if(hasGame>=1){
+                   this.setState({ render: true, game: res.game, hasGame: true,cart: "ownGame" });
+                 }else{
+                   this.setState({render: true,game: res.game});
+                 }
                }
             }
         })
@@ -113,7 +123,7 @@ class GamePage extends React.Component {
                             <div className="priceBox">
                               {this.state.game.price}
                             </div>
-                            <div onClick={this.state.cart? null:this.toCart.bind(this)} className="buyButton">{this.state.cart? "Already In Cart": "Add to Cart"}</div>
+                            <div onClick={this.state.cart? null:this.toCart.bind(this)} className="buyButton">{this.state.cart? this.state.hasGame? "In Library":"Already In Cart": "Add to Cart"}</div>
                           </div>
                         </div>
                       </div>
