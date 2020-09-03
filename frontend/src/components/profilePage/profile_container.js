@@ -4,7 +4,8 @@ import { getUser } from "../../actions/session_actions";
 
 const mapStateToProps=(state,ownProps)=>{
     return{
-        userId:  ownProps.match.params.profileId
+        userId:  ownProps.match.params.profileId,
+        user: state.session.user
     }
 }
 
