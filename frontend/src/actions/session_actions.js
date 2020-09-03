@@ -37,6 +37,10 @@ export const saveEmail=(email)=>{
     })
 }
 
+export const getUser=(userId)=>dispatch=>{
+    return APIutil.getUser(userId).then(user=>dispatch(receiveCurrentUser(user)))
+}
+
 export const checkEmail=(email)=>dispatch=>{
    return APIutil.checkEmail(email)
     .then((res)=>dispatch(saveEmail(res)))

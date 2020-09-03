@@ -12,6 +12,11 @@ router.get('/edkim',(req,res)=>{
     res.json({msg: "This is ed kim"});
     // console.log("ED KIM");
 });
+router.post('/getUser',(req,res)=>{
+    User.findOne({_id: req.body.userId}).populate('games').then(user=>{
+        res.json(user);
+    })
+})
 //get post patch destroy puts RESTapi
 //get get info
 //post creating new info

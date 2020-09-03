@@ -20,6 +20,7 @@ import searchPage_container from './components/search_page/searchPage_container'
 import wishList_container from './components/session/wishList_container';
 import cart_container from './components/session/cart_container';
 import funds_container from './components/session/funds_container';
+import profile_container from './components/profilePage/profile_container';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
       <Route exact path='/wishlist' component={wishList_container}/>
       <Route exact path='/cart' component={cart_container}/>
       <Route exact path='/funds' component={funds_container}/>
+      <Route exact path='/profile/:profileId' component={profile_container}/>
       </div>
       
       <Route path='/' component={Footer}/>
