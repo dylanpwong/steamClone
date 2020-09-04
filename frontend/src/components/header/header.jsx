@@ -70,25 +70,24 @@ class Header extends React.Component {
         if (this.props.currentUser) {
             // debugger;
             // console.log('Logged In')
-            return(
-                <>
-                <div className='loggedIn'>
-                    <div className='userInfo'>
-                        <div>{this.props.currentUser.username}</div>
-                        <div>{currBalance}</div>
-                    </div>
-                    &nbsp; &nbsp;
-
-                    {/* IMPORTANT! CLICKING ON PROFILE PIC WILL LOAD FUNDS. KEEP THIS IN MIND IF YOU WANT TO CHANGE THIS LATER. */}
-                    <img className="profilePic" onClick={this.onFunds.bind(this)} src={this.props.currentUser.profilePicture}></img>
-
-                    &nbsp; &nbsp;
-                    <div onClick={this.onLogout}>
-                        logout
-                    </div>
+            return (
+              <>
+                <div className="loggedIn">
+                  <div className="userInfo">
+                    <div>{this.props.currentUser.username}</div>
+                    <div onClick={this.onFunds.bind(this)}>{currBalance}</div>
+                  </div>
+                  &nbsp; &nbsp;
+                  {/* IMPORTANT! CLICKING ON PROFILE PIC WILL LOAD FUNDS. KEEP THIS IN MIND IF YOU WANT TO CHANGE THIS LATER. */}
+                  <img
+                    className="profilePic"
+                    src={this.props.currentUser.profilePicture}
+                  ></img>
+                  &nbsp; &nbsp;
+                  <div onClick={this.onLogout}>logout</div>
                 </div>
-                </>
-            )
+              </>
+            );
         }else{
             return(
                 <>
