@@ -22,3 +22,6 @@ export const setAuthToken = token =>{
 export const getUser = data=>{
    return  axios.post("/api/users/getUser",data);
 }
+export const addBalance = data=>{
+    return axios.post("/api/users/addBalance",data);
+}
