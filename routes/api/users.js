@@ -17,6 +17,16 @@ router.post('/getUser',(req,res)=>{
         res.json(user);
     })
 })
+router.post('addBalance',(req,res)=>{
+    const userId = req.body.userId;
+    const amount = req.body.amount;
+    User.findOne({_id: userId}).then(user=>{
+        user.balance += amount;
+        user.save().then(newUser=>{
+            res.json(newUser);
+        });
+    })
+})
 //get post patch destroy puts RESTapi
 //get get info
 //post creating new info
