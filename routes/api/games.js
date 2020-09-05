@@ -192,7 +192,7 @@ router.post('/getCart',(req,res)=>{
     const userId = req.body.userId;
     
     // debugger
-    User.findOne({id: userId}).populate({
+    User.findOne({_id: userId}).populate({
         path: 'cart games reviewList',
         model: Game,
     })

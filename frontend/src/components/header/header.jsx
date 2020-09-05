@@ -31,6 +31,7 @@ class Header extends React.Component {
                 userId: this.props.currentUser._id
             }
             this.props.getCart(data).then(res => {
+                // debugger;
     
               this.setState({cart: res.user.cart});  
             })

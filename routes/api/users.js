@@ -119,7 +119,7 @@ router.post('/login',(req,res)=>{
     const password = req.body.password;
 
     User.findOne({email: email}).populate({
-        path: "games reviewList",
+        path: "games reviewList cart wishlist",
         model: Game
     })
         .then(user=>{
@@ -132,6 +132,7 @@ router.post('/login',(req,res)=>{
                         // debugger;
                         const payload = {
                             id: user.id,
+                            _id: user.id,
                             username: user.username,
                             email: user.email,
                             reviews: user.reviews,

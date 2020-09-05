@@ -16,7 +16,11 @@ class cartPage extends React.Component {
   componentDidMount() {
     // debugger
     if (this.props.currentUser != null) {
-      this.props.getCart(this.props.currentUser.id).then((res) => {
+      const data={
+        userId: this.props.currentUser._id
+      }
+      this.props.getCart(data).then((res) => {
+        // debugger;
         this.setState({ cart: res.user.cart });
       });
     }
