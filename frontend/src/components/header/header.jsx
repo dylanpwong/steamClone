@@ -37,6 +37,13 @@ class Header extends React.Component {
             })
         }
     }
+    componentDidUpdate(){//updates cart number
+        if(this.props.currentUser){
+            if(this.state.cart.length !==this.props.currentUser.cart.length){
+                    this.setState({cart: this.props.currentUser.cart})
+            }
+        }
+    }
     // componentDidUpdate(){
     //     const userId = this.props.currentUser? this.props.currentUser._id ? this.props.currentUser._id : this.props.currentUser.id :null
     //     const data = {

@@ -7,6 +7,7 @@ class cartPage extends React.Component {
       super(props);
       this.state = {
         cart: null,
+        cartErrors: null
       };
       
       this.onReturn = this.onReturn.bind(this);
@@ -41,9 +42,13 @@ class cartPage extends React.Component {
           userId: this.props.currentUser._id,
           gameIds: this.state.cart.map(ele=>ele._id),
       }
-      this.props.buyGames(data).then(res=>{
-        this.props.history.push('/');
-      })
+      if(data.gameIds.length !==0){
+        this.props.buyGames(data).then(res=>{
+          this.props.history.push('/');
+        })
+      }else{
+        this.setState({cartErrors: 'Cart Is Empty'})
+      }
     }
   }
 
@@ -57,7 +62,7 @@ class cartPage extends React.Component {
       this.props.removeFromCart(newData)
       .then(res => {
         const newDataPop={
-          userId: res.user.id
+          userId: res.user._id//changed from id
         }
         this.props.getCart(newDataPop).then(res=>{
           
@@ -93,6 +98,7 @@ class cartPage extends React.Component {
       <>
         <div className="cartContainer">
           <div className="cartHeader">Your Shopping Cart</div>
+          <div className="cartEmpty">{this.state.cartErrors}</div>
           <div className="cartList">{cartGames}</div>
           <div className="cartFooter">
             <div className="totalContainer">

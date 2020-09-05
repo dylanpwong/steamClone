@@ -278,3 +278,6 @@
     border-radius: 0;
     border: none;
 }
+.cartEmpty{
+    color: red;
+}
