@@ -30,7 +30,7 @@ class Header extends React.Component {
             const data={
                 userId: this.props.currentUser._id
             }
-            this.props.getCart(data).then(res => {
+            this.props.getCart(data).then(res => {//add logout if user is logged in but no user is found
                 // debugger;
                 if(!res.user){
                     this.setState({cart: []})
