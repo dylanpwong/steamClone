@@ -6,7 +6,34 @@ class fundsPage extends React.Component {
         super(props);
     }
 
+    addBalance(amount){
+        return(e)=>{
+            const data={
+                userId : this.props.currentUser._id,
+                amount: amount
+
+            }
+            // debugger;
+            this.props.addBalance(data).then(res=>{
+                // debugger;
+                this.props.history.push('/');
+            })
+        }
+    }
+
     render() {
+        const amounts=[5,10,25,50,100];
+        const fundHolder=amounts.map(amount=>{
+            return (
+              <div key={amount} className="addFund">
+                <div className="addText">Add {`$${amount}.00`}</div>
+                <div className="blackBox">
+                  <div className="fundAmount">{`$${amount}.00`}</div>
+                  <div onClick={this.addBalance(amount)}className="fundButton">Add funds</div>
+                </div>
+              </div>
+            );
+        })
         return (
             <>
             <div className='fundsContainer'>
@@ -19,7 +46,8 @@ class fundsPage extends React.Component {
 
 
                 <div className = 'addContainer'>
-                    <div className='addFund'>
+                    {fundHolder}
+                    {/* <div className='addFund'>
                         <div className = 'addText'>Add $5.00</div>
                         <div className = 'blackBox'>
                             <div className = 'fundAmount'>$5.00</div>
@@ -53,7 +81,7 @@ class fundsPage extends React.Component {
                             <div className = 'fundAmount'>$100.00</div>
                             <div className = 'fundButton'>Add funds</div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             </>

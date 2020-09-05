@@ -17,7 +17,7 @@ router.post('/getUser',(req,res)=>{
         res.json(user);
     })
 })
-router.post('addBalance',(req,res)=>{
+router.post('/addBalance',(req,res)=>{
     const userId = req.body.userId;
     const amount = req.body.amount;
     User.findOne({_id: userId}).then(user=>{

@@ -1,5 +1,6 @@
 import {connect} from "react-redux"
 import fundsPage from "./fundsPage.jsx"
+import { addBalance } from "../../actions/session_actions.js"
 
 const mapStateToProps = (state)=>{
     // debugger
@@ -11,6 +12,7 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
     return{
+        addBalance: (user)=>dispatch(addBalance(user))
     };
 
 }
