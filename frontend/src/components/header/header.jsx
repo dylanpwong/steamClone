@@ -32,8 +32,11 @@ class Header extends React.Component {
             }
             this.props.getCart(data).then(res => {
                 // debugger;
-    
-              this.setState({cart: res.user.cart});  
+                if(!res.user){
+                    this.setState({cart: []})
+                }else{
+                    this.setState({cart: res.user.cart});  
+                }
             })
         }
     }
