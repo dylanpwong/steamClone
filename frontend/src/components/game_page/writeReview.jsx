@@ -47,8 +47,8 @@ class WriteReview extends React.Component{
           content: this.state.content,
           rec: this.state.rec,
           gameId: this.props.game._id,
-          userId: this.props.user.id,
-          reviewId: this.state.review? this.state.review._id: null,
+          userId: this.props.user.id ? this.props.user.id : this.props.user._id,
+          reviewId: this.state.review ? this.state.review._id : null,
         };
         // debugger;
         if(toBeSub.content ==""){
@@ -60,6 +60,7 @@ class WriteReview extends React.Component{
                 window.location.reload();
             });
         }else{
+            // debugger;
             this.props.createReview(toBeSub).then(res=>{
                 // debugger;
                window.location.reload();

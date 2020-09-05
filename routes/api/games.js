@@ -205,13 +205,24 @@ router.post('/getCart',(req,res)=>{
 router.post('/buyGames',(req,res)=>{
     const price = req.body.price;
     const gameIds = req.body.gameIds;
-    const cost = req.body.cost;
+    // const balance = req.body.balance;
     const userId = req.body.userId;
 
-    User.findOne({id: userId}).then(user=>{
+    User.findOne({_id: userId}).populate({
+        path:'games cart reviewList',
+        model: Game,
+    }).populate({
+        path: 'reviews',
+        model: Review,
+        populate:({
+            path: "game",
+            model: Game
+        })
+    }).then(user=>{
       
-            user.games.push(...gameIds)
-            user.cost = cost - price;
+            user.games.push(...gameIds);
+            user.cart=[];
+            user.balance = user.balance - price;
             user.save().then(newUser=>{
                 res.json(newUser);
             })

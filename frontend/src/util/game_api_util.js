@@ -38,3 +38,6 @@ export const getCart=(data)=> {
 export const removeFromCart=(data=> {
     return axios.post("api/games/removeFromCart",data);
 })
+export const buyGames=data=>{
+    return axios.post('/api/games/buyGames',data)
+}

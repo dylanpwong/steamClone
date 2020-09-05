@@ -29,12 +29,25 @@ class cartPage extends React.Component {
   onReturn() {
     this.props.history.push("/");
   }
+  buyGames(price){
+
+    return(e)=>{
+      const data={
+          price: price,
+          userId: this.props.currentUser._id,
+          gameIds: this.state.cart.map(ele=>ele._id),
+      }
+      this.props.buyGames(data).then(res=>{
+        this.props.history.push('/');
+      })
+    }
+  }
 
   removeGame(data) {
     return (e) => {
       const newData = {
         userId: this.props.currentUser._id, 
-        gameId: data._id
+        gameId: data._id,
       }
 
       this.props.removeFromCart(newData)
@@ -87,7 +100,7 @@ class cartPage extends React.Component {
               continue to checkout.
             </div>
             <div className="checkoutContainer">
-              <div className="checkoutButton">Purchase for myself</div>
+              <div onClick={this.buyGames(totalPrice)}className="checkoutButton">Purchase for myself</div>
               <div className="checkoutButton">Purchase as a gift</div>
             </div>
           </div>

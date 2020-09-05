@@ -31,7 +31,7 @@ router.post("/create",(req,res)=>{
       // debugger;
       newReview.save().then(review=>{
         game.reviews.push(review);
-        user.reviews.push(review)
+        user.reviews.push(review);
         game.save().then(newGame=>{
           user.save().then(newUser=>{
             // debugger;

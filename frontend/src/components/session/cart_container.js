@@ -1,6 +1,6 @@
 import {connect} from "react-redux"
 import cartPage from "./cartPage.jsx"
-import { getCart, removeFromCart } from "../../actions/game_actions.js"
+import { getCart, removeFromCart, buyGames } from "../../actions/game_actions.js"
 
 const mapStateToProps = (state)=>{
     // debugger
@@ -13,7 +13,8 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps=(dispatch)=>{
     return{
         getCart: (data) =>dispatch(getCart(data)),
-        removeFromCart: (data) => dispatch(removeFromCart(data))
+        removeFromCart: (data) => dispatch(removeFromCart(data)),
+        buyGames: (data) => dispatch(buyGames(data)),
     };
 
 }

@@ -25,13 +25,16 @@ class Header extends React.Component {
     }
 
     componentDidMount() {
-        const data={
-            userId: this.props.currentUser._id
+        
+        if(!!this.props.currentUser){
+            const data={
+                userId: this.props.currentUser._id
+            }
+            this.props.getCart(data).then(res => {
+    
+              this.setState({cart: res.user.cart});  
+            })
         }
-        this.props.getCart(data).then(res => {
-
-          this.setState({cart: res.user.cart});  
-        })
     }
     // componentDidUpdate(){
     //     const userId = this.props.currentUser? this.props.currentUser._id ? this.props.currentUser._id : this.props.currentUser.id :null

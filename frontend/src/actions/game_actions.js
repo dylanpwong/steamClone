@@ -94,6 +94,9 @@ export const receiveType = type =>{
     })
 }
 // const error
+export const buyGames=(data)=>dispatch=>{
+    return APIutil.buyGames(data).then(res=> updateUser(res))
+}
 
 export const fetchHelltaker = () => dispatch => {
     return APIutil.Helltaker()
