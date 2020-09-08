@@ -33,6 +33,7 @@ export const addToCart=(data=>{
     return axios.post("/api/games/addToCart",data);
 })
 export const getCart=(data)=> {
+    // debugger
     return axios.post("/api/games/getCart", data);
 }
 export const removeFromCart=(data=> {

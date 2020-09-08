@@ -43,3 +43,4 @@ const UserSchema = new Schema({
 UserSchema.plugin(deepPopulate);
 const User = mongoose.model('users',UserSchema);
 module.exports=User;
+// module.exports.user=User;

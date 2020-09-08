@@ -13,6 +13,7 @@ export const checkEmail = email =>{
 }
 
 export const setAuthToken = token =>{
+    // debugger;
     if(token){
         axios.defaults.headers.common["Authorization"] = token;
     }else {

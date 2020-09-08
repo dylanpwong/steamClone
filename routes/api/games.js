@@ -189,9 +189,9 @@ router.post('/removeFromCart',(req,res)=>{
 })
 
 router.post('/getCart',(req,res)=>{
+    // debugger
     const userId = req.body.userId;
     
-    // debugger
     User.findOne({_id: userId}).populate({
         path: 'cart games reviewList',
         model: Game,

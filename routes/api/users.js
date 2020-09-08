@@ -120,6 +120,7 @@ router.post('/login',(req,res)=>{
 
     User.findOne({email: email}).populate({
         path: "games reviewList cart wishlist",
+        // path:"games reviewList",
         model: Game
     })
         .then(user=>{

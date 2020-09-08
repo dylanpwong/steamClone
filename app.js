@@ -28,6 +28,7 @@ mongoose
 
   app.use(bodyParser.json());
 
+  // app.use(express.limit("2mb"));
 // app.get("/", (req,res)=>{
 //     const user = new User({
 //         username: "Froppie",
