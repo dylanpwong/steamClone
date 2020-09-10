@@ -199,6 +199,8 @@ router.post('/getCart',(req,res)=>{
     .then(user=> {
         // debugger
         res.json(user);
+    }).catch(err=>{
+        console.log(err)
     })
 })
 
