@@ -56,6 +56,8 @@ router.get('/randomGames',(req,res)=>{
         shuffle(games);
      
         res.json(games);
+    },err=>{
+        res.json({error: err})
     })
    
 })

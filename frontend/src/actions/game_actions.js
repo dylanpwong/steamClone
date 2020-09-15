@@ -121,7 +121,9 @@ export const fetchGame =(gameId) =>dispatch=>{
 }
 export const getRandom = ()=> dispatch=>{
     return APIutil.getRandom()
-    .then((res)=> dispatch(receiveMore(res)))
+    .then((res)=> dispatch(receiveMore(res)),error=>{
+        console.log(error);
+    })
 }
 export const getPopular = ()=> dispatch=>{
     return APIutil.getPopular()
