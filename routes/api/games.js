@@ -209,7 +209,7 @@ router.post('/getCart',(req,res)=>{
 router.post('/buyGames',(req,res)=>{
     const price = req.body.price;
     const gameIds = req.body.gameIds;
-    // const balance = req.body.balance;
+    // const balance = req.body.balance;j
     const userId = req.body.userId;
 
     User.findOne({_id: userId}).populate({
