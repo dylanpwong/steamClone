@@ -19,7 +19,7 @@ export const recieveGame = (game) =>{
 };
 
 export const updateUser=(user)=>{
-    // debugger;
+    // debugger;s
     return({
         type: UPDATE_USER,
         user: user.data,
