@@ -11,7 +11,7 @@ export const RECEIVE_CART="RECEIVE_CART";
 export const UPDATE_USER="UPDATE_USER";
 
 export const recieveGame = (game) =>{
-    // debugger
+    
     return({
         type: RECEIVE_GAME,
         game: game.data
