@@ -41,7 +41,7 @@ export const receiveMore = games =>{
     })
 }
 export const recieveUserReview = data =>{
-    // debugger;
+    
     return({
         type: RECEIVE_USER_REVIEW,
         info: data.data,
